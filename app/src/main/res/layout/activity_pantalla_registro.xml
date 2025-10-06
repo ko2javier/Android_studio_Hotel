@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainPantallaRegistro"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    android:background="#F5F5DC"
+    android:gravity="center_horizontal"
+    tools:context=".Pantalla_Registro">
+    <TextView
+        android:id="@+id/CampoTextoRegistro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" Pantalla Registro"
+        android:gravity="center"
+        android:textColor="#9D2525"
+        android:textSize="30dp"
+        android:padding="5dp"
+        android:textStyle="bold"
+        />
+    <EditText
+        android:id="@+id/Campo_DatosNombreUser_PantallaRegistro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:hint="nombre"
+        android:inputType="text"
+        />
+    <EditText
+        android:id="@+id/Campo_DatosApellidosUser_PantallaRegistro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="apellidos"
+        android:inputType="text"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        />
+    <EditText
+        android:id="@+id/Campo_email_PantallaRegistro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="email"
+        android:inputType="textEmailAddress"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:textColor="#3D53B6"
+        />
+
+    <EditText
+        android:id="@+id/Campo_telefono_PantallaRegistro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="número de telefono"
+        android:inputType="phone"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:textColor="#3D53B6"
+        />
+
+    <EditText
+        android:id="@+id/Campo_Contrasena_PantallaRegistro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="password"
+        android:inputType="textPassword"
+        android:textColor="#3D53B6"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        />
+
+    <EditText
+        android:id="@+id/Campo_Confirma_Contrasena_PantallaRegistro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Confirm password"
+        android:inputType="textPassword"
+        android:textColor="#3D53B6"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        />
+
+
+
+    <!-- intentamos simular un switch-->
+
+    <Switch
+        android:id="@+id/switch_pantalla_registro"
+        android:text="Aceptar terminos y condiciones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        />
+
+<!--
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switch_pantalla_registro2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aceptar términos y condiciones" />
+        -->
+
+
+
+    <LinearLayout
+        android:id="@+id/linear_interior_botones_pantalla_registro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/boton_registrate_pantalla_registro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registrate"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="20dp"
+            android:background="#9BD973"
+            android:textStyle="bold"
+            />
+        <Button
+            android:id="@+id/boton_cancelar_pantalla_registro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="cancelar"
+            android:layout_marginTop="5dp"
+            android:background="#E25822"
+            android:textStyle="bold"
+            />
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

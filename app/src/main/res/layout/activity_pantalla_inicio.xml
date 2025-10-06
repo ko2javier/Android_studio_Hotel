@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Pantalla_Inicio"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5DC"
+    android:gravity="center_horizontal"
+    tools:context=".Pantalla_Inicio">
+
+    <LinearLayout
+        android:id="@+id/linear_bienvenida"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+<!-- header-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:id="@+id/texto_bienvnida"
+        android:text="Bienvenido al Hotel Pelusa "
+        android:gravity="center"
+        android:textColor="#CE2222"
+        android:typeface="sans"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginEnd="5dp"
+
+        />
+        <ImageView
+            android:layout_marginTop="20dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:src="@drawable/hotel_bg"
+            />
+
+    </LinearLayout>
+
+
+    <!-- parte del medio-->
+
+    <EditText
+        android:id="@+id/campo_user_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="usuario@yahoo.com"
+        android:layout_marginTop="100dp"
+        android:textColor="@color/black"
+        android:textStyle="italic"
+        android:layout_gravity="center"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="5dp"
+        android:inputType="text"
+
+        />
+    <EditText
+        android:id="@+id/campo_pasword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="contraseña"
+        android:textColor="@color/black"
+        android:textStyle="italic"
+        android:inputType="textPassword"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+
+        />
+    <!-- botones-->
+    <LinearLayout
+        android:id="@+id/linear_botones_end"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+
+        >
+        <Button
+            android:id="@+id/boton_inicio_sesion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#9BD973"
+            android:text="Iniciar Sesion "
+            android:textStyle="bold"
+            android:padding="3dp"
+            android:layout_marginEnd="130dp"
+
+             />
+        <Button
+            android:id="@+id/boton_inicio_registrase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#F8C537"
+            android:text="Registrarse "
+            android:textStyle="bold"
+            android:padding="3dp"
+
+            />
+"
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
