@@ -1,15 +1,16 @@
 package com.example.hotel_hw_1.model;
 
 public class Gest extends Usuario {
+
     private String nombre;
     private String apellidos;
-    private String  phone;
+    private String phone;
 
-    public Gest() {}
+    public Gest() {
+    }
 
 
-
-    public Gest(String email, String pass, String tipo_user,  String nombre,String apellidos, String phone) {
+    public Gest(String email, String pass, String tipo_user, String nombre, String apellidos, String phone) {
         super(email, pass, tipo_user);
         this.apellidos = apellidos;
         this.nombre = nombre;

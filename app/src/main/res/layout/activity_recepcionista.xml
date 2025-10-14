@@ -4,7 +4,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/layout_gerente"
+    android:id="@+id/layout_recepcionista"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -14,20 +14,19 @@
 
 
     <TextView
-        android:id="@+id/TextView_gerente"
-
+        android:id="@+id/TextView_recep"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
-        android:text="Pantalla Menu Gerente"
+        android:text="Pantalla Menu Recepcionista"
         android:textSize="20sp"
         android:textColor="#C32626"
         />
 
     <Button
-        android:id="@+id/btn_consultar_editar_perfil"
+        android:id="@+id/btn_consultar_editar_perfil_recp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -38,7 +37,7 @@
 
         />
     <Button
-        android:id="@+id/btn_consultar_ocupacion_hotel"
+        android:id="@+id/btn_consultar_ocupacion_hotel_recp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -50,7 +49,7 @@
         />
 
     <Button
-        android:id="@+id/btn_consultar_listado_huspedes"
+        android:id="@+id/btn_consultar_listado_huspedes_recp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -68,7 +67,7 @@
         android:layout_gravity="center"
         android:background="#9BD973"
         android:layout_marginTop="50dp"
-        android:text="Consultar Tareas Pedientes MMTO"
+        android:text="Añadir Reservas al hotel"
         android:padding="5dp"
 
         />
@@ -80,11 +79,11 @@
         android:layout_gravity="center"
         android:background="#9BD973"
         android:layout_marginTop="50dp"
-        android:text="Consultar Tareas Pedientes Limpieza"
+        android:text=" Check-in and check-out"
         android:padding="5dp"
 
         />
-
+    
 
 
     <Button
