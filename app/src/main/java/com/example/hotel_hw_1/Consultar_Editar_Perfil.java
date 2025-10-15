@@ -12,11 +12,32 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.hotel_hw_1.model.Empleado;
-import com.example.hotel_hw_1.model.Gest;
+
 import com.example.hotel_hw_1.model.Usuario;
 
 public class Consultar_Editar_Perfil extends AppCompatActivity {
+
+    private static void pasar_ventana_editar_perfil(Usuario usuario, EditText field_email,
+                                                    EditText field_password, EditText field_type_user,
+                                                    EditText field_nombre, EditText field_apellidos,
+                                                    EditText field_phone) {
+        if (usuario != null) {
+            Log.d("PERFIL_DEBUG", "Cargando perfil de: " + usuario.getEmail());
+            // obtengo los datos y habilito los campos que podrá cambiar !!
+            field_email.setText(usuario.getEmail());
+            field_password.setText(usuario.getPass());
+            field_password.setEnabled(true);
+
+            field_type_user.setText(usuario.getTipo_usuario());
+            field_nombre.setText(usuario.getNombre());
+            field_nombre.setEnabled(true);
+            field_apellidos.setText(usuario.getApellidos());
+            field_apellidos.setEnabled(true);
+            field_phone.setText(usuario.getTelefono());
+            field_phone.setEnabled(true);
+
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,38 +59,18 @@ public class Consultar_Editar_Perfil extends AppCompatActivity {
         Button btn_confirmar_cambios= findViewById(R.id.btn_confirmar_editar_perfil);
         Button btn_volver= findViewById(R.id.btn_volver_editar_perfil);
 
-        // defino mi bundle recibido
+        // Obtengo Instancia de usuario y paso datos para cargarlos con el metodo
 
         Usuario usuario = Usuario.getInstance();
 
-        if (usuario != null) {
-            Log.d("PERFIL_DEBUG", "Cargando perfil de: " + usuario.getEmail());
+        pasar_ventana_editar_perfil(usuario, field_email, field_password, field_type_user, field_nombre, field_apellidos, field_phone);
 
-            field_email.setText(usuario.getEmail());
-            field_password.setText(usuario.getPass());
-            field_type_user.setText(usuario.getTipo_user());
-
-            if (usuario instanceof Empleado) {
-                Empleado e = (Empleado) usuario;
-                field_nombre.setText(e.getNombre());
-                field_apellidos.setText(e.getApellidos());
-                field_phone.setText(e.getPhone());
-            } else if (usuario instanceof Gest) {
-                Gest g = (Gest) usuario;
-                field_nombre.setText(g.getNombre());
-                field_apellidos.setText(g.getApellidos());
-                field_phone.setText(g.getPhone());
-            }
-        } else {
-            Log.e("PERFIL_DEBUG", "⚠ No hay usuario cargado en memoria");
-        }
-
-
-
-
-
-
+        btn_volver.setOnClickListener(v->{
+            finish();
+        });
 
     }
+
+
 
 }

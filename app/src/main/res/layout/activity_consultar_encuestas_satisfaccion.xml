@@ -9,7 +9,7 @@
     tools:context=".Consultar_Encuestas_Satisfaccion"
     android:background="#FAF9E8"
     android:orientation="vertical"
-    android:padding="10dp">
+    android:padding="20dp">
 
     <TextView
         android:id="@+id/txt_titulo_pantalla_encuestas"
@@ -179,6 +179,18 @@
             android:gravity="center_horizontal"
             android:layout_marginTop="2dp" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_volver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="volver"
+        android:background="#1a759f"
+        android:textColor="@color/white"
+        android:padding="8dp"
+        />
 
 
 </LinearLayout>

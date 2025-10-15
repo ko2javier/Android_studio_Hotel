@@ -1,3 +1,4 @@
+/*
 package com.example.hotel_hw_1.model;
 
 
@@ -62,3 +63,4 @@ public class Empleado extends Usuario implements Serializable {
 
 
 }
+*/

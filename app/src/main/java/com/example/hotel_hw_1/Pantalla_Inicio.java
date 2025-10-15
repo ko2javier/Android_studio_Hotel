@@ -59,7 +59,7 @@ public class Pantalla_Inicio extends AppCompatActivity {
             String campo_user= et_campo_user.getText().toString();
             String campo_pass= et_campo_password.getText().toString();
             Usuario u = UsuarioData.checkLogin(campo_user, campo_pass);
-            Log.d("LOGIN_DEBUG", "Usuario logueado: " + u.getEmail() + " | Tipo: " + u.getTipo_user());
+            Log.d("LOGIN_DEBUG", "Usuario logueado: " + u.getEmail() + " | Tipo: " + u.getTipo_usuario());
 
             if (u!=null){
                 // Guardamos el usuario completo (Empleado o Gest)

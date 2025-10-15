@@ -18,7 +18,7 @@ public class Pantalla_Menu_Usuarios extends AppCompatActivity {
 
         // Recupero el usuario logeado
         Usuario usuario = Usuario.getInstance();
-        String tipoUser = usuario.getTipo_user();
+        //String tipoUser = usuario.getTipo_user();
 
         EdgeToEdge.enable(this);
 

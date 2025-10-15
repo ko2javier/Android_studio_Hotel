@@ -30,12 +30,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="#9BD973"
         android:layout_marginTop="50dp"
-        android:text="Consultar/Editar Perfil"
+        android:background="#9BD973"
         android:padding="5dp"
+        android:text="Consultar/Editar Perfil"
 
         />
+
     <Button
         android:id="@+id/btn_consultar_tareas_pdtes_asigandas_mmto"
         android:layout_width="wrap_content"

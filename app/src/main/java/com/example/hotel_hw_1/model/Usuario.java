@@ -7,72 +7,67 @@ import com.example.hotel_hw_1.GerenteActivity;
 import com.example.hotel_hw_1.HuespedActivity;
 import com.example.hotel_hw_1.LimpiadorActivity;
 import com.example.hotel_hw_1.MantenimientoActivity;
-import com.example.hotel_hw_1.Pantalla_Menu_Usuarios;
 import com.example.hotel_hw_1.RecepcionistaActivity;
 
 import java.io.Serializable;
 
 public class Usuario implements Serializable {
     private static Usuario instance;
-     private String tipo_user;
-     private  String email; // user
 
-    private  String pass ;
+    private String email;
+    private String pass;
+    private String nombre;
+    private String apellidos;
+    private String telefono;
+    private String tipo_usuario; // Ejemplo: gerente, recepcionista, limpieza, mantenimiento, huesped
 
+    // Singleton
     public static Usuario getInstance() {
-        if (instance == null) {
-            instance = new Usuario();
-        }
+        if (instance == null) instance = new Usuario();
         return instance;
     }
 
-   // Método para guardar el usuario actual (Empleado o Gest)
     public static void setInstance(Usuario u) {
         instance = u;
     }
-      public Usuario() {}
 
-    // Constructor completo
-    public Usuario(String email, String pass, String tipo_user) {
+    // Constructores
+    public Usuario() {}
 
+    public Usuario(String email, String pass, String tipo_usuario, String nombre,
+                   String apellidos, String telefono) {
         this.email = email;
         this.pass = pass;
-        this.tipo_user = tipo_user;
+        this.tipo_usuario = tipo_usuario;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.telefono = telefono;
     }
 
-    public String getEmail() {return email; }
-
+    // Getters y setters
+    public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
 
     public String getPass() { return pass; }
+    public void setPass(String pass) { this.pass = pass; }
 
-    public void setPass(String pass) {this.pass = pass; }
+    public String getNombre() { return nombre; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
 
-    public String getTipo_user() { return tipo_user; }
+    public String getApellidos() { return apellidos; }
+    public void setApellidos(String apellidos) { this.apellidos = apellidos; }
 
+    public String getTelefono() { return telefono; }
+    public void setTelefono(String telefono) { this.telefono = telefono; }
 
-    // Método para limpiar el usuario actual (logout)
-    public  void limpiarInstance() {
-        instance = null;
-    }
+    public String getTipo_usuario() { return tipo_usuario; }
+    public void setTipo_usuario(String tipo_usuario) { this.tipo_usuario = tipo_usuario; }
 
-    public void setTipo_user(String tipo_user) { this.tipo_user = tipo_user; }
-
-    /*Creo el metodo para llamar a las diferentes pantallas respecto
-    a los posibles usuarios digase
-    huesped
-    gerente
-    mtto
-    recep
-    limpieza
-
-*/
+    // Método para obtener pantalla según el tipo
     public Intent obtenerPantalla(Context context) {
-        if (tipo_user == null) {
-            return null;
-        }
+        if (tipo_usuario == null) return null;
 
-        switch (tipo_user.toLowerCase()) {
+        switch (tipo_usuario.toLowerCase()) {
             case "gerente":
                 return new Intent(context, GerenteActivity.class);
             case "recepcionista":
@@ -87,8 +82,4 @@ public class Usuario implements Serializable {
                 return null;
         }
     }
-
-
-
 }
-

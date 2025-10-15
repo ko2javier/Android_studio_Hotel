@@ -60,11 +60,6 @@
 
         />
 
-
-
-    
-
-
     <Button
         android:id="@+id/btn_consultar_Encuestas_limpiador"
         android:layout_width="wrap_content"

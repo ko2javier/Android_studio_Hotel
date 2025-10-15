@@ -1,6 +1,5 @@
 package com.example.hotel_hw_1.model;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,25 +7,20 @@ public class UsuarioData {
     private static List<Usuario> usuarios = new ArrayList<>();
 
     static {
-        usuarios.add(new Empleado("recepcion@hotel.com", "1234", "empleado",
-                "Ana", "666777888", "Martínez", "recepcionista"));
-
-        usuarios.add(new Empleado("limpieza@hotel.com", "1234", "empleado",
-                "Luis", "666111222", "Pérez", "limpieza"));
-
-        usuarios.add(new Empleado("mantenimiento@hotel.com", "1234", "empleado",
-                "Marcos", "666333444", "Gómez", "mantenimiento"));
-
-        usuarios.add(new Gest("huesped_2@hotel.com", "1234", "huesped",
+        usuarios.add(new Usuario("gerente@hotel.com", "1234", "gerente",
+                "Pedrito", "Calvo", "666777888"));
+        usuarios.add(new Usuario("recepcion@hotel.com", "1234", "recepcionista",
+                "Ana", "Martínez", "666777888"));
+        usuarios.add(new Usuario("limpieza@hotel.com", "1234", "limpieza",
+                "Luis", "Pérez", "666111222"));
+        usuarios.add(new Usuario("mantenimiento@hotel.com", "1234", "mantenimiento",
+                "Marcos", "Gómez", "666333444"));
+        usuarios.add(new Usuario("huesped_2@hotel.com", "1234", "huesped",
                 "Juan", "Lorenzo", "699999999"));
-        usuarios.add(new Gest("huesped@hotel.com", "1234", "huesped",
+        usuarios.add(new Usuario("huesped@hotel.com", "1234", "huesped",
                 "Diana", "Rio", "699999999"));
-        usuarios.add(new Empleado("gerente@hotel.com", "1234", "empleado",
-                "Pedrito", "666777888", "Calvo", "gerente"));
-
-
     }
-// Metodo para chear si un usuario esta en la lista
+
     public static Usuario checkLogin(String email, String pass) {
         for (Usuario u : usuarios) {
             if (u.getEmail().equals(email) && u.getPass().equals(pass)) {
@@ -35,7 +29,7 @@ public class UsuarioData {
         }
         return null;
     }
-// Metodo para añadir un huesped
+
     public static void addUsuario(Usuario u) {
         usuarios.add(u);
     }

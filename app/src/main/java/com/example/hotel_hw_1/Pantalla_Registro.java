@@ -15,7 +15,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.hotel_hw_1.model.Gest;
+
 import com.example.hotel_hw_1.model.Usuario;
 import com.example.hotel_hw_1.model.UsuarioData;
 import com.google.android.material.snackbar.Snackbar;
@@ -69,7 +69,7 @@ public class Pantalla_Registro extends AppCompatActivity {
         String apellidos = et_apellidos.getText().toString();
         String phone = et_phone.getText().toString();
         String pass1 = et_password.getText().toString();
-        Gest nuevoHuesped = new Gest(email, pass1, "huesped", apellidos, nombre, phone);
+        Usuario nuevoHuesped = new Usuario(email, pass1, "huesped", apellidos, nombre, phone);
 
         UsuarioData.addUsuario(nuevoHuesped);
     }

@@ -12,8 +12,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.hotel_hw_1.model.Empleado;
-import com.example.hotel_hw_1.model.Gest;
+
 import com.example.hotel_hw_1.model.Usuario;
 
 public class GerenteActivity extends AppCompatActivity {
@@ -34,6 +33,8 @@ public class GerenteActivity extends AppCompatActivity {
         // defino mis botones para despues ponerlos a la escucha
         Button btn_consultar_perfil= findViewById(R.id.btn_consultar_editar_perfil);
         Button btn_consultar_ocupacion= findViewById(R.id.btn_consultar_ocupacion_hotel);
+        Button btn_consultar_encuestas_gerente= findViewById(R.id.btn_consultar_encuestas_gerente);
+
 
         // comienzo con los listeners !!!!
 
@@ -46,6 +47,14 @@ public class GerenteActivity extends AppCompatActivity {
 
                 startActivity(i);
             }
+        });
+        btn_consultar_ocupacion.setOnClickListener(v->{
+            Intent i = new Intent(GerenteActivity.this, Consultar_Ocupacion_Hotel.class);
+            startActivity(i);
+        });
+        btn_consultar_encuestas_gerente.setOnClickListener(v->{
+            Intent i = new Intent(GerenteActivity.this, Consultar_Encuestas_Satisfaccion.class);
+            startActivity(i);
         });
 
     }

@@ -1,3 +1,4 @@
+/*
 package com.example.hotel_hw_1.model;
 
 import java.io.Serializable;
@@ -42,4 +43,4 @@ public class Gest extends Usuario implements Serializable {
     public void setApellidos(String apellidos) {
         this.apellidos = apellidos;
     }
-}
+}*/

@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FAF9E8"
-    android:padding="30dp"
+    android:padding="50dp"
     >
 
     <TextView
         android:id="@+id/txt_titulo_pantalla_ocupacion"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Pantalla Ocupación del Hotel"
+        android:text="Pantall Ocupación del Hotel"
 
         android:textStyle="bold"
         android:textColor="#AB1F1F"
@@ -126,5 +126,17 @@
         android:textSize="20sp"
         android:textColor="#2E8B57"
         android:layout_marginTop="20dp" />
+
+    <Button
+        android:id="@+id/btn_volver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="volver"
+        android:background="#1a759f"
+        android:textColor="@color/white"
+        android:padding="8dp"
+        />
 
 </LinearLayout>
