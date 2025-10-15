@@ -58,6 +58,12 @@ public class Pantalla_Inicio extends AppCompatActivity {
             * */
             String campo_user= et_campo_user.getText().toString();
             String campo_pass= et_campo_password.getText().toString();
+
+            if (campo_user.isEmpty() || campo_pass.isEmpty()) {
+                Snackbar.make(v, "Por favor, introduzca usuario y contraseña", Snackbar.LENGTH_SHORT).show();
+                return;
+            }
+
             Usuario u = UsuarioData.checkLogin(campo_user, campo_pass);
             Log.d("LOGIN_DEBUG", "Usuario logueado: " + u.getEmail() + " | Tipo: " + u.getTipo_usuario());
 
