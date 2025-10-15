@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light.NoActionBar">
         <activity
+            android:name=".Crear_Encuesta_Satisfaccion"
+            android:exported="false" />
+        <activity
             android:name=".MantenimientoActivity"
             android:exported="false" />
         <activity
