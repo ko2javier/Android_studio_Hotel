@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/consultar_editar_perfil"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Consultar_Editar_Perfil"
+    android:background="#F5F5DC"
+    android:orientation="vertical"
+    android:padding="10dp"
+    >
+    <TextView
+        android:id="@+id/text_consult_editar_perfil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="30dp"
+        android:text="Consultar/Editar Perfil"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="#AB1F1F"
+        android:textSize="20sp"
+
+        />
+
+    <EditText
+        android:id="@+id/campo_nombre_editar_perfil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="nombre"
+        android:enabled="false"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:inputType="text"
+        />
+    <EditText
+        android:id="@+id/campo_apellidos_editar_perfil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="apellidos"
+        android:enabled="false"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:inputType="text"
+        />
+    <EditText
+        android:id="@+id/campo_email_editar_perfil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="email"
+        android:enabled="false"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:inputType="textEmailAddress"
+        />
+    <EditText
+        android:id="@+id/campo_telefono_editar_perfil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="telefono"
+        android:enabled="false"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:inputType="phone"
+        />
+    <EditText
+        android:id="@+id/campo_pass_editar_perfil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="contraseña"
+        android:enabled="false"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:inputType="text"
+        />
+    <EditText
+        android:id="@+id/campo_tipo_user_editar_perfil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="user_type"
+        android:enabled="false"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:inputType="text"
+        />
+
+    <LinearLayout
+        android:id="@+id/linear_botones_editar_perfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        >
+
+        <Button
+            android:id="@+id/btn_confirmar_editar_perfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#56D67E"
+            android:text="Confirmar cambios"
+            android:padding="8dp"
+            android:textColor="@color/white"
+            />
+        <Button
+            android:id="@+id/btn_volver_editar_perfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:background="#1a759f"
+            android:text="Volver"
+            android:padding="8dp"
+            android:textColor="@color/white"
+            />
+
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

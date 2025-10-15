@@ -1,6 +1,8 @@
 package com.example.hotel_hw_1.model;
 
-public class Gest extends Usuario {
+import java.io.Serializable;
+
+public class Gest extends Usuario implements Serializable {
 
     private String nombre;
     private String apellidos;

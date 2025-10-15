@@ -12,15 +12,19 @@ public class UsuarioData {
                 "Ana", "666777888", "Martínez", "recepcionista"));
 
         usuarios.add(new Empleado("limpieza@hotel.com", "1234", "empleado",
-                "Luis", "666111222", "Pérez", "limpiador"));
+                "Luis", "666111222", "Pérez", "limpieza"));
 
         usuarios.add(new Empleado("mantenimiento@hotel.com", "1234", "empleado",
-                "Pedro", "666333444", "Gómez", "mantenimiento"));
+                "Marcos", "666333444", "Gómez", "mantenimiento"));
 
+        usuarios.add(new Gest("huesped_2@hotel.com", "1234", "huesped",
+                "Juan", "Lorenzo", "699999999"));
         usuarios.add(new Gest("huesped@hotel.com", "1234", "huesped",
-                "López", "Carlos", "699999999"));
+                "Diana", "Rio", "699999999"));
+        usuarios.add(new Empleado("gerente@hotel.com", "1234", "empleado",
+                "Pedrito", "666777888", "Calvo", "gerente"));
 
-        usuarios.add(new Usuario("gerente@hotel.com", "1234", "gerente"));
+
     }
 // Metodo para chear si un usuario esta en la lista
     public static Usuario checkLogin(String email, String pass) {

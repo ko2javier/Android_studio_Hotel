@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_huesped"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5DC"
+    tools:context=".Presentacion">
+
+
+
+    <TextView
+        android:id="@+id/TextView_huesped"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:text="Pantalla Menu huesped"
+        android:textSize="20sp"
+        android:textColor="#C32626"
+        />
+
+    <Button
+        android:id="@+id/btn_consultar_editar_perfil_huesped"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#9BD973"
+        android:layout_marginTop="50dp"
+        android:text="Consultar/Editar Perfil"
+        android:padding="5dp"
+
+        />
+
+    <Button
+        android:id="@+id/btn_add_reservas_hotel_huesped"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#9BD973"
+        android:layout_marginTop="50dp"
+        android:text="Add Reservas al hotel"
+        android:padding="5dp"
+
+        />
+    <Button
+        android:id="@+id/btn_check_status_realizadas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#9BD973"
+        android:layout_marginTop="50dp"
+        android:text="Check status de Reservas hotel"
+        android:padding="5dp"
+
+        />
+
+
+
+
+
+    
+
+
+    <Button
+        android:id="@+id/btn_realizar_encuestas_al_hotel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#9BD973"
+        android:layout_marginTop="50dp"
+        android:text="Realizar Encuestas-Satisfaccion"
+        android:padding="5dp"
+
+        />
+
+
+
+
+
+
+</LinearLayout>

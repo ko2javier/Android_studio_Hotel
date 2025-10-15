@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/consultar_encuestas_satisfacion"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Consultar_Encuestas_Satisfaccion"
+    android:background="#FAF9E8"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/txt_titulo_pantalla_encuestas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Resultados de Encuestas"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#B22222"
+        android:gravity="center"
+        android:layout_marginBottom="25dp" />
+
+    <!-- Por bloques ahora empezamos con recepcion-->
+
+    <LinearLayout
+        android:id="@+id/linear_recepcion_encuestas"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:padding="5dp"
+        android:layout_marginBottom="12dp"
+        android:elevation="3dp">
+
+        <TextView
+            android:id="@+id/txt_recepcion_encuestas"
+            android:text="Atención en Recepción"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#000000"
+            android:layout_marginBottom="5dp" />
+
+        <RatingBar
+            android:id="@+id/ratingRecepcion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:rating="4.5"
+            android:stepSize="0.5"
+            android:isIndicator="true"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/txt_recep_prom_encuestas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Promedio: 4.5"
+            android:textSize="15sp"
+            android:textColor="#444"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="5dp" />
+
+        <TextView
+            android:id="@+id/txt_recep_cant_encuestas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3 encuestas registradas"
+            android:textSize="12sp"
+            android:textColor="#777"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="2dp"
+            />
+    </LinearLayout>
+
+    <!--  Bloque de MMTO-->
+    <LinearLayout
+        android:id="@+id/linear_mmto_encuestas"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="12dp"
+        android:elevation="3dp">
+
+        <TextView
+            android:id="@+id/txt_mmto_encuestas"
+            android:text="Instalaciones y Equipos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#000000"
+            android:layout_marginBottom="5dp" />
+
+        <RatingBar
+            android:id="@+id/ratingMantenimiento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:rating="4.0"
+            android:stepSize="0.5"
+            android:isIndicator="true"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/txt_mmto_prom_encuestas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Promedio: 4.0"
+            android:textSize="15sp"
+            android:textColor="#444"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="5dp" />
+
+        <TextView
+            android:id="@+id/txt_mmto_cant_encuestas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="8 encuestas registradas"
+            android:textSize="12sp"
+            android:textColor="#777"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="2dp" />
+    </LinearLayout>
+
+    <!-- Bloque Limpieza -->
+    <LinearLayout
+        android:id="@+id/linear_limpieza_encuestas"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="5dp"
+        android:layout_marginBottom="12dp"
+        android:elevation="3dp">
+
+        <TextView
+            android:id="@+id/txt_limpieza_encuestas"
+            android:text="Limpieza y Orden"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#000000"
+            android:layout_marginBottom="5dp" />
+
+        <RatingBar
+            android:id="@+id/ratingLimpieza"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:rating="4.0"
+            android:stepSize="0.5"
+            android:isIndicator="true"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/txt_limpieza_prom_encuestas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Promedio: 4.0"
+            android:textSize="15sp"
+            android:textColor="#444"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="5dp" />
+
+        <TextView
+            android:id="@+id/txt_limpieza_cant_encuestas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3 encuestas registradas"
+            android:textSize="12sp"
+            android:textColor="#777"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="2dp" />
+    </LinearLayout>
+
+
+</LinearLayout>

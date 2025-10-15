@@ -1,8 +1,9 @@
 package com.example.hotel_hw_1.model;
 
 
+import java.io.Serializable;
 
-public class Empleado extends Usuario {
+public class Empleado extends Usuario implements Serializable {
     private String nombre;
     private String apellidos;
     private String  phone;
@@ -26,7 +27,15 @@ public class Empleado extends Usuario {
         this.apellidos = apellidos;
         this.tipo_empleado= tipo_empleado;
     }
+// Reescribo este metodo del padre para que me devuelve quien se logueo del tipo empleado
+    @Override
+    public String getTipo_user() {
 
+        if (tipo_empleado != null && !tipo_empleado.isEmpty()) {
+            return tipo_empleado.toLowerCase();
+        }
+        return super.getTipo_user();
+    }
     public String getNombre() {
         return nombre;
     }

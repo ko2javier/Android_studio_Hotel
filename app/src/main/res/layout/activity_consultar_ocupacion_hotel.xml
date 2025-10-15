@@ -1,0 +1,130 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/consultar_ocupacion_hotel"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAF9E8"
+    android:padding="30dp"
+    >
+
+    <TextView
+        android:id="@+id/txt_titulo_pantalla_ocupacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pantalla Ocupación del Hotel"
+
+        android:textStyle="bold"
+        android:textColor="#AB1F1F"
+        android:textSize="20sp"
+        android:layout_marginBottom="25dp" />
+
+    <!-- Datos Planta 1 -->
+    <TextView
+        android:id="@+id/txt_pt_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Planta 1 --> 12 libres"
+        android:layout_marginBottom="10dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/txt_pt_1.1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Simples: 101, 102, 104\nDobles: 115, 118, 120, 121\nTriples: 198, 199"
+        android:textSize="15sp"
+        android:textColor="#555" />
+
+    <!-- Datos Planta 2 -->
+    <TextView
+        android:id="@+id/txt_pt_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Planta 2 --> 10 libres"
+        android:textSize="18sp"
+        android:layout_marginBottom="10dp"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/txt_pt_2.1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Simples: 202, 204, 209\nDobles: 220, 222, 228\nTriples: 297, 299"
+        android:textSize="15sp"
+        android:textColor="#555" />
+
+    <!--  Pt 3 -->
+    <TextView
+        android:id="@+id/txt_pt_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Planta 3 --> 14 libres"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/txt_pt_3.1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Simples: 303, 305, 310\nDobles: 324, 325, 330\nTriples: 397, 399"
+        android:textSize="15sp"
+        android:textColor="#555" />
+
+    <!--  Pt 4 -->
+    <TextView
+        android:id="@+id/txt_pt_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Planta 4 --> 18 libres"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/txt_pt_4.1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Simples: 401, 403, 404, 408\nDobles: 420, 425, 430\nTriples: 496, 498, 499"
+        android:textSize="15sp"
+        android:textColor="#555"
+        android:layout_marginBottom="10dp"/>
+
+    <!--  Pt 5 -->
+    <TextView
+        android:id="@+id/txt_pt_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Planta 5 --> 16 libres"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:id="@+id/txt_pt_5.1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Simples: 501, 504, 507\nDobles: 520, 525, 528, 530\nTriples: 596, 598"
+        android:textSize="15sp"
+        android:textColor="#555" />
+
+    <!-- Total -->
+    <TextView
+
+        android:id="@+id/txtTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Libres: 70 / 500 habitaciones"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="#2E8B57"
+        android:layout_marginTop="20dp" />
+
+</LinearLayout>

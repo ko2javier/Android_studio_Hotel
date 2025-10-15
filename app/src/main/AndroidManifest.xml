@@ -12,6 +12,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light.NoActionBar">
         <activity
+            android:name=".MantenimientoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HuespedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LimpiadorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RecepcionistaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GerenteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Consultar_Encuestas_Satisfaccion"
+            android:exported="false" />
+        <activity
+            android:name=".Consultar_Ocupacion_Hotel"
+            android:exported="false" />
+        <activity
+            android:name=".Consultar_Editar_Perfil"
+            android:exported="false" />
+        <activity
             android:name=".Pantalla_Registro"
             android:exported="false" />
         <activity

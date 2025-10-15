@@ -2,6 +2,7 @@ package com.example.hotel_hw_1;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -58,13 +59,14 @@ public class Pantalla_Inicio extends AppCompatActivity {
             String campo_user= et_campo_user.getText().toString();
             String campo_pass= et_campo_password.getText().toString();
             Usuario u = UsuarioData.checkLogin(campo_user, campo_pass);
+            Log.d("LOGIN_DEBUG", "Usuario logueado: " + u.getEmail() + " | Tipo: " + u.getTipo_user());
 
             if (u!=null){
-                usuario.setEmail(campo_user);
-                usuario.setPass(campo_pass);
-                usuario.setTipo_user(u.getTipo_user());
-                Intent intent= new Intent(Pantalla_Inicio.this, Pantalla_Menu_Usuarios.class);
+                // Guardamos el usuario completo (Empleado o Gest)
+                Usuario.setInstance(u);
 
+
+                Intent intent = u.obtenerPantalla(this);
                 startActivity(intent);
             }else{
                 Snackbar.make(v, "Usuario o contraseña incorrectos", Snackbar.LENGTH_SHORT).show();

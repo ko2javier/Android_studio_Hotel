@@ -10,7 +10,8 @@
     android:layout_margin="10dp"
     android:background="#F5F5DC"
     android:gravity="center_horizontal"
-    tools:context=".Pantalla_Registro">
+    tools:context=".Pantalla_Registro"
+    android:padding="10dp">
     <TextView
         android:id="@+id/CampoTextoRegistro"
         android:layout_width="match_parent"
