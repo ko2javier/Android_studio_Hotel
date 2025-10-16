@@ -10,6 +10,8 @@ import com.example.hotel_hw_1.MantenimientoActivity;
 import com.example.hotel_hw_1.RecepcionistaActivity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Usuario implements Serializable {
     private static Usuario instance;
@@ -19,6 +21,9 @@ public class Usuario implements Serializable {
     private String nombre;
     private String apellidos;
     private String telefono;
+
+    // Defino campo reservas para los huspedes!!
+    private List<String> reservas = new ArrayList<>();
     private String tipo_usuario; // Ejemplo: gerente, recepcionista, limpieza, mantenimiento, huesped
 
     // Singleton
@@ -81,5 +86,13 @@ public class Usuario implements Serializable {
             default:
                 return null;
         }
+    }
+
+// adiciono reserva!!
+    public void agregarReserva(String reserva) {
+        reservas.add(reserva);
+    }
+    public List<String> getReservas(){
+        return this.reservas;
     }
 }

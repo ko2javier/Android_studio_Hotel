@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light.NoActionBar">
         <activity
+            android:name=".Consultar_Estado_Reservas"
+            android:exported="false" />
+        <activity
             android:name=".Realizar_Reserva_Activity"
             android:exported="false" />
         <activity

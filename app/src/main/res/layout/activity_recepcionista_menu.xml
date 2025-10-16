@@ -27,7 +27,8 @@
 
     <Button
         android:id="@+id/btn_consultar_editar_perfil_recp"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="80dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="#9BD973"
@@ -38,11 +39,12 @@
         />
     <Button
         android:id="@+id/btn_consultar_ocupacion_hotel_recp"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="80dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="#9BD973"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:text="Consultar Ocupacion del Hotel"
         android:padding="5dp"
 
@@ -50,11 +52,12 @@
 
     <Button
         android:id="@+id/btn_consultar_listado_huspedes_recp"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="80dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="#9BD973"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:text="Consultar Listado huespedes"
         android:padding="5dp"
 
@@ -62,11 +65,12 @@
 
     <Button
         android:id="@+id/btn_add_reservas_hotel"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="80dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="#9BD973"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:text="Añadir Reservas al hotel"
         android:padding="5dp"
 
@@ -74,11 +78,12 @@
 
     <Button
         android:id="@+id/btn_gestionar_check_in_out"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="80dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="#9BD973"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:text=" Check-in and check-out"
         android:padding="5dp"
 
@@ -88,18 +93,29 @@
 
     <Button
         android:id="@+id/btn_consultar_Encuestas"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="80dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="#9BD973"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:text="Consultar Encuestas"
         android:padding="5dp"
 
         />
+    <Button
+        android:id="@+id/boton_cerrar_sesion"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="80dp"
+        android:layout_marginTop="30dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#F8C537"
+        android:text="Cerrar Sesion "
+        android:textStyle="bold"
+        android:padding="3dp"
 
-
-
+        />
 
 
 

@@ -1,4 +1,6 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pantalla_rese"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -53,7 +55,7 @@
         android:id="@+id/txt_disponibilidad_actual"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Disponibilidad actual:\n- Simples: 5- Dobles: 3- Triples: 2"
+        android:text="Disponibilidad actual:\n- Simples: 10- Dobles: 3- Triples: 2"
         android:textSize="16sp"
         android:textColor="#2E7D32"
         android:background="#E8F5E9"

@@ -27,7 +27,8 @@
 
     <Button
         android:id="@+id/btn_consultar_editar_perfil_huesped"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="80dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="#9BD973"
@@ -39,7 +40,8 @@
 
     <Button
         android:id="@+id/btn_add_reservas_hotel_huesped"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="80dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="#9BD973"
@@ -50,7 +52,8 @@
         />
     <Button
         android:id="@+id/btn_check_status_realizadas"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="80dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="#9BD973"
@@ -62,13 +65,28 @@
 
     <Button
         android:id="@+id/btn_realizar_encuestas_al_hotel"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="80dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="#9BD973"
         android:layout_marginTop="50dp"
-        android:text="Realizar Encuestas-Satisfaccion"
+        android:text="Realizar Encuestas"
         android:padding="5dp"
+
+        />
+
+    <Button
+        android:id="@+id/boton_cerrar_sesion"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="80dp"
+        android:layout_marginTop="50dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#F8C537"
+        android:text="Cerrar Sesion "
+        android:textStyle="bold"
+        android:padding="3dp"
 
         />
 

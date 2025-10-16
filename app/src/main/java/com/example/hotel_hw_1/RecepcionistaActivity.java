@@ -45,5 +45,11 @@ public class RecepcionistaActivity extends AppCompatActivity {
             startActivity(i);
         });
 
+        btn_add_reservas_hotel.setOnClickListener(v->{
+            Intent i = new Intent(RecepcionistaActivity.this, Realizar_Reserva_Activity.class);
+            startActivity(i);
+        });
+
+
     }
 }

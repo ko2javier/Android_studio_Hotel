@@ -24,7 +24,7 @@
         android:id="@+id/txt_pt_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Planta 1 --> 12 libres"
+        android:text="Planta 1 --> 9 libres"
         android:layout_marginBottom="10dp"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -43,7 +43,7 @@
         android:id="@+id/txt_pt_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Planta 2 --> 10 libres"
+        android:text="Planta 2 --> 8 libres"
         android:textSize="18sp"
         android:layout_marginBottom="10dp"
         android:textStyle="bold"
@@ -62,7 +62,7 @@
         android:id="@+id/txt_pt_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Planta 3 --> 14 libres"
+        android:text="Planta 3 --> 8 libres"
         android:textSize="18sp"
         android:textStyle="bold"
         android:layout_marginBottom="10dp"
@@ -81,7 +81,7 @@
         android:id="@+id/txt_pt_4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Planta 4 --> 18 libres"
+        android:text="Planta 4 --> 10 libres"
         android:textSize="18sp"
         android:textStyle="bold"
         android:layout_marginBottom="10dp"
@@ -101,7 +101,7 @@
         android:id="@+id/txt_pt_5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Planta 5 --> 16 libres"
+        android:text="Planta 5 --> 9 libres"
         android:textSize="18sp"
         android:textStyle="bold"
         android:layout_marginTop="8dp"
@@ -116,16 +116,17 @@
         android:textColor="#555" />
 
     <!-- Total -->
+
     <TextView
 
         android:id="@+id/txtTotal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Total Libres: 70 / 500 habitaciones"
-        android:textStyle="bold"
-        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:text="Total Libres: 44 / 500 habitaciones"
         android:textColor="#2E8B57"
-        android:layout_marginTop="20dp" />
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/btn_volver"

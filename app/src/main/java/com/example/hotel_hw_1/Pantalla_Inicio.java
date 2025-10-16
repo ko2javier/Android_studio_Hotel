@@ -65,12 +65,12 @@ public class Pantalla_Inicio extends AppCompatActivity {
             }
 
             Usuario u = UsuarioData.checkLogin(campo_user, campo_pass);
-            Log.d("LOGIN_DEBUG", "Usuario logueado: " + u.getEmail() + " | Tipo: " + u.getTipo_usuario());
+
 
             if (u!=null){
                 // Guardamos el usuario completo (Empleado o Gest)
                 Usuario.setInstance(u);
-
+                Log.d("LOGIN_DEBUG", "Usuario logueado: " + u.getEmail() + " | Tipo: " + u.getTipo_usuario());
 
                 Intent intent = u.obtenerPantalla(this);
                 startActivity(intent);

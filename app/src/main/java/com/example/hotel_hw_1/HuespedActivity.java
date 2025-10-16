@@ -36,6 +36,15 @@ public class HuespedActivity extends AppCompatActivity {
             startActivity(i);
         });
 
+        btn_add_reservas.setOnClickListener(v->{
+            Intent i= new Intent(HuespedActivity.this, Realizar_Reserva_Activity.class);
+            startActivity(i);
+        });
+
+        btn_check_reservas_done.setOnClickListener(v->{
+            Intent i = new Intent(HuespedActivity.this, Consultar_Estado_Reservas.class);
+            startActivity(i);
+        });
 
 
     }
