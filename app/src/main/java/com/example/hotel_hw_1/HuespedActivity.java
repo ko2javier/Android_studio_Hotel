@@ -31,6 +31,10 @@ public class HuespedActivity extends AppCompatActivity {
             startActivity(i);
 
         });
+        btn_realizar_encuestas.setOnClickListener(v->{
+            Intent i = new Intent(HuespedActivity.this, Crear_Encuesta_Satisfaccion.class);
+            startActivity(i);
+        });
 
 
 

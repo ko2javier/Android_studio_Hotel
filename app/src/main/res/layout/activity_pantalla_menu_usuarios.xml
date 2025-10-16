@@ -1,100 +1,163 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/layout_crear_encuesta"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#FAF9E8"
-    android:padding="24dp">
+    android:padding="30dp">
 
     <TextView
-        android:id="@+id/textoTituloEncuesta"
-        android:text="Encuesta de Satisfacción"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:textColor="#C32626"
-        android:gravity="center_horizontal"
-        android:layout_marginBottom="16dp"
+        android:id="@+id/txt_titulo_pantalla_reserva_aplicacion"
+        android:text="Pantalla Reserva Habitación:"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textColor="#C11C1C"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        />
 
-    <!-- LIMPIEZA -->
+    <LinearLayout
+        android:id="@+id/linear_fecha_reserva"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp">
+
+        <TextView
+            android:id="@+id/txt_fecha_reserva"
+            android:text="Fecha:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginEnd="15dp"/>
+
+        <EditText
+            android:id="@+id/edit_fecha"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="DD-MM-YYYY"
+            android:layout_marginRight="20dp"
+
+            android:inputType="date"
+            android:padding="10dp"/>
+    </LinearLayout>
+
+
     <TextView
+        android:id="@+id/txt_disponibilidad_actual"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Limpieza habitación:"
+        android:text="Disponibilidad actual:\n- Simples: 5- Dobles: 3- Triples: 2"
+        android:textSize="16sp"
+        android:textColor="#2E7D32"
+        android:background="#E8F5E9"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:elevation="2dp"
         android:textStyle="bold"
-        android:layout_marginTop="8dp" />
+        android:gravity="center" />
 
-    <RatingBar
-        android:id="@+id/ratingLimpieza"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:numStars="5"
-        android:stepSize="1.0"
-        android:rating="3" />
 
-    <!-- MANTENIMIENTO -->
+
     <TextView
+        android:text="Elige tipo de habitación:"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Mantenimiento:"
+        android:textSize="18sp"
         android:textStyle="bold"
-        android:layout_marginTop="8dp" />
+        android:layout_marginBottom="10dp"/>
 
-    <RatingBar
-        android:id="@+id/ratingMantenimiento"
-        android:layout_width="wrap_content"
+    <RadioGroup
+        android:id="@+id/radioGroupHabitacion"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:numStars="5"
-        android:stepSize="1.0"
-        android:rating="3" />
+        android:layout_marginBottom="20dp">
+        <RadioButton
+            android:id="@+id/rbSimple"
+            android:text="Simple"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"/>
+        <RadioButton
+            android:id="@+id/rbDoble"
+            android:text="Doble"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <RadioButton
+            android:id="@+id/rbTriple"
+            android:text="Triple"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RadioGroup>
 
-    <!-- RECEPCIÓN -->
     <TextView
+        android:id="@+id/txt_servicios_adicionales"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Atención en recepción:"
+        android:text="Servicios adicionales:"
+        android:textSize="18sp"
         android:textStyle="bold"
-        android:layout_marginTop="8dp" />
-
-    <RatingBar
-        android:id="@+id/ratingRecepcion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:numStars="5"
-        android:stepSize="1.0"
-        android:rating="3" />
-
-    <!-- COMENTARIO -->
-    <EditText
-        android:id="@+id/campoComentario"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"/>
+    <LinearLayout
+        android:id="@+id/linear_check_box"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:hint="Comentario (opcional)"
-        android:inputType="textMultiLine"
-        android:lines="2"
-        android:gravity="top|start"
-        android:background="#FFFFFF"
-        android:padding="10dp" />
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp"
+        >
+        <CheckBox
+            android:id="@+id/checkbox_spa"
+            android:text="Spa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            />
+        <CheckBox
+            android:id="@+id/checkbox_parking"
+            android:text="Parking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"/>
+        <CheckBox
+            android:id="@+id/checkbox_mmto"
+            android:text="Mantenimiento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"/>
 
-    <!-- BOTONES -->
+
+    </LinearLayout>
+
+
+
+
     <Button
-        android:id="@+id/btnEnviarEncuesta"
+        android:id="@+id/btn_confirmar_reserva_flat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enviar Encuesta"
-        android:layout_marginTop="16dp" />
+        android:checked="false"
+        android:text="CONFIRMAR RESERVA"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="#4CAF50"
+        android:textColor="#FFF"/>
 
     <Button
-        android:id="@+id/btnVolverEncuesta"
+        android:id="@+id/btn_volver_reserva_flat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Volver"
-        android:layout_marginTop="8dp" />
+        android:checked="false"
+        android:text="VOLVER"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#0D47A1"
+        android:textColor="#FFF"/>
+
 </LinearLayout>

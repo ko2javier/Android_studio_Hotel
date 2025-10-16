@@ -27,6 +27,7 @@
     <!-- Por bloques definimos-->
 
     <TextView
+        android:id="@+id/txt_limpieza_crear_encuesta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Limpieza habitación:"
@@ -39,11 +40,12 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:numStars="5"
-        android:stepSize="1.0"
-        android:rating="3" />
+        android:stepSize="0.5"
+        android:rating="1" />
 
     <!-- MANTENIMIENTO -->
     <TextView
+        android:id="@+id/txt_mmt_crear_encuesta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Mantenimiento:"
@@ -51,15 +53,16 @@
         android:layout_marginTop="8dp" />
 
     <RatingBar
-        android:id="@+id/ratingMantenimiento"
+        android:id="@+id/rating_mantenimiento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:numStars="5"
-        android:stepSize="1.0"
-        android:rating="3" />
+        android:stepSize="0.5"
+        android:rating="1" />
 
     <TextView
+        android:id="@+id/txt_recep_crear_encuesta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Atención en recepción:"
@@ -67,17 +70,17 @@
         android:layout_marginTop="8dp" />
 
     <RatingBar
-        android:id="@+id/ratingRecepcion"
+        android:id="@+id/rating_recepcion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:numStars="5"
-        android:stepSize="1.0"
-        android:rating="3" />
+        android:stepSize="0.5"
+        android:rating="1" />
 
     <!-- COMENTARIO -->
     <EditText
-        android:id="@+id/campoComentario"
+        android:id="@+id/campo_comentario_encuestas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -90,17 +93,21 @@
 
     <!-- BOTONES -->
     <Button
-        android:id="@+id/btnEnviarEncuesta"
+        android:id="@+id/btn_enviar_encuesta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Enviar Encuesta"
-        android:layout_marginTop="16dp" />
+        android:background="#56D67E"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/white"/>
 
     <Button
-        android:id="@+id/btnVolverEncuesta"
+        android:id="@+id/btn_volver_encuesta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Volver"
-        android:layout_marginTop="8dp" />
+        android:background="#1a759f"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/white"/>
 
 </LinearLayout>
