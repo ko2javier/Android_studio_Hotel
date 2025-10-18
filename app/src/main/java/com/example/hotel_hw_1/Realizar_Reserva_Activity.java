@@ -25,7 +25,8 @@ import com.google.android.material.snackbar.Snackbar;
 public class Realizar_Reserva_Activity extends AppCompatActivity {
 
     // Metodo para verificar la reserva realizada
-    private void confirmar_reserva(View v, RadioGroup radio_group, CheckBox checkbox_spa, CheckBox checkbox_parking, CheckBox checkbox_mmto, EditText edit_fecha, TextView txt_disponibilidad_actual) {
+    private void confirmar_reserva(View v, RadioGroup radio_group, CheckBox checkbox_spa, CheckBox checkbox_parking,
+                                   RadioGroup  radiog_type_pension, EditText edit_fecha, TextView txt_disponibilidad_actual) {
         int idSeleccionado = radio_group.getCheckedRadioButtonId();
         if (idSeleccionado == -1) {
             Snackbar.make(v, "Seleccione un tipo de habitación", Snackbar.LENGTH_SHORT).show();
@@ -35,14 +36,18 @@ public class Realizar_Reserva_Activity extends AppCompatActivity {
         // Determino el tipo de habit seleccionada
         RadioButton rbSeleccionado = findViewById(idSeleccionado);
         String tipoHabitacion = rbSeleccionado.getText().toString();
-
-
+        // Determino tipo de pension. y lo completo en la linea 48!!
+        int idPensionSeleccionada = radiog_type_pension.getCheckedRadioButtonId();
 
         // Servicios adicionales
         StringBuilder servicios = new StringBuilder();
         if (checkbox_spa.isChecked()) servicios.append("Spa ");
         if (checkbox_parking.isChecked()) servicios.append("Parking ");
-        if (checkbox_mmto.isChecked()) servicios.append("Mantenimiento ");
+        if (idPensionSeleccionada != -1) {
+            RadioButton rbPensionSeleccionada = findViewById(idPensionSeleccionada);
+            servicios.append(rbPensionSeleccionada.getText().toString()).append(" ");
+        }
+
         if (servicios.length() == 0) servicios.append("Sin servicios adicionales");
 
         // Determinamos si la fecha cumple con el patron adecuado!!
@@ -90,7 +95,9 @@ public class Realizar_Reserva_Activity extends AppCompatActivity {
         RadioButton rbTriple= findViewById(R.id.rbTriple);
         CheckBox checkbox_spa= findViewById(R.id.checkbox_spa);
         CheckBox checkbox_parking= findViewById(R.id.checkbox_parking);
-        CheckBox checkbox_mmto= findViewById(R.id.checkbox_mmto);
+        RadioGroup radiog_type_pension= findViewById(R.id.radiog_type_pension);
+        RadioButton rb_media_pension= findViewById(R.id.rb_media_pension);
+        RadioButton rb_pension_full= findViewById(R.id.rb_pension_full);
         Button btn_confirmar_reserva= findViewById(R.id.btn_confirmar_reserva_flat);
         Button btn_volver_reserva_flat = findViewById(R.id.btn_volver_reserva_flat);
         TextView txt_disponibilidad_actual = findViewById(R.id.txt_disponibilidad_actual);
@@ -121,7 +128,8 @@ public class Realizar_Reserva_Activity extends AppCompatActivity {
 
         btn_confirmar_reserva.setOnClickListener(v -> {
 
-            confirmar_reserva(v, radio_group, checkbox_spa, checkbox_parking, checkbox_mmto, edit_fecha, txt_disponibilidad_actual);
+            confirmar_reserva(v, radio_group, checkbox_spa, checkbox_parking, radiog_type_pension,
+                    edit_fecha, txt_disponibilidad_actual);
         });
 
 
