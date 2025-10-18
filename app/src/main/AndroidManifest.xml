@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light.NoActionBar">
         <activity
+            android:name=".GestionEntradasSalidasActivity"
+            android:exported="false" />
+        <activity
             android:name=".Solicitar_Tarea"
             android:exported="false" />
         <activity

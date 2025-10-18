@@ -68,6 +68,13 @@ public class RecepcionistaActivity extends AppCompatActivity {
             }
         });
 
+        btn_gestionar_check_in_out.setOnClickListener(v->{
+            Intent i= new Intent(RecepcionistaActivity.this,
+                    GestionEntradasSalidasActivity.class);
+            startActivity(i);
+        });
+
+
 
     }
 }
