@@ -2,15 +2,12 @@ package com.example.hotel_hw_1;
 
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
+import com.example.hotel_hw_1.model.AdaptadorReserva;
 import com.example.hotel_hw_1.model.Usuario;
 
 import java.util.List;
@@ -23,32 +20,27 @@ public class Consultar_Estado_Reservas extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_consultar_estado_reservas);
 
-        // defino variables
-
+        // definimos variables
 
         Button btnVolver = findViewById(R.id.btn_volver_consultar_reservas);
-        LinearLayout layoutReservasDinamicas= findViewById(R.id.layout_reservas_dinamicas);
+        ListView listaReservas = findViewById(R.id.lista_reservas);
 
-
+        //  Obtener reservas del usuario actual
         Usuario usuario = Usuario.getInstance();
         List<String> reservas = usuario.getReservas();
 
-        // Añadimos nuevas reservas si el usuario lo hace!!!
-        if (!reservas.isEmpty()) {
-            for (String r : reservas) {
-                TextView txt = new TextView(this);
-                txt.setText(r);
-                txt.setTextSize(16);
-                txt.setPadding(10, 10, 10, 20);
-
-                txt.setTextColor(getColor(android.R.color.holo_green_dark));
-                layoutReservasDinamicas.addView(txt);
-            }
+        //  Si el usuario aún no ha reservado, agregamos algunas para que no este en blanco!!
+        if (reservas.isEmpty()) {
+            reservas.add("Fecha: 12-10-2025 | Habitación: Doble | Servicios: Spa | Estado: Cancelada");
+            reservas.add("Fecha: 09-10-2025 | Habitación: Simple | Servicios: Sin servicios adicionales | Estado: Cancelada");
+            reservas.add("Fecha: 08-10-2025 | Habitación: Doble | Servicios: Parking 1/2 Pensión | Estado: Confirmada");
         }
-        btnVolver.setOnClickListener(v->{
-            finish();
-        });
 
+        //  configuro mi adaptador
+        AdaptadorReserva adaptador = new AdaptadorReserva(this, reservas);
+        listaReservas.setAdapter(adaptador);
 
+        // boton volver a la escucha
+        btnVolver.setOnClickListener(v -> finish());
     }
 }

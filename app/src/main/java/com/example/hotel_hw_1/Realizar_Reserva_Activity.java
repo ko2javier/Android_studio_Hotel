@@ -1,5 +1,6 @@
 package com.example.hotel_hw_1;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -22,6 +23,8 @@ import com.example.hotel_hw_1.model.ReservaData;
 import com.example.hotel_hw_1.model.Usuario;
 import com.google.android.material.snackbar.Snackbar;
 
+import java.util.Calendar;
+
 public class Realizar_Reserva_Activity extends AppCompatActivity {
 
     // Metodo para verificar la reserva realizada
@@ -33,10 +36,10 @@ public class Realizar_Reserva_Activity extends AppCompatActivity {
             return;
         }
 
-        // Determino el tipo de habit seleccionada
+        // Determino el tipo de habitacion seleccionada
         RadioButton rbSeleccionado = findViewById(idSeleccionado);
         String tipoHabitacion = rbSeleccionado.getText().toString();
-        // Determino tipo de pension. y lo completo en la linea 48!!
+        // Determino tipo de pension. y lo completo en la linea 49!!
         int idPensionSeleccionada = radiog_type_pension.getCheckedRadioButtonId();
 
         // Servicios adicionales
@@ -53,10 +56,9 @@ public class Realizar_Reserva_Activity extends AppCompatActivity {
         // Determinamos si la fecha cumple con el patron adecuado!!
 
         String fecha = edit_fecha.getText().toString().trim();
-        String patronFecha = "\\d{2}-\\d{2}-\\d{4}"; // Formato DD-MM-YYYY
-
-        if (!fecha.matches(patronFecha)) {
-            Snackbar.make(v, "Formato de fecha inválido. Use DD-MM-YYYY", Snackbar.LENGTH_SHORT).show();
+        // Si la fecha esta vacia retornamos
+        if (fecha.isEmpty()) {
+            Snackbar.make(v, "Rellene el campo fecha", Snackbar.LENGTH_SHORT).show();
             edit_fecha.requestFocus(); // Retornamos el focus a fecha
             return;
         }
@@ -77,7 +79,7 @@ public class Realizar_Reserva_Activity extends AppCompatActivity {
             txt_disponibilidad_actual.setText("Disponibilidad actual:\n" + ReservaData.mostrarDisponibilidad());
         }
         // damos unos segundos y volvemos al huesped!!
-        v.postDelayed(this::finish, 1800);
+        v.postDelayed(this::finish, 2000);
     }
 
     @Override
@@ -131,6 +133,28 @@ public class Realizar_Reserva_Activity extends AppCompatActivity {
             confirmar_reserva(v, radio_group, checkbox_spa, checkbox_parking, radiog_type_pension,
                     edit_fecha, txt_disponibilidad_actual);
         });
+
+        // ---  Pongo a la escucha el Selector de fecha DatePickerDialog ---
+        edit_fecha.setOnClickListener(v -> {
+            final Calendar calen = Calendar.getInstance();
+            int year = calen.get(Calendar.YEAR);
+            int month = calen.get(Calendar.MONTH);
+            int day = calen.get(Calendar.DAY_OF_MONTH);
+
+            DatePickerDialog datePicker = new DatePickerDialog(
+                    this,
+                    (view, selectedYear, selectedMonth, selectedDay) -> {
+                        // Le doy formato a mi Fecha
+                        String fechaSeleccionada = String.format("%02d-%02d-%04d",
+                                selectedDay, (selectedMonth + 1), selectedYear);
+                        edit_fecha.setText(fechaSeleccionada);
+                    },
+                    year, month, day
+            );
+
+            datePicker.show();
+        });
+
 
 
 

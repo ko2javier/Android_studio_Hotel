@@ -10,6 +10,8 @@
     android:orientation="vertical"
     android:padding="30dp"
     android:background="#FAF9E8">
+
+    <!--  Título principal -->
     <TextView
         android:id="@+id/txt_titulo"
         android:text="Gestión de Entradas / Salidas"
@@ -21,152 +23,154 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp" />
 
-    <!-- Divido por bloques 1- Buscar -->
+    <!--  Selección de operación -->
+    <TextView
+        android:id="@+id/txt_choose_operacion"
+        android:text="Seleccione la operación:"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="5dp"/>
 
+    <RadioGroup
+        android:id="@+id/radio_group_operacion"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp">
+
+        <RadioButton
+            android:id="@+id/rb_check_in"
+            android:text="Check-In"
+            android:checked="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <RadioButton
+            android:id="@+id/rb_check_out"
+            android:text="Check-Out"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"/>
+    </RadioGroup>
+
+    <!--  Bloque: formulario de registro (para Check-In sin reserva) -->
     <LinearLayout
-
+        android:id="@+id/linear_form_checkin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="10dp"
-        android:id="@+id/linear_primer_bloque"
-        android:visibility="visible"
-        >
+        android:visibility="visible">
 
         <TextView
-            android:id="@+id/txt_choose_operacion"
-            android:text="Seleccione la operación:"
+            android:id="@+id/txt_datos_checkin"
+            android:text="Datos del huésped:"
             android:textSize="16sp"
             android:textStyle="bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="5dp"/>
-
-        <RadioGroup
-            android:id="@+id/radio_group_operacion"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp">
-
-            <RadioButton
-                android:id="@+id/rb_checkIn"
-                android:text="Check-In"
-                android:checked="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <RadioButton
-                android:id="@+id/rb_checkOut"
-                android:text="Check-Out"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"/>
-        </RadioGroup>
-
-        <!--Parte de campos busqueda-->
-
-        <TextView
-            android:id="@+id/txt_titulo_operacion"
-            android:text="Buscar huésped:"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"/>
+            android:layout_marginBottom="10dp"/>
 
         <EditText
-            android:id="@+id/et_nombre_gest"
+            android:id="@+id/et_nombre_huesped"
             android:hint="Nombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
         <EditText
-            android:id="@+id/et_apellidos_gest"
+            android:id="@+id/et_apellidos_huesped"
             android:hint="Apellidos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"/>
-        <Button
-            android:id="@+id/btn_buscar"
-            android:text="Buscar"
+
+        <EditText
+            android:id="@+id/et_telefono_huesped"
+            android:hint="Teléfono"
+            android:inputType="phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#4CAF50"
-            android:textColor="#FFF"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"/>
+            android:layout_marginTop="10dp"/>
 
+        <EditText
+            android:id="@+id/et_habitacion_huesped"
+            android:hint="Habitación"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"/>
+
+        <Button
+            android:id="@+id/btn_realizar_check_in"
+            android:text="REALIZAR CHECK-IN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="#4CAF50"
+            android:textColor="#FFF"/>
     </LinearLayout>
 
-    <!-- Divido por bloques 2- Mostrar datos Encontrados!!! -->
+    <!--  Bloque: búsqueda y resultado (para Check-Out) -->
     <LinearLayout
-        android:id="@+id/linear_datos_gest"
+        android:id="@+id/linear_buscar_checkout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:elevation="3dp"
         android:orientation="vertical"
         android:padding="10dp"
         android:visibility="gone">
 
         <TextView
-            android:id="@+id/txt_datos"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:text="Datos del huésped:"
+            android:id="@+id/txt_buscar_checkout"
+            android:text="Buscar huésped:"
             android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/et_nombre_huesped_encontrado"
+            android:textStyle="bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:enabled="false"
-            android:hint="Nombre" />
+            android:layout_marginBottom="10dp"/>
 
         <EditText
-            android:id="@+id/et_apellidos_huesped_encontrado"
+            android:id="@+id/et_nombre_buscar"
+            android:hint="Nombre"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:enabled="false"
-            android:hint="Apellidos" />
+            android:layout_height="wrap_content"/>
 
         <EditText
-            android:id="@+id/et_telefono"
+            android:id="@+id/et_apellidos_buscar"
+            android:hint="Apellidos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:enabled="true"
-            android:hint="Teléfono" />
+            android:layout_marginTop="10dp"/>
 
-        <EditText
-            android:id="@+id/etx_numero_room"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:enabled="true"
-            android:hint="Habitación asignada" />
-
-        <!-- 🔘 Botón de acción (Check-In / Check-Out) -->
         <Button
-            android:id="@+id/btn_realizar_accion"
+            android:id="@+id/btn_buscar_checkout"
+            android:text="BUSCAR"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
             android:backgroundTint="#4CAF50"
-            android:text="REALIZAR CHECK-IN"
-            android:textColor="#FFF" />
+            android:textColor="#FFF"
+            android:layout_marginTop="20dp"/>
+
+        <Button
+            android:id="@+id/btn_realizar_check_out"
+            android:text="REALIZAR CHECK-OUT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#B71C1C"
+            android:textColor="#FFF"
+            android:layout_marginTop="15dp"
+            android:visibility="gone"/>
     </LinearLayout>
 
     <Button
-        android:id="@+id/btnVolver"
+        android:id="@+id/btn_volver"
         android:text="VOLVER"
         android:layout_width="match_parent"
-        android:layout_marginHorizontal="10dp"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="#0D47A1"
-        android:textColor="#FFF"
-        android:layout_marginTop="10dp"/>
-
+        android:textColor="#FFF"/>
 
 </LinearLayout>

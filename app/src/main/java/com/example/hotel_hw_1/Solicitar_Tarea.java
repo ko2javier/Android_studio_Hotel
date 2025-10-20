@@ -31,8 +31,8 @@ public class Solicitar_Tarea extends AppCompatActivity {
 
         int checkedId = radioGroupTarea.getCheckedRadioButtonId();
         String tipoTarea = "";
-        if (checkedId == R.id.rbLimpieza) tipoTarea = "Limpieza";
-        else if (checkedId == R.id.rbMantenimiento) tipoTarea = "Mantenimiento";
+        if (checkedId == R.id.rb_limpieza) tipoTarea = "Limpieza";
+        else if (checkedId == R.id.rb_mmto) tipoTarea = "Mantenimiento";
 
 
         // Validar habitación (rango 100–599)
@@ -81,7 +81,7 @@ public class Solicitar_Tarea extends AppCompatActivity {
         etx_numero_room.setText("");
         autoZona.setText("");
         autoPasillo.setText("");
-        radioGroupTarea.check(R.id.rbLimpieza);
+        radioGroupTarea.check(R.id.rb_limpieza);
     }
 
 
@@ -111,7 +111,7 @@ public class Solicitar_Tarea extends AppCompatActivity {
 
         // Cambiar opciones según tarea seleccionada
         radioGroupTarea.setOnCheckedChangeListener((group, checkedId) -> {
-            if (checkedId == R.id.rbLimpieza) {
+            if (checkedId == R.id.rb_limpieza) {
                 autoZona.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, zonasLimpieza));
             } else {
                 autoZona.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, zonasMantenimiento));

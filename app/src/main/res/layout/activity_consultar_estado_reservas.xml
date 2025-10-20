@@ -22,36 +22,18 @@
         android:textSize="20sp"
         android:textColor="#C32626"
         />
-    <TextView
-        android:id="@+id/txt_reserva_cancelada"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="30dp"
-        android:layout_marginTop="40dp"
-        android:text="Reserva #1 | Habitación Doble | Fecha: 12/10/2025 | Estado: Cancelada"
-        android:textSize="16sp"
-        android:textColor="@android:color/holo_red_dark"
-        android:layout_marginBottom="20dp"
-        />
-    <TextView
-        android:id="@+id/txt_reserva_cancelada2"
-        android:layout_width="match_parent"
 
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="30dp"
-        android:layout_marginTop="10dp"
-        android:text="Reserva #1 | Habitación Doble | Fecha: 09/10/2025 | Estado: Cancelada"
-        android:textSize="16sp"
-        android:textColor="@android:color/holo_red_dark"
-        android:layout_marginBottom="20dp"
-        />
-    <!-- Añadios reservas dinamicas !! -->
-    <LinearLayout
-        android:id="@+id/layout_reservas_dinamicas"
-        android:orientation="vertical"
+
+    <ListView
+        android:id="@+id/lista_reservas"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp" />
+
 
     <Button
         android:id="@+id/btn_volver_consultar_reservas"

@@ -1,0 +1,19 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_reserva"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#FFF8E1"
+    android:padding="12dp"
+    android:layout_marginBottom="10dp"
+    android:elevation="2dp">
+
+    <TextView
+        android:id="@+id/txt_detalle_reserva"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+         android:textSize="16sp"
+        android:textColor="#2E7D32"
+        android:padding="5dp" />
+
+</LinearLayout>
