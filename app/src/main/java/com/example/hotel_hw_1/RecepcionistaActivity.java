@@ -74,6 +74,11 @@ public class RecepcionistaActivity extends AppCompatActivity {
             startActivity(i);
         });
 
+        btn_consultar_listado_huspedes_recp.setOnClickListener(v->{
+            Intent i = new Intent(RecepcionistaActivity.this, ConsultarHuespedesActivity.class);
+            startActivity(i);
+        });
+
 
 
     }

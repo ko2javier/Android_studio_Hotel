@@ -1,31 +1,73 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/item_huesped"
-    android:orientation="vertical"
-    android:padding="10dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#FFF">
-
-    <TextView
-        android:id="@+id/txt_nombre_huesped"
-        android:text="Nombre Apellidos"
-        android:textStyle="bold"
-        android:textColor="#000"
-        android:textSize="16sp"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:background="#FFFFFF"
+    android:layout_marginVertical="4dp"
+    android:elevation="2dp">
+    <LinearLayout
+        android:id="@+id/linear_fotos_datos"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/person"
+            android:layout_marginEnd="30dp"
+            />
+        <LinearLayout
+            android:id="@+id/linear_datos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
 
-    <TextView
-        android:id="@+id/txt_habitacion_huesped"
-        android:text="Habitación 101"
-        android:textColor="#444"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/txt_nombre_huesped"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="#1A237E"
+                android:text="nombre huesped" />
 
-    <TextView
-        android:id="@+id/txt_estado_huesped"
-        android:text="En hospedaje"
-        android:textColor="#2E7D32"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/txt_telefono_huesped"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#555"
+                android:text="telefono" />
+
+            <TextView
+                android:id="@+id/txt_habitacion_huesped"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#555"
+                android:text="habitacion" />
+
+            <TextView
+                android:id="@+id/txt_estado_huesped"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#2E7D32"
+                android:text="estado" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+
 </LinearLayout>

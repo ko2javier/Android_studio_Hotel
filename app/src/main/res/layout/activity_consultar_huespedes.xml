@@ -1,0 +1,38 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_consultar_huespedes"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAF9E8"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/txt_titulo_listado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Listado de Huéspedes "
+        android:textColor="#B22222"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_marginBottom="15dp" />
+
+    <ListView
+        android:id="@+id/list_view_huespedes"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:dividerHeight="6dp"
+        android:divider="#DDDDDD" />
+
+    <Button
+        android:id="@+id/btn_volver_listado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="VOLVER"
+        android:backgroundTint="#0D47A1"
+        android:textColor="#FFF"
+        android:layout_marginTop="10dp" />
+
+</LinearLayout>
