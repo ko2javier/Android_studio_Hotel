@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_gestion_empleados"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F7F7"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".GestionEmpleadosActivity">
+
+    <TextView
+        android:id="@+id/txt_titulo_gestion_empleados"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gestión de Empleados"
+        android:textAlignment="center"
+        android:textColor="#C62828"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginBottom="20dp"/>
+
+    <ListView
+        android:id="@+id/lista_empleados"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp"/>
+
+    <Button
+        android:id="@+id/btn_agregar_empleado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Añadir nuevo empleado"
+        android:backgroundTint="#4CAF50"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:id="@+id/btn_volver_gestion_empleados"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="VOLVER"
+        android:backgroundTint="#0D47A1"
+        android:textColor="@android:color/white" />
+
+</LinearLayout>
