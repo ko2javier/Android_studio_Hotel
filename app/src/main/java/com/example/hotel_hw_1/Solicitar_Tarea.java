@@ -71,11 +71,11 @@ public class Solicitar_Tarea extends AppCompatActivity {
             }
         }
 
-        // Si todo es válido, se crea la tarea
+        // Si todo es válido, creo la tarea
         Tarea nuevaTarea = new Tarea(tipoTarea, "-", String.valueOf(habitacion), zona, pasillo);
         TareaData.agregarTarea(nuevaTarea);
 
-        Snackbar.make(v, "Solicitud enviada correctamente ✅", Snackbar.LENGTH_SHORT).show();
+        Snackbar.make(v, "Solicitud enviada correctamente ", Snackbar.LENGTH_SHORT).show();
 
         // Limpiamos los campos
         etx_numero_room.setText("");

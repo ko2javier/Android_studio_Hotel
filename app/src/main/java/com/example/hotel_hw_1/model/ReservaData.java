@@ -5,7 +5,7 @@ import java.util.List;
 
 public class ReservaData {
 
-    // 🔹 Lista de plantas (las mismas que se muestran en la pantalla de disponibilidad)
+    // Lista de plantas (las mismas que se muestran en la pantalla de disponibilidad)
     private static final List<Planta> plantas = new ArrayList<>();
 
     static {
@@ -16,7 +16,7 @@ public class ReservaData {
         plantas.add(new Planta("Planta 5", 9, "501, 504, 507", "520, 525, 528, 530", "596, 598"));
     }
 
-    // 🔹 Método principal para reservar una habitación según tipo
+    // Metodo principal para reservar una habitación según tipo
     public static boolean reservar(String tipoHabitacion) {
         for (Planta p : plantas) {
             boolean reservada = p.reservar(tipoHabitacion);
@@ -25,7 +25,7 @@ public class ReservaData {
         return false;
     }
 
-    // 🔹 Mostrar disponibilidad total global
+    //  Mostrar disponibilidad total global. Recalculamos si se añaden reservas!!
     public static String mostrarDisponibilidad() {
         int totalSimples = 0;
         int totalDobles = 0;
@@ -42,7 +42,7 @@ public class ReservaData {
                 "  - Triples: " + totalTriples;
     }
 
-    // 🔹 Obtener lista completa (para mostrar en listview si hiciera falta)
+    //  Obtener lista completa (para mostrar en listview si hiciera falta)
     public static List<Planta> getPlantas() {
         return plantas;
     }
