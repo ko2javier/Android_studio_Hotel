@@ -37,6 +37,7 @@ public class GerenteActivity extends AppCompatActivity {
         Button btn_consultar_encuestas_gerente= findViewById(R.id.btn_consultar_encuestas_gerente);
         Button boton_cerrar_sesion = findViewById(R.id.boton_cerrar_sesion);
         Button btn_consultar_listado_huspedes= findViewById(R.id.btn_consultar_listado_huspedes);
+        Button btn_consultar_listado_empleados= findViewById(R.id.btn_consultar_listado_empleados);
 
 
         // comienzo con los listeners !!!!
@@ -71,6 +72,11 @@ public class GerenteActivity extends AppCompatActivity {
         });
         btn_consultar_listado_huspedes.setOnClickListener(v->{
             Intent i= new Intent(GerenteActivity.this, ConsultarHuespedesActivity.class);
+            startActivity(i);
+        });
+        btn_consultar_listado_empleados.setOnClickListener(v->{
+            Intent i = new Intent(GerenteActivity.this,
+                    GestionEmpleadosActivity.class);
             startActivity(i);
         });
 

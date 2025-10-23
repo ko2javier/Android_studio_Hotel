@@ -119,8 +119,8 @@ public class GestionEntradasSalidasActivity extends AppCompatActivity {
     }
 
     private static boolean validaciones_campos(View v, String nombre, String apellidos, String telefono, String habitacion) {
-        if (nombre.isEmpty() || apellidos.isEmpty() || telefono.isEmpty() || habitacion.isEmpty()) {
-            Snackbar.make(v, "Complete todos los campos", Snackbar.LENGTH_SHORT).show();
+        if (nombre.length()<3 || apellidos.length()<3 ) {
+            Snackbar.make(v, "Nombre/apellidos minimo 3 caracteres", Snackbar.LENGTH_SHORT).show();
             return true;
         }
         // Validamos phone, numeros no letras y 9 dig

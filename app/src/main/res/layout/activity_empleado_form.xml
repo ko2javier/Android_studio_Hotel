@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scroll_empleado_form"
+
+    android:background="#FAF9E8"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+    android:padding="30dp">
+
+        <TextView
+            android:id="@+id/txt_titulo_form"
+            android:text="Gestión de Empleado"
+            android:textStyle="bold"
+            android:textColor="#B22222"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp" />
+
+        <EditText
+            android:id="@+id/et_nombre_empleado"
+            android:hint="Nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/et_apellidos_empleado"
+            android:hint="Apellidos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/et_rol_empleado"
+            android:hint="Rol (recepcionista, limpieza, mantenimiento)"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/et_email_empleado"
+            android:hint="Correo electrónico"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/et_telefono_empleado"
+            android:hint="Teléfono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:inputType="phone" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="25dp">
+
+            <Button
+                android:id="@+id/btn_cancelar"
+                android:text="CANCELAR"
+                android:backgroundTint="#B22222"
+                android:textColor="#FFF"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp" />
+
+            <Button
+                android:id="@+id/btn_guardar"
+                android:text="GUARDAR"
+                android:backgroundTint="#0D47A1"
+                android:textColor="#FFF"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+

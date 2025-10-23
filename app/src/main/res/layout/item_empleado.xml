@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="@android:color/white"
+    android:layout_marginBottom="6dp"
+    android:elevation="2dp">
+    <LinearLayout
+        android:id="@+id/linear_datos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        >
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/emple_2"
+        android:layout_marginEnd="10dp"
+
+        />
+        <TextView
+            android:id="@+id/txt_nombre_empleado"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Nombre del empleado"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginEnd="10dp"
+            android:textColor="#212121"/>
+
+        <TextView
+            android:id="@+id/txt_rol_empleado"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Rol: Limpieza"
+            android:layout_marginEnd="10dp"
+            android:textSize="14sp"
+            android:textColor="#555"/>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end"
+        android:layout_marginTop="5dp">
+
+        <Button
+            android:id="@+id/btn_editar_empleado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Editar"
+            android:textColor="#FFF"
+            android:backgroundTint="#0288D1"
+            android:layout_marginEnd="10dp"/>
+
+        <Button
+            android:id="@+id/btn_eliminar_empleado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Eliminar"
+            android:textColor="#FFF"
+            android:backgroundTint="#D32F2F"/>
+    </LinearLayout>
+</LinearLayout>

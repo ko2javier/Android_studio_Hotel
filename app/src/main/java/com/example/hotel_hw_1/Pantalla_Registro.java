@@ -42,7 +42,8 @@ public class Pantalla_Registro extends AppCompatActivity {
 /* Compruebo terminos
 * y condiciones y que las
 * contraseñas coincidan */
-    private static boolean chequar_pass(View v, EditText et_password, EditText et_confirmPassword, Switch sw_terminos_codi) {
+    private static boolean chequar_pass(View v, EditText et_password,
+                                        EditText et_confirmPassword, Switch sw_terminos_codi) {
         // validar contraseña
         String pass1 = et_password.getText().toString();
         String pass2 = et_confirmPassword.getText().toString();

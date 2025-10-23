@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="#9BD973"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:text="Consultar/Editar Perfil"
         android:padding="5dp"
 
@@ -101,6 +101,18 @@
         android:background="#9BD973"
         android:layout_marginTop="30dp"
         android:text="Consultar Encuestas"
+        android:padding="5dp"
+
+        />
+    <Button
+        android:id="@+id/btn_consultar_listado_empleados"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="80dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#9BD973"
+        android:layout_marginTop="30dp"
+        android:text="Consultar Listado empleados"
         android:padding="5dp"
 
         />
