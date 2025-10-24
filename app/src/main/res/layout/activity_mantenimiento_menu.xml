@@ -38,18 +38,7 @@
 
         />
 
-    <Button
-        android:id="@+id/btn_consultar_tareas_pdtes_asigandas_mmto"
-        android:layout_width="match_parent"
-        android:layout_marginHorizontal="80dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="#9BD973"
-        android:layout_marginTop="30dp"
-        android:text="Tareas pdtes asignadas"
-        android:padding="5dp"
 
-        />
 
     <Button
         android:id="@+id/btn_consultar_tareas_pdtes_mmto_hotel"
@@ -59,7 +48,7 @@
         android:layout_gravity="center"
         android:background="#9BD973"
         android:layout_marginTop="30dp"
-        android:text="Tareas limpieza pdtes hotel"
+        android:text="Consultar Tareas Pdtes/Asignadas"
         android:padding="5dp"
 
         />

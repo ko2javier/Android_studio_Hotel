@@ -7,66 +7,93 @@
     android:padding="15dp"
     android:layout_margin="6dp"
     android:background="#FFFFFF"
-    android:elevation="2dp">
+    android:elevation="3dp">
 
-    <!--  Tipo de tarea y estado -->
+    <!-- Contenedor principal horizontal -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center_vertical">>
+        android:gravity="center_vertical">
 
-        <TextView
-            android:id="@+id/txt_tipo_tarea"
+        <!-- Icono de tarea -->
+        <ImageView
+            android:id="@+id/img_icono_tarea"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginEnd="12dp"
+
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_limpieza" />
+
+        <!-- Bloque de textos principal -->
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Tipo: Limpieza"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="#000000"/>
+            android:orientation="vertical"
+            android:layout_weight="1">
 
-        <TextView
-            android:id="@+id/txt_estado_tarea"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Pendiente"
-            android:textSize="15sp"
-            android:textColor="#B22222"
-            android:textStyle="bold"/>
+            <!-- Tipo y estado -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/txt_tipo_tarea"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Tipo: Limpieza"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#000000"/>
+
+                <TextView
+                    android:id="@+id/txt_estado_tarea"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pendiente"
+                    android:textSize="15sp"
+                    android:textColor="#B22222"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <!-- Planta / Habitación -->
+            <TextView
+                android:id="@+id/txt_ubicacion_tarea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Planta 2 - Habitación 203"
+                android:textSize="14sp"
+                android:textColor="#333333"
+                android:layout_marginTop="2dp"/>
+
+            <!-- Pasillo -->
+            <TextView
+                android:id="@+id/txt_detalle_tarea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pasillo Norte"
+                android:textSize="13sp"
+                android:textColor="#555555"
+                android:layout_marginTop="2dp"/>
+
+            <!-- Asignada a -->
+            <TextView
+                android:id="@+id/txt_asignada_a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Asignada a: Sin asignar"
+                android:textSize="14sp"
+                android:textColor="#1A237E"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
     </LinearLayout>
 
-    <!--  Planta / Habitación -->
-    <TextView
-        android:id="@+id/txt_ubicacion_tarea"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Planta 2 - Habitación 203"
-        android:textSize="14sp"
-        android:textColor="#333333"
-        android:layout_marginTop="2dp"/>
-
-    <!--  Zona / Pasillo -->
-    <TextView
-        android:id="@+id/txt_detalle_tarea"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text=" Pasillo Norte"
-        android:textSize="13sp"
-        android:textColor="#555555"
-        android:layout_marginTop="2dp"/>
-
-    <!--  Asignada a -->
-    <TextView
-        android:id="@+id/txt_asignada_a"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Asignada a: Sin asignar"
-        android:textSize="14sp"
-        android:textColor="#1A237E"
-        android:layout_marginTop="4dp"/>
-
-    <!--  Botón de acción -->
+    <!-- Botón de acción -->
     <Button
         android:id="@+id/btn_accion_tarea"
         android:layout_width="match_parent"
@@ -74,5 +101,5 @@
         android:text="ASIGNAR"
         android:textColor="#FFFFFF"
         android:backgroundTint="#4CAF50"
-        android:layout_marginTop="8dp"/>
+        android:layout_marginTop="10dp"/>
 </LinearLayout>

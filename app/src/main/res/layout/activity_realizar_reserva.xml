@@ -61,7 +61,7 @@
         android:background="#E8F5E9"
         android:padding="10dp"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="30dp"
         android:elevation="2dp"
         android:textStyle="bold"
         android:gravity="center" />
@@ -73,7 +73,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:layout_marginTop="20dp"
         android:layout_marginBottom="30dp">
 
         <TextView
@@ -92,19 +91,39 @@
             android:layout_marginRight="20dp"
             android:hint="Seleccione planta"
             android:background="@android:drawable/edit_text"
-            android:completionThreshold="3"
+            android:completionThreshold="1"
             />
 
     </LinearLayout>
 
+    <EditText
+        android:id="@+id/et_nombre_huesped"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre del huésped"
+        android:inputType="textPersonName"
+        android:visibility="gone"
+        android:layout_marginTop="5dp"/>
+
+    <EditText
+        android:id="@+id/et_apellidos_huesped"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Apellidos del huésped"
+        android:inputType="textEmailAddress"
+        android:visibility="gone"
+        android:layout_marginTop="5dp"/>
+
 
 
     <TextView
+        android:id="@+id/txt_tipo_room"
         android:text="Elige tipo de habitación:"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="18sp"
         android:textStyle="bold"
+        android:layout_marginTop="25dp"
         android:layout_marginBottom="10dp"/>
 
     <RadioGroup

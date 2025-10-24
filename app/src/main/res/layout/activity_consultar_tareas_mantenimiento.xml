@@ -14,7 +14,7 @@
         android:id="@+id/txt_titulo_tareas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Consultar Tareas de Limpieza"
+        android:text="Consultar Tareas de Mantenimiento"
         android:textColor="#B71C1C"
         android:textStyle="bold"
         android:textAlignment="center"
@@ -23,7 +23,7 @@
 
 
     <TextView
-        android:id="@+id/txt_titulo_limpieza"
+        android:id="@+id/txt_titulo_mmto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Seleccione el tipo de tareas a visualizar:"
@@ -61,7 +61,7 @@
 
 
     <ListView
-        android:id="@+id/list_tareas_limpieza"
+        android:id="@+id/list_tareas"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"

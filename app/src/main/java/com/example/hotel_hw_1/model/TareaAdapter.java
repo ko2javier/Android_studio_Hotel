@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -45,12 +46,21 @@ public class TareaAdapter extends ArrayAdapter<Tarea> {
         TextView txtDetalle = convertView.findViewById(R.id.txt_detalle_tarea);
         TextView txtAsignada = convertView.findViewById(R.id.txt_asignada_a);
         Button btnAccion = convertView.findViewById(R.id.btn_accion_tarea);
+        ImageView imgIcono = convertView.findViewById(R.id.img_icono_tarea);
 
         txtTipo.setText("Tipo: " + tarea.getTipoTarea());
         txtEstado.setText(tarea.getEstado());
         txtUbicacion.setText(tarea.getPlanta() + " - Habitación " + tarea.getHabitacion());
         txtDetalle.setText("Pasillo: "+tarea.getPasillo());
         txtAsignada.setText("Asignada a: " + tarea.getAsignadaA());
+
+
+        // en dependencia del tipo tarea asignamos un icono o otro!!
+        if (tarea.getTipoTarea().equalsIgnoreCase("Limpieza")) {
+            imgIcono.setImageResource(R.drawable.ic_limpieza);
+        } else {
+            imgIcono.setImageResource(R.drawable.ic_mantenimiento);
+        }
 
         if (tarea.getEstado().equalsIgnoreCase("Pendiente")) {
             txtEstado.setTextColor(context.getColor(android.R.color.holo_red_dark));
@@ -70,6 +80,13 @@ public class TareaAdapter extends ArrayAdapter<Tarea> {
     }
 
     private void asignarTarea(Tarea tarea) {
+
+        // compruebo que la tarea no ha sido asignada ya!! para que no permita hacer cambios
+
+        if (!tarea.getAsignadaA().equalsIgnoreCase("Sin asignar")) {
+            mostrarDialogo("Aviso", "Esta tarea ya está asignada y no se puede modificar.");
+            return;
+        }
 
         // obtengo el tipo de tarea que voy a asignar para luego ver si son 4 o 3.
         String tipo = tarea.getTipoTarea();
@@ -120,8 +137,9 @@ public class TareaAdapter extends ArrayAdapter<Tarea> {
             mostrarDialogo("Error", "Esta tarea ya está asignada.");
             return;
         }
-
-        String empleado = rolUsuario.equalsIgnoreCase("Limpieza") ? "Empleado Limpieza" : "Empleado Mantenimiento";
+        // obtengo name+ apellido de la instancia de user. El de mantenimiento y limpieza
+        // si son usuarios propios de la aplicacion.
+        String empleado = Usuario.getInstance().getNombre() + " " + Usuario.getInstance().getApellidos();
         int limite = rolUsuario.equalsIgnoreCase("Limpieza") ? 4 : 3;
 
         if (!TareaData.puedeAutoAsignarse(empleado, rolUsuario, limite)) {

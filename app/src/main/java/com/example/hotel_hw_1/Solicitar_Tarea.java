@@ -16,6 +16,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.hotel_hw_1.model.Tarea;
 import com.example.hotel_hw_1.model.TareaData;
+import com.example.hotel_hw_1.model.Usuario;
 import com.google.android.material.snackbar.Snackbar;
 
 public class Solicitar_Tarea extends AppCompatActivity {
@@ -61,8 +62,8 @@ public class Solicitar_Tarea extends AppCompatActivity {
             return;
         }
 
-        // Validar pasillo (si no está vacío)
-        if (!pasillo.isEmpty()) {
+        // Validar pasillo (si no está vacío) si tiene valor lo compuerbo con la lista_pasillos
+        if (!pasillo.isEmpty() ) {
             boolean pasilloValido = false;
             for (String p : pasillos) if (p.equalsIgnoreCase(pasillo)) pasilloValido = true;
             if (!pasilloValido) {
@@ -72,7 +73,7 @@ public class Solicitar_Tarea extends AppCompatActivity {
         }
 
         // Si todo es válido, creo la tarea
-        Tarea nuevaTarea = new Tarea(tipoTarea, "-", String.valueOf(habitacion), pasillo);
+        Tarea nuevaTarea = new Tarea(tipoTarea, "", String.valueOf(habitacion), pasillo);
         TareaData.agregarTarea(nuevaTarea);
 
         Snackbar.make(v, "Solicitud enviada correctamente ", Snackbar.LENGTH_SHORT).show();

@@ -45,7 +45,7 @@
         android:layout_gravity="center"
         android:background="#9BD973"
         android:layout_marginTop="30dp"
-        android:text=" Consultar Tareas Pdtes/Asignadas"
+        android:text="Consultar Tareas Pdtes/Asignadas"
         android:padding="5dp"
 
         />

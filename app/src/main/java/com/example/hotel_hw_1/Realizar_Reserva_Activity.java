@@ -23,13 +23,16 @@ import com.example.hotel_hw_1.model.ReservaData;
 import com.example.hotel_hw_1.model.Usuario;
 import com.google.android.material.snackbar.Snackbar;
 
+import java.util.Arrays;
 import java.util.Calendar;
+import java.util.List;
 
 public class Realizar_Reserva_Activity extends AppCompatActivity {
 
     // Metodo para verificar la reserva realizada
     private void confirmar_reserva(View v, RadioGroup radio_group, CheckBox checkbox_spa, CheckBox checkbox_parking,
-                                   RadioGroup  radiog_type_pension, EditText edit_fecha, TextView txt_disponibilidad_actual) {
+                                   RadioGroup  radiog_type_pension, EditText edit_fecha, TextView txt_disponibilidad_actual,
+                                   AutoCompleteTextView autoPlanta, EditText etNombreHuesped,  EditText et_apellidos ) {
         int idSeleccionado = radio_group.getCheckedRadioButtonId();
         if (idSeleccionado == -1) {
             Snackbar.make(v, "Seleccione un tipo de habitación", Snackbar.LENGTH_SHORT).show();
@@ -62,8 +65,41 @@ public class Realizar_Reserva_Activity extends AppCompatActivity {
             edit_fecha.requestFocus(); // Retornamos el focus a fecha
             return;
         }
+        /* Validos campos para recepcionista
+        * comienzo por la planta
+        * */
+        // determnino que el user solicito la planta adecuada para recepcionista !!! huesped no aplica!!
+        String planta = autoPlanta.getText().toString().trim();
+        List<String> plantasValidas = Arrays.asList("Planta 1", "Planta 2", "Planta 3", "Planta 4", "Planta 5");
+
+        if (Usuario.getInstance().getTipo_usuario().equalsIgnoreCase("recepcionista")
+                && !plantasValidas.contains(planta)) {
+            Snackbar.make(v, "Seleccione una planta válida", Snackbar.LENGTH_SHORT).show();
+            autoPlanta.requestFocus();
+            return;
+        }
+
+        String nombreHuesped = "";
+        String apellidos = "";
+
+        // Si el usuario es recepcionista, pedimos los datos del huésped
+        if (Usuario.getInstance().getTipo_usuario().equalsIgnoreCase("recepcionista")) {
+            nombreHuesped = etNombreHuesped.getText().toString().trim();
+            apellidos = et_apellidos.getText().toString().trim();
+
+            if (nombreHuesped.length()<3 || apellidos.length()<3) {
+                Snackbar.make(v, "Complete los datos del huésped", Snackbar.LENGTH_SHORT).show();
+                return;
+            }
+        }
         // Despues de confirmado todo, guardo la reserva en el usuario!!
-        String detalles = "Fecha: " + fecha +
+        String detalles = "";
+        // si es recepcionista guardo los detalles del cliente!
+        if (Usuario.getInstance().getTipo_usuario().equalsIgnoreCase("recepcionista")) {
+            detalles = "Cliente: " + nombreHuesped + " (" + apellidos+ ") | ";
+        }
+
+        detalles += "Fecha: " + fecha +
                 " | Habitación: " + tipoHabitacion +
                 " | Servicios: " + servicios +
                 " | Estado: Confirmada";
@@ -90,6 +126,8 @@ public class Realizar_Reserva_Activity extends AppCompatActivity {
 
 
      // Defino variables del xml
+        EditText etNombreHuesped = findViewById(R.id.et_nombre_huesped);
+        EditText et_apellidos = findViewById(R.id.et_apellidos_huesped);
         EditText edit_fecha = findViewById(R.id.edit_fecha);
         RadioGroup radio_group= findViewById(R.id.radioGroupHabitacion);
         RadioButton rbSimple= findViewById(R.id.rbSimple);
@@ -114,6 +152,8 @@ public class Realizar_Reserva_Activity extends AppCompatActivity {
       // Cmprobamos el tipo de usuario y oculatamos para huesped!!
         if (usuario.getTipo_usuario().equalsIgnoreCase("recepcionista")) {
             linearPlanta.setVisibility(View.VISIBLE); // HAcemos visible solo para recepcionista
+            etNombreHuesped.setVisibility(View.VISIBLE);
+            et_apellidos.setVisibility(View.VISIBLE);
 
             String[] plantas = {"Planta 1", "Planta 2", "Planta 3", "Planta 4", "Planta 5"};
             ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
@@ -131,7 +171,7 @@ public class Realizar_Reserva_Activity extends AppCompatActivity {
         btn_confirmar_reserva.setOnClickListener(v -> {
 
             confirmar_reserva(v, radio_group, checkbox_spa, checkbox_parking, radiog_type_pension,
-                    edit_fecha, txt_disponibilidad_actual);
+                    edit_fecha, txt_disponibilidad_actual,  autoPlanta, etNombreHuesped, et_apellidos);
         });
 
         // ---  Pongo a la escucha el Selector de fecha DatePickerDialog ---

@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light.NoActionBar">
         <activity
+            android:name=".consultar_tareas_mantenimiento"
+            android:exported="false" />
+        <activity
             android:name=".ConsultarTareasLimpieza"
             android:exported="false" />
         <activity
