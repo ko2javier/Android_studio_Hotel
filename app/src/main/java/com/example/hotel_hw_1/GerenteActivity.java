@@ -17,6 +17,10 @@ import com.example.hotel_hw_1.model.Usuario;
 import com.google.android.material.snackbar.Snackbar;
 
 public class GerenteActivity extends AppCompatActivity {
+    private Button btn_consultar_perfil, btn_consultar_ocupacion,btn_consultar_encuestas_gerente,
+            boton_cerrar_sesion,btn_consultar_listado_huspedes, btn_consultar_listado_empleados,
+            btn_consultar_tareas_pdtes;
+
 
 
 
@@ -32,12 +36,13 @@ public class GerenteActivity extends AppCompatActivity {
             return insets;
         });
         // defino mis botones para despues ponerlos a la escucha
-        Button btn_consultar_perfil= findViewById(R.id.btn_consultar_editar_perfil);
-        Button btn_consultar_ocupacion= findViewById(R.id.btn_consultar_ocupacion_hotel);
-        Button btn_consultar_encuestas_gerente= findViewById(R.id.btn_consultar_encuestas_gerente);
-        Button boton_cerrar_sesion = findViewById(R.id.boton_cerrar_sesion);
-        Button btn_consultar_listado_huspedes= findViewById(R.id.btn_consultar_listado_huspedes);
-        Button btn_consultar_listado_empleados= findViewById(R.id.btn_consultar_listado_empleados);
+         btn_consultar_perfil= findViewById(R.id.btn_consultar_editar_perfil);
+        btn_consultar_ocupacion= findViewById(R.id.btn_consultar_ocupacion_hotel);
+         btn_consultar_encuestas_gerente= findViewById(R.id.btn_consultar_encuestas_gerente);
+         boton_cerrar_sesion = findViewById(R.id.boton_cerrar_sesion);
+         btn_consultar_listado_huspedes= findViewById(R.id.btn_consultar_listado_huspedes);
+         btn_consultar_listado_empleados= findViewById(R.id.btn_consultar_listado_empleados);
+        btn_consultar_tareas_pdtes = findViewById(R.id.btn_consultar_tareas_pdtes);
 
 
         // comienzo con los listeners !!!!
@@ -77,6 +82,11 @@ public class GerenteActivity extends AppCompatActivity {
         btn_consultar_listado_empleados.setOnClickListener(v->{
             Intent i = new Intent(GerenteActivity.this,
                     GestionEmpleadosActivity.class);
+            startActivity(i);
+        });
+
+        btn_consultar_tareas_pdtes.setOnClickListener(v->{
+            Intent i= new Intent(GerenteActivity.this, GestionTareasActivity.class);
             startActivity(i);
         });
 

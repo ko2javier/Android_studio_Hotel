@@ -10,14 +10,20 @@ public class TareaData {
 
     static {
         //  Agrego tareas de Mantenimiento
-        tareas.add(new Tarea("Mantenimiento", "Planta 1", "101", "Zona Norte", "Pasillo A"));
-        tareas.add(new Tarea("Mantenimiento", "Planta 2", "202", "Zona Este", "Pasillo B"));
-        tareas.add(new Tarea("Mantenimiento", "Planta 3", "303", "Zona Sur", "Pasillo C"));
-
+        tareas.add(new Tarea("Mantenimiento", "Planta 1", "101",  "Norte"));
+        tareas.add(new Tarea("Mantenimiento", "Planta 2", "202",  "Sur"));
+        tareas.add(new Tarea("Mantenimiento", "Planta 3", "303",  "Oeste"));
+        tareas.add(new Tarea("Mantenimiento", "Planta 5", "503",  "Este"));
+        tareas.add(new Tarea("Mantenimiento", "Planta 2", "203",  "Oeste"));
+        tareas.add(new Tarea("Mantenimiento", "Planta 4", "403",  "Este"));
         // Agrego tareas de Limpieza
-        tareas.add(new Tarea("Limpieza", "Planta 1", "104", "Zona Oeste", "Pasillo D"));
-        tareas.add(new Tarea("Limpieza", "Planta 2", "206", "Zona Central", "Pasillo E"));
-        tareas.add(new Tarea("Limpieza", "Planta 4", "405", "Zona Sur", "Pasillo F"));
+        tareas.add(new Tarea("Limpieza", "Planta 1", "104",  "Norte"));
+        tareas.add(new Tarea("Limpieza", "Planta 2", "206",  "Sur"));
+        tareas.add(new Tarea("Limpieza", "Planta 4", "405",  "Este"));
+        tareas.add(new Tarea("Limpieza", "Planta 5", "505",  "Oeste"));
+        tareas.add(new Tarea("Limpieza", "Planta 1", "115",  "oeste"));
+        tareas.add(new Tarea("Limpieza", "Planta 3", "305",  "Oeste"));
+        tareas.add(new Tarea("Limpieza", "Planta 2", "215",  "Sur"));
     }
 
     // Esto es fundamental --> Añadir nueva tarea  desde huesped

@@ -2,6 +2,7 @@ package com.example.hotel_hw_1.model;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,8 +48,8 @@ public class TareaAdapter extends ArrayAdapter<Tarea> {
 
         txtTipo.setText("Tipo: " + tarea.getTipoTarea());
         txtEstado.setText(tarea.getEstado());
-        txtUbicacion.setText("Planta " + tarea.getPlanta() + " - Habitación " + tarea.getHabitacion());
-        txtDetalle.setText(tarea.getZona() + " - " + tarea.getPasillo());
+        txtUbicacion.setText(tarea.getPlanta() + " - Habitación " + tarea.getHabitacion());
+        txtDetalle.setText("Pasillo: "+tarea.getPasillo());
         txtAsignada.setText("Asignada a: " + tarea.getAsignadaA());
 
         if (tarea.getEstado().equalsIgnoreCase("Pendiente")) {
@@ -61,7 +62,7 @@ public class TareaAdapter extends ArrayAdapter<Tarea> {
             btnAccion.setText("ASIGNAR");
             btnAccion.setOnClickListener(view -> asignarTarea(tarea));
         } else {
-            btnAccion.setText("AUTOASIGNAR");
+            btnAccion.setText("AUTO_ASIGNAR");
             btnAccion.setOnClickListener(view -> autoasignarTarea(tarea));
         }
 
@@ -69,29 +70,50 @@ public class TareaAdapter extends ArrayAdapter<Tarea> {
     }
 
     private void asignarTarea(Tarea tarea) {
+
+        // obtengo el tipo de tarea que voy a asignar para luego ver si son 4 o 3.
         String tipo = tarea.getTipoTarea();
-        String empleado = tipo.equalsIgnoreCase("Limpieza") ? "Empleado Limpieza" : "Empleado Mantenimiento";
-        int limite = tipo.equalsIgnoreCase("Limpieza") ? 4 : 3;
 
-        // Comprobamos límite
-        if (!TareaData.puedeAutoAsignarse(empleado, tipo, limite)) {
-            mostrarDialogo("Límite alcanzado", "El empleado ya tiene el número máximo de tareas.");
-            return;
-        }
+        // Obtenemos los nombres de empleados con ese rol (limpieza o mantenimiento) de TareaData
+        String[] empleadosPorRol = EmpleadoData.getNombresPorRol(tipo);
 
-        // Confirmación sencilla
+
+        // Mostramos el diálogo con la lista de empleados disponibles
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle("Confirmar asignación");
-        builder.setMessage("¿Asignar tarea a " + empleado + "?");
-        builder.setPositiveButton("Sí", (dialog, which) -> {
-            tarea.setAsignadaA(empleado);
-            tarea.setEstado("Asignada");
-            notifyDataSetChanged();
-            mostrarDialogo("Éxito", "Tarea asignada correctamente.");
+        builder.setTitle("Asignar tarea a:");
+            builder.setItems(empleadosPorRol, (dialog, which) -> {
+            String empleadoSeleccionado = empleadosPorRol[which]; // defino el nombre del empleado seleccionado
+            int limite = tipo.equalsIgnoreCase("Limpieza") ? 4 : 3; // defino lim 4 limpieza , 3 mmto!!
+
+            // Verificamos si el empleado ha llegado o no al limite!!
+
+         /* esta puesto a proposito el # de empleados en EmpleadoData
+         * para que compruebe que cdo se llegue a 3 en mmto por un empleado no puede
+         * asignarsele mas tareas !!
+         * */
+            if (!TareaData.puedeAutoAsignarse(empleadoSeleccionado, tipo, limite)) {
+                mostrarDialogo("Límite alcanzado", "El empleado ya tiene el número máximo de tareas asignadas.");
+                return;
+            }
+
+            // Confirmo la tarea y ademas de esto la asigno al empleado correspondiente!!
+            new AlertDialog.Builder(context)
+                    .setTitle("Confirmar asignación")
+                    .setMessage("¿Asignar tarea a " + empleadoSeleccionado + "?")
+                    .setPositiveButton("Sí", (d, w) -> {
+                        tarea.setAsignadaA(empleadoSeleccionado); // aca asigno
+                        tarea.setEstado("Asignada"); // confirmo en la tarea
+                        notifyDataSetChanged(); // para que se recargue la lista y se muestre actualizada
+                        mostrarDialogo("Éxito", "Tarea asignada correctamente a " + empleadoSeleccionado + ".");
+                    })
+                    .setNegativeButton("No", null)
+                    .show();
         });
-        builder.setNegativeButton("No", null);
+
+        builder.setNegativeButton("Cancelar", null);
         builder.show();
     }
+
 
     private void autoasignarTarea(Tarea tarea) {
         if (!tarea.getAsignadaA().equalsIgnoreCase("Sin asignar")) {

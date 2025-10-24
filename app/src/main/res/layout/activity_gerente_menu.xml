@@ -65,30 +65,18 @@
         />
 
     <Button
-        android:id="@+id/btn_consultar_tareas_pdtes_mmto"
+        android:id="@+id/btn_consultar_tareas_pdtes"
         android:layout_width="match_parent"
         android:layout_marginHorizontal="80dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="#9BD973"
         android:layout_marginTop="30dp"
-        android:text="Consultar Tareas Pedientes MMTO"
+        android:text="Consultar Tareas Pedientes"
         android:padding="5dp"
 
         />
 
-    <Button
-        android:id="@+id/btn_consultar_tareas_pdtes_cleaning"
-        android:layout_width="match_parent"
-        android:layout_marginHorizontal="80dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="#9BD973"
-        android:layout_marginTop="30dp"
-        android:text="Consultar Tareas Pedientes Limpieza"
-        android:padding="5dp"
-
-        />
 
 
 

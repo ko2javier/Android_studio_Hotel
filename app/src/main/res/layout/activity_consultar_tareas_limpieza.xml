@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_consultar_tareas"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F8F6E3"
+    android:padding="16dp"
+    tools:context=".ConsultarTareasLimpieza">
+
+
+    <TextView
+        android:id="@+id/txt_titulo_tareas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Consultar Tareas de Limpieza"
+        android:textColor="#B71C1C"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:layout_marginBottom="12dp" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Seleccione el tipo de tareas a visualizar:"
+        android:textColor="#555"
+        android:textAlignment="center"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Radio group para pdtes/asig-->
+    <RadioGroup
+        android:id="@+id/rg_tipo_tareas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="16dp">
+
+        <RadioButton
+            android:id="@+id/rb_pendientes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pendientes"
+            android:checked="true"
+            android:buttonTint="@android:color/holo_green_dark"
+            android:textColor="#000" />
+
+        <RadioButton
+            android:id="@+id/rb_asignadas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Asignadas"
+            android:layout_marginStart="32dp"
+            android:buttonTint="@android:color/holo_green_dark"
+            android:textColor="#000" />
+    </RadioGroup>
+
+
+    <ListView
+        android:id="@+id/list_tareas_limpieza"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="4dp" />
+
+
+    <Button
+        android:id="@+id/btn_volver_tareas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="VOLVER"
+        android:textStyle="bold"
+        android:background="@color/teal_700"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="12dp" />
+
+</LinearLayout>

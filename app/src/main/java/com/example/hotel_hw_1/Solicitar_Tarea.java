@@ -72,7 +72,7 @@ public class Solicitar_Tarea extends AppCompatActivity {
         }
 
         // Si todo es válido, creo la tarea
-        Tarea nuevaTarea = new Tarea(tipoTarea, "-", String.valueOf(habitacion), zona, pasillo);
+        Tarea nuevaTarea = new Tarea(tipoTarea, "-", String.valueOf(habitacion), pasillo);
         TareaData.agregarTarea(nuevaTarea);
 
         Snackbar.make(v, "Solicitud enviada correctamente ", Snackbar.LENGTH_SHORT).show();

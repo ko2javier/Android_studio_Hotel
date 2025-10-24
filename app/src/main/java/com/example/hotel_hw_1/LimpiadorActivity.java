@@ -14,6 +14,8 @@ import com.example.hotel_hw_1.model.Usuario;
 import com.google.android.material.snackbar.Snackbar;
 
 public class LimpiadorActivity extends AppCompatActivity {
+    private Button btn_consulta_perfil, btn_consultar_tareas_asignadas_pdtes,
+             btn_consultar_encuestas_limpiador,boton_cerrar_sesion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,13 +24,12 @@ public class LimpiadorActivity extends AppCompatActivity {
         setContentView(R.layout.activity_limpiador_menu);
 
         //defino botones
-        Button btn_consulta_perfil= findViewById(R.id.btn_consultar_editar_perfil_limp);
-        Button btn_consultar_tareas_asignadas_pdtes=
+        btn_consulta_perfil= findViewById(R.id.btn_consultar_editar_perfil_limp);
+         btn_consultar_tareas_asignadas_pdtes=
                 findViewById(R.id.btn_consultar_tareas_pdtes_asigandas_limpiador);
-        Button btn_consultar_tares_pdtes_sin_asignar=
-                findViewById(R.id.btn_consultar_tareas_pdtes_limpieza_hotel);
-        Button btn_consultar_encuestas_limpiador= findViewById(R.id.btn_consultar_Encuestas_limpiador);
-        Button boton_cerrar_sesion= findViewById(R.id.boton_cerrar_sesion);
+
+         btn_consultar_encuestas_limpiador= findViewById(R.id.btn_consultar_Encuestas_limpiador);
+         boton_cerrar_sesion= findViewById(R.id.boton_cerrar_sesion);
 
 
         //Pongo a la escucha
@@ -50,6 +51,11 @@ public class LimpiadorActivity extends AppCompatActivity {
             i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i);
 
+        });
+
+        btn_consultar_tareas_asignadas_pdtes.setOnClickListener(v->{
+            Intent i = new Intent(this, ConsultarTareasLimpieza.class);
+            startActivity(i);
         });
 
     }

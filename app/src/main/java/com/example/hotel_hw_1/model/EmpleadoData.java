@@ -42,4 +42,25 @@ public class EmpleadoData {
         }
         return null;
     }
+
+    /*
+    * Con este metodo garatizo entregar una lista de nombres
+    * segun el rol que ocupan
+    * asi puedo asignar a quien sea segun su especialidad
+    * */
+
+    public static String[] getNombresPorRol(String rol) {
+        String nombres_total = "";
+
+        for (Empleado e : listaEmpleados) {
+            if (e.getRol().equalsIgnoreCase(rol)) {
+                nombres_total += e.getNombre() + " " + e.getApellidos() + ";";
+            }
+        }
+        // Dividimos los nombres en un array
+        String[] nombres = nombres_total.split(";");
+        return nombres;
+    }
+
+
 }
