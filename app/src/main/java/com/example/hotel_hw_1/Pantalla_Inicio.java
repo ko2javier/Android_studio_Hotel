@@ -1,3 +1,14 @@
+
+/**
+ * Autor: K. Jabier O'Reilly
+ * Proyecto: Gestión de Hotel - Práctica 1ª Evaluación (PMDM 2025/2026)
+ * Clase: Pantalla_Inicio.java
+ * Descripción: Pantalla principal de inicio de sesión y registro del sistema.
+ *              Verifica credenciales y redirige al menú correspondiente según el rol.
+ * Centro: C.F.G.S. Desarrollo de Aplicaciones Multiplataforma
+ * Módulo: Programación Multimedia y Dispositivos Móviles
+ */
+
 package com.example.hotel_hw_1;
 
 import android.content.Intent;

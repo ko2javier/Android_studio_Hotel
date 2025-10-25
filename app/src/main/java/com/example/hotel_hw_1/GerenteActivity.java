@@ -1,10 +1,20 @@
+/**
+ * Autor: K. Jabier O'Reilly
+ * Proyecto: Gestión de Hotel - Práctica 1ª Evaluación (PMDM 2025/2026)
+ * Clase: GerenteActivity.java
+ * Descripción: Menú principal del gerente con acceso a las distintas funciones
+ *              de gestión del hotel (empleados, huéspedes, tareas y encuestas).
+ * Centro: C.F.G.S. Desarrollo de Aplicaciones Multiplataforma
+ * Módulo: Programación Multimedia y Dispositivos Móviles
+ */
+
+
 package com.example.hotel_hw_1;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;

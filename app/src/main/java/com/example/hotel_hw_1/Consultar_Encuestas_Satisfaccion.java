@@ -1,3 +1,14 @@
+/**
+ * Autor: K. Jabier O'Reilly
+ * Proyecto: Gestión de Hotel - Práctica 1ª Evaluación (PMDM 2025/2026)
+ * Clase: Consultar_Encuestas_Satisfaccion.java
+ * Descripción: Pantalla donde cada usuario puede ver las encuestas de satisfacción
+ *              según su rol (limpieza, mantenimiento, recepción o gerente).
+ *              Muestra los datos simulados en una lista con su adaptador.
+ * Centro: C.F.G.S. Desarrollo de Aplicaciones Multiplataforma
+ * Módulo: Programación Multimedia y Dispositivos Móviles
+ */
+
 package com.example.hotel_hw_1;
 
 import android.os.Bundle;

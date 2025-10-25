@@ -1,3 +1,14 @@
+/**
+ * Autor: K. Jabier O'Reilly
+ * Proyecto: Gestión de Hotel - Práctica 1ª Evaluación (PMDM 2025/2026)
+ * Clase: AdapterHuesped.java
+ * Descripción: Adaptador personalizado que muestra los datos de los huéspedes,
+ *              incluyendo nombre, teléfono, habitación y estado (Check-In o Check-Out),
+ *              aplicando color según el estado actual.
+ * Centro: C.F.G.S. Desarrollo de Aplicaciones Multiplataforma
+ * Módulo: Programación Multimedia y Dispositivos Móviles
+ */
+
 package com.example.hotel_hw_1.model;
 
 import android.content.Context;

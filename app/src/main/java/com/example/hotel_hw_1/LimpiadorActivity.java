@@ -1,3 +1,13 @@
+/**
+ * Autor: K. Jabier O'Reilly
+ * Proyecto: Gestión de Hotel - Práctica 1ª Evaluación (PMDM 2025/2026)
+ * Clase: LimpiadorActivity.java
+ * Descripción: Menú principal del personal de limpieza con acceso a sus tareas
+ *              asignadas y encuestas de satisfacción.
+ * Centro: C.F.G.S. Desarrollo de Aplicaciones Multiplataforma
+ * Módulo: Programación Multimedia y Dispositivos Móviles
+ */
+
 package com.example.hotel_hw_1;
 
 import android.content.Intent;

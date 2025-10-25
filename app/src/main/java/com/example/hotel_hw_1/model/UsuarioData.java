@@ -1,3 +1,14 @@
+/**
+ * Autor: K. Jabier O'Reilly
+ * Proyecto: Gestión de Hotel - Práctica 1ª Evaluación (PMDM 2025/2026)
+ * Clase: UsuarioData.java
+ * Descripción: Clase encargada de gestionar la lista de usuarios registrados
+ *              en el sistema. Permite validar el inicio de sesión, añadir nuevos
+ *              usuarios y mantener los datos de acceso para cada tipo de rol.
+ * Centro: C.F.G.S. Desarrollo de Aplicaciones Multiplataforma
+ * Módulo: Programación Multimedia y Dispositivos Móviles
+ */
+
 package com.example.hotel_hw_1.model;
 
 import java.util.ArrayList;

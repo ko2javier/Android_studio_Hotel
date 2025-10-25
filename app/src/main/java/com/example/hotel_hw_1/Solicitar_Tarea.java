@@ -1,3 +1,13 @@
+/**
+ * Autor: K. Jabier O'Reilly
+ * Proyecto: Gestión de Hotel - Práctica 1ª Evaluación (PMDM 2025/2026)
+ * Clase: Solicitar_Tarea.java
+ * Descripción: Permite a los huéspedes solicitar tareas de limpieza o mantenimiento.
+ *              Realiza validaciones de los campos y guarda la solicitud correctamente.
+ * Centro: C.F.G.S. Desarrollo de Aplicaciones Multiplataforma
+ * Módulo: Programación Multimedia y Dispositivos Móviles
+ */
+
 package com.example.hotel_hw_1;
 
 import android.os.Bundle;

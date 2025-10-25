@@ -1,3 +1,13 @@
+/**
+ * Autor: K. Jabier O'Reilly
+ * Proyecto: Gestión de Hotel - Práctica 1ª Evaluación (PMDM 2025/2026)
+ * Clase: Realizar_Reserva_Activity.java
+ * Descripción: Permite realizar reservas tanto para huéspedes como recepcionistas.
+ *              Incluye selección de habitación, servicios, fecha y validaciones de campos.
+ * Centro: C.F.G.S. Desarrollo de Aplicaciones Multiplataforma
+ * Módulo: Programación Multimedia y Dispositivos Móviles
+ */
+
 package com.example.hotel_hw_1;
 
 import android.app.DatePickerDialog;

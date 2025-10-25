@@ -1,3 +1,13 @@
+/**
+ * Autor: K. Jabier O'Reilly
+ * Proyecto: Gestión de Hotel - Práctica 1ª Evaluación (PMDM 2025/2026)
+ * Clase: Presentacion.java
+ * Descripción: Pantalla inicial tipo splash que se muestra al abrir la app
+ *              y redirige automáticamente al inicio tras unos segundos.
+ * Centro: C.F.G.S. Desarrollo de Aplicaciones Multiplataforma
+ * Módulo: Programación Multimedia y Dispositivos Móviles
+ */
+
 package com.example.hotel_hw_1;
 
 import android.content.Intent;

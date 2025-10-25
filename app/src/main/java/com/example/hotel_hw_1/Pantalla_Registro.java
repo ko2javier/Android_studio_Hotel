@@ -1,3 +1,13 @@
+/**
+ * Autor: K. Jabier O'Reilly
+ * Proyecto: Gestión de Hotel - Práctica 1ª Evaluación (PMDM 2025/2026)
+ * Clase: Pantalla_Registro.java
+ * Descripción: Pantalla de registro de nuevos usuarios (huéspedes).
+ *              Incluye validaciones de todos los campos y control del switch de términos.
+ * Centro: C.F.G.S. Desarrollo de Aplicaciones Multiplataforma
+ * Módulo: Programación Multimedia y Dispositivos Móviles
+ */
+
 package com.example.hotel_hw_1;
 
 import android.content.Intent;

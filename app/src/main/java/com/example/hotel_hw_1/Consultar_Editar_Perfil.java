@@ -1,3 +1,14 @@
+/**
+ * Autor: K. Jabier O'Reilly
+ * Proyecto: Gestión de Hotel - Práctica 1ª Evaluación (PMDM 2025/2026)
+ * Clase: Consultar_Editar_Perfil.java
+ * Descripción: Activity que permite al usuario consultar y modificar su perfil.
+ *              Carga los datos del usuario actual y valida los cambios introducidos
+ *              antes de guardarlos .
+ * Centro: C.F.G.S. Desarrollo de Aplicaciones Multiplataforma
+ * Módulo: Programación Multimedia y Dispositivos Móviles
+ */
+
 package com.example.hotel_hw_1;
 
 import android.os.Bundle;

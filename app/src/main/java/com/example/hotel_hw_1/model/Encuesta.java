@@ -1,3 +1,14 @@
+/**
+ * Autor: K. Jabier O'Reilly
+ * Proyecto: Gestión de Hotel - Práctica 1ª Evaluación (PMDM 2025/2026)
+ * Clase: Encuesta.java
+ * Descripción: Clase modelo que representa una encuesta de satisfacción del hotel,
+ *              incluyendo su categoría, promedio de valoración, cantidad de respuestas
+ *              y visibilidad según el tipo de usuario.
+ * Centro: C.F.G.S. Desarrollo de Aplicaciones Multiplataforma
+ * Módulo: Programación Multimedia y Dispositivos Móviles
+ */
+
 package com.example.hotel_hw_1.model;
 
 public class Encuesta {

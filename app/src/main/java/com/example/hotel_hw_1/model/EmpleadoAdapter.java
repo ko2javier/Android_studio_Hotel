@@ -1,3 +1,14 @@
+/**
+ * Autor: K. Jabier O'Reilly
+ * Proyecto: Gestión de Hotel - Práctica 1ª Evaluación (PMDM 2025/2026)
+ * Clase: EmpleadoAdapter.java
+ * Descripción: Adaptador personalizado que gestiona la visualización de empleados
+ *              en una lista, permitiendo editar o eliminar registros mediante
+ *              botones asociados a cada elemento.
+ * Centro: C.F.G.S. Desarrollo de Aplicaciones Multiplataforma
+ * Módulo: Programación Multimedia y Dispositivos Móviles
+ */
+
 package com.example.hotel_hw_1.model;
 
 import android.content.Context;

@@ -1,3 +1,13 @@
+/**
+ * Autor: K. Jabier O'Reilly
+ * Proyecto: Gestión de Hotel - Práctica 1ª Evaluación (PMDM 2025/2026)
+ * Clase: GestionEntradasSalidasActivity.java
+ * Descripción: Gestiona los procesos de Check-In y Check-Out de los huéspedes,
+ *              validando los datos y actualizando el registro del hotel.
+ * Centro: C.F.G.S. Desarrollo de Aplicaciones Multiplataforma
+ * Módulo: Programación Multimedia y Dispositivos Móviles
+ */
+
 package com.example.hotel_hw_1;
 
 import android.app.AlertDialog;

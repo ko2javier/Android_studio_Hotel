@@ -1,3 +1,14 @@
+/**
+ * Autor: K. Jabier O'Reilly
+ * Proyecto: Gestión de Hotel - Práctica 1ª Evaluación (PMDM 2025/2026)
+ * Clase: TareaAdapter.java
+ * Descripción: Adaptador personalizado que muestra las tareas del hotel (limpieza o mantenimiento)
+ *              permitiendo su asignación manual por el gerente o autoasignación por el empleado.
+ *              Incluye validaciones de límite de tareas y actualización dinámica del estado.
+ * Centro: C.F.G.S. Desarrollo de Aplicaciones Multiplataforma
+ * Módulo: Programación Multimedia y Dispositivos Móviles
+ */
+
 package com.example.hotel_hw_1.model;
 
 import android.app.AlertDialog;

@@ -1,3 +1,13 @@
+/**
+ * Autor: K. Jabier O'Reilly
+ * Proyecto: Gestión de Hotel - Práctica 1ª Evaluación (PMDM 2025/2026)
+ * Clase: AdaptadorEncuesta.java
+ * Descripción: Adaptador personalizado para mostrar las encuestas de satisfacción
+ *              en una lista con su categoría, valoración promedio y cantidad de respuestas.
+ * Centro: C.F.G.S. Desarrollo de Aplicaciones Multiplataforma
+ * Módulo: Programación Multimedia y Dispositivos Móviles
+ */
+
 package com.example.hotel_hw_1.model;
 
 import android.content.Context;
