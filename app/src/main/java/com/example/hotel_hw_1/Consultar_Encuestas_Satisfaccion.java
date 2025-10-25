@@ -26,37 +26,49 @@ public class Consultar_Encuestas_Satisfaccion extends AppCompatActivity {
         Button btnVolver = findViewById(R.id.btn_volver);
 
         Usuario usuario = Usuario.getInstance();
-        String tipoUser = usuario.getTipo_usuario();
+        String tipoUser = usuario.getTipo_usuario().toLowerCase();
 
+        // simulo los datos de las encuestas recibidas mdte el array
         List<Encuesta> encuestas = new ArrayList<>();
-        encuestas.add(new Encuesta("Atención en Recepción", 4.5f, 3, true));
-        encuestas.add(new Encuesta("Instalaciones y Equipos", 4.0f, 8, true));
-        encuestas.add(new Encuesta("Limpieza y Orden", 4.0f, 3, true));
+        encuestas.add(new Encuesta("Limpieza habitación", 4.3f, 10, true));
+        encuestas.add(new Encuesta("Limpieza planta", 4.1f, 9, true));
+        encuestas.add(new Encuesta("Limpieza vestíbulo", 4.4f, 8, true));
+        encuestas.add(new Encuesta("Atención personal limpieza", 4.6f, 12, true));
+        encuestas.add(new Encuesta("Atención personal mantenimiento", 4.2f, 7, true));
+        encuestas.add(new Encuesta("Atención en recepción", 4.8f, 15, true));
+        encuestas.add(new Encuesta("Servicio mantenimiento durante estancia", 4.0f, 5, true));
 
-        //  Ocultamos según rol
+        // Filtro las encuestas segun el rol. para ello declaro las encuestas que seran o no visibles
         for (Encuesta e : encuestas) {
-            switch (tipoUser.toLowerCase()) {
-                case "recepcionista":
-                    if (!e.getCategoria().contains("Recepción")) e.setVisible(false);
-                    break;
-                case "mantenimiento":
-                    if (!e.getCategoria().contains("Instalaciones")) e.setVisible(false);
-                    break;
+            switch (tipoUser) {
                 case "limpieza":
-                    if (!e.getCategoria().contains("Limpieza")) e.setVisible(false);
+                    if (!e.getCategoria().toLowerCase().contains("limpieza"))
+                        e.setVisible(false);
                     break;
+
+                case "mantenimiento":
+                    if (!e.getCategoria().toLowerCase().contains("mantenimiento"))
+                        e.setVisible(false);
+                    break;
+
+                case "recepcionista":
+                    if (!e.getCategoria().toLowerCase().contains("recepción"))
+                        e.setVisible(false);
+                    break;
+
                 case "gerente":
-                    e.setVisible(true);
+                    e.setVisible(true); // lo ve todo
                     break;
             }
         }
 
-        //  Filtramos solo las visibles
+        // Finalmente hago la lista con lo que esta visible !!
         List<Encuesta> encuestasFiltradas = new ArrayList<>();
         for (Encuesta e : encuestas) {
             if (e.isVisible()) encuestasFiltradas.add(e);
         }
 
+        // Cargo el adaptador con la lista encuestasFiltradas !!!
         AdaptadorEncuesta adaptador = new AdaptadorEncuesta(this, encuestasFiltradas);
         listaEncuestas.setAdapter(adaptador);
 
