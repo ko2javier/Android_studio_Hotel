@@ -1,113 +1,172 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/crear_encuesta_satisfaccion"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/sroll_padre"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Crear_Encuesta_Satisfaccion"
-    android:orientation="vertical"
     android:background="#FAF9E8"
-    android:padding="24dp">
+    android:padding="20dp">
 
-
-    <TextView
-        android:id="@+id/textoTituloEncuesta"
-        android:text="Encuesta de Satisfacción"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:textColor="#C32626"
-        android:gravity="center_horizontal"
-        android:layout_marginBottom="16dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-
-    <!-- Por bloques definimos-->
-
-    <TextView
-        android:id="@+id/txt_limpieza_crear_encuesta"
+    <LinearLayout
+        android:id="@+id/linear_hijo_scroll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Limpieza habitación:"
-        android:textStyle="bold"
-        android:layout_marginTop="30dp" />
+        android:gravity="center"
+        android:orientation="vertical">
 
-    <RatingBar
-        android:id="@+id/ratingLimpieza"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:numStars="5"
-        android:stepSize="0.5"
-        android:rating="1" />
+        <!-- Título -->
+        <TextView
+            android:id="@+id/txt_titulo_encuesta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Encuesta de Satisfacción"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="#C11C1C"
+            android:layout_marginBottom="20dp"/>
 
-    <!-- MANTENIMIENTO -->
-    <TextView
-        android:id="@+id/txt_mmt_crear_encuesta"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Mantenimiento:"
-        android:textStyle="bold"
-        android:layout_marginTop="8dp" />
+        <!-- Pregunta 1 -->
+        <TextView
+            android:id="@+id/punto_1"
+            android:text="1. Limpieza de la habitación:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"/>
+        <RatingBar
+            android:id="@+id/rb_limpieza_habitacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:stepSize="0.5"
+            android:rating="1"
+            android:layout_marginBottom="10dp"/>
 
-    <RatingBar
-        android:id="@+id/rating_mantenimiento"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:numStars="5"
-        android:stepSize="0.5"
-        android:rating="1" />
+        <!-- Pregunta 2 -->
+        <TextView
+            android:id="@+id/punto_2"
+            android:text="2. Limpieza de la planta:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"/>
+        <RatingBar
+            android:id="@+id/rb_limpieza_planta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:stepSize="0.5"
+            android:rating="1"
+            android:layout_marginBottom="10dp"/>
 
-    <TextView
-        android:id="@+id/txt_recep_crear_encuesta"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Atención en recepción:"
-        android:textStyle="bold"
-        android:layout_marginTop="8dp" />
+        <!-- Pregunta 3 -->
+        <TextView
+            android:id="@+id/punto_3"
+            android:text="3. Limpieza del vestíbulo:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"/>
+        <RatingBar
+            android:id="@+id/rb_limpieza_vestibulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:stepSize="0.5"
+            android:rating="1"
+            android:layout_marginBottom="10dp"/>
 
-    <RatingBar
-        android:id="@+id/rating_recepcion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:numStars="5"
-        android:stepSize="0.5"
-        android:rating="1" />
+        <!-- Pregunta 4 -->
+        <TextView
+            android:id="@+id/punto_4"
+            android:text="4. Atención del personal de limpieza:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"/>
+        <RatingBar
+            android:id="@+id/rb_personal_limpieza"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:stepSize="0.5"
+            android:rating="1"
+            android:layout_marginBottom="10dp"/>
 
-    <!-- COMENTARIO -->
-    <EditText
-        android:id="@+id/campo_comentario_encuestas"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:hint="Comentario (opcional)"
-        android:inputType="textMultiLine"
-        android:lines="2"
-        android:gravity="top|start"
-        android:background="#FFFFFF"
-        android:padding="10dp" />
+        <!-- Pregunta 5 -->
+        <TextView
+            android:id="@+id/punto_5"
+            android:text="5. Atención del personal de mantenimiento:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"/>
+        <RatingBar
+            android:id="@+id/rb_personal_mantenimiento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:stepSize="0.5"
+            android:rating="1"
+            android:layout_marginBottom="10dp"/>
 
-    <!-- BOTONES -->
-    <Button
-        android:id="@+id/btn_enviar_encuesta"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Enviar Encuesta"
-        android:background="#56D67E"
-        android:layout_marginTop="16dp"
-        android:textColor="@color/white"/>
+        <!-- Pregunta 6 -->
+        <TextView
+            android:id="@+id/punto_6"
+            android:text="6. Atención en recepción:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"/>
+        <RatingBar
+            android:id="@+id/rb_recepcion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:stepSize="0.5"
+            android:rating="1"
+            android:layout_marginBottom="10dp"/>
 
-    <Button
-        android:id="@+id/btn_volver_encuesta"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Volver"
-        android:background="#1a759f"
-        android:layout_marginTop="15dp"
-        android:textColor="@color/white"/>
+        <!-- Pregunta 7 -->
+        <TextView
+            android:id="@+id/punto_7"
+            android:text="7. Servicio de mantenimiento durante su estancia:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"/>
+        <RatingBar
+            android:id="@+id/rb_servicio_mantenimiento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:stepSize="0.5"
+            android:rating="1"
+            android:layout_marginBottom="20dp"/>
 
-</LinearLayout>
+        <!-- Comentario -->
+        <EditText
+            android:id="@+id/et_comentario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Deje aquí sus comentarios (opcional)"
+            android:background="@android:drawable/edit_text"
+            android:padding="5dp"
+            android:minHeight="40dp"
+            android:gravity="top"
+            android:layout_marginBottom="25dp"/>
+
+        <!-- Botón Enviar -->
+        <Button
+            android:id="@+id/btn_enviar_encuesta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ENVIAR ENCUESTA"
+            android:backgroundTint="#4CAF50"
+            android:textColor="#FFF"
+            android:textStyle="bold"/>
+        <Button
+            android:id="@+id/btn_volver_encuesta"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="5dp"
+            android:layout_height="wrap_content"
+            android:text="Volver"
+            android:background="#1a759f"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/white"/>
+
+
+    </LinearLayout>
+</ScrollView>

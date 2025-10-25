@@ -1,4 +1,5 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/item_encuesta"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -8,41 +9,65 @@
     android:layout_marginBottom="12dp"
     android:elevation="3dp">
 
-    <TextView
-        android:id="@+id/txt_categoria_encuesta"
+    <LinearLayout
+        android:id="@+id/linear_horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:textColor="#000000"
-        android:layout_marginBottom="5dp"/>
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
 
-    <RatingBar
-        android:id="@+id/rating_encuesta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:numStars="5"
-        android:stepSize="0.5"
-        android:isIndicator="true"
-        android:layout_gravity="center_horizontal"/>
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/outline_asterisk_24" />
 
-    <TextView
-        android:id="@+id/txt_promedio_encuesta"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Promedio: 4.5"
-        android:textSize="15sp"
-        android:textColor="#444"
-        android:gravity="center_horizontal"
-        android:layout_marginTop="5dp"/>
+        <LinearLayout
+            android:id="@+id/linear_interior"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="20dp">
 
-    <TextView
-        android:id="@+id/txt_cant_encuesta"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="3 encuestas registradas"
-        android:textSize="12sp"
-        android:textColor="#777"
-        android:gravity="center_horizontal"
-        android:layout_marginTop="2dp"/>
+            <TextView
+                android:id="@+id/txt_categoria_encuesta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="5dp"/>
+
+            <RatingBar
+                android:id="@+id/rating_encuesta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:stepSize="0.5"
+                android:isIndicator="true"
+                android:layout_gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/txt_promedio_encuesta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Promedio: 4.5"
+                android:textSize="15sp"
+                android:textColor="#444"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="5dp"/>
+
+            <TextView
+                android:id="@+id/txt_cant_encuesta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3 encuestas registradas"
+                android:textSize="12sp"
+                android:textColor="#777"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="2dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
 </LinearLayout>

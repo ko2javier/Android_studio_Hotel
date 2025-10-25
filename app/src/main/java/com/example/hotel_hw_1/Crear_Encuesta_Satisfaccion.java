@@ -1,54 +1,81 @@
 package com.example.hotel_hw_1;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RatingBar;
+import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-import com.google.android.material.snackbar.Snackbar;
+import com.example.hotel_hw_1.R;
 
 public class Crear_Encuesta_Satisfaccion extends AppCompatActivity {
+
+    private RatingBar rb_limpieza_habitacion, rb_limpieza_planta, rb_limpieza_vestibulo,
+            rb_personal_limpieza, rb_personal_mantenimiento, rb_recepcion, rb_servicio_mantenimiento;
+    private EditText et_comentario;
+    private Button btn_enviar, btn_volver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_crear_encuesta_satisfaccion);
 
-    // Defimos variables !!
-        RatingBar rt_ratingLimpieza= findViewById(R.id.ratingLimpieza);
-        RatingBar rating_mantenimiento= findViewById(R.id.rating_mantenimiento);
-        RatingBar rating_recepcion= findViewById(R.id.rating_recepcion);
-        EditText edx_comentario_encuestas= findViewById(R.id.campo_comentario_encuestas);
-        Button btn_enviar_encuesta= findViewById(R.id.btn_enviar_encuesta);
-        Button btn_volver_encuesta= findViewById(R.id.btn_volver_encuesta);
+        // Vincular elementos
+        rb_limpieza_habitacion = findViewById(R.id.rb_limpieza_habitacion);
+        rb_limpieza_planta = findViewById(R.id.rb_limpieza_planta);
+        rb_limpieza_vestibulo = findViewById(R.id.rb_limpieza_vestibulo);
+        rb_personal_limpieza = findViewById(R.id.rb_personal_limpieza);
+        rb_personal_mantenimiento = findViewById(R.id.rb_personal_mantenimiento);
+        rb_recepcion = findViewById(R.id.rb_recepcion);
+        rb_servicio_mantenimiento = findViewById(R.id.rb_servicio_mantenimiento);
+        et_comentario = findViewById(R.id.et_comentario);
+        btn_enviar = findViewById(R.id.btn_enviar_encuesta);
+        btn_volver = findViewById(R.id.btn_volver_encuesta);
 
-        // Simulamos el envio de los datos de la encuesta a un sitio donde se recoja!!
+        // Acción del botón Enviar
+        btn_enviar.setOnClickListener(v -> enviarEncuesta());
 
-        btn_enviar_encuesta.setOnClickListener(v->{
+        // Acción del botón Volver
+        btn_volver.setOnClickListener(v -> finish());
+    }
+// metodo para enviar la encuesta,
+private void enviarEncuesta() {
+    // Recogemos valores
+    float r1 = rb_limpieza_habitacion.getRating();
+    float r2 = rb_limpieza_planta.getRating();
+    float r3 = rb_limpieza_vestibulo.getRating();
+    float r4 = rb_personal_limpieza.getRating();
+    float r5 = rb_personal_mantenimiento.getRating();
+    float r6 = rb_recepcion.getRating();
+    float r7 = rb_servicio_mantenimiento.getRating();
 
-            float limp = rt_ratingLimpieza.getRating();
-            float mant = rating_mantenimiento.getRating();
-            float recep = rating_recepcion.getRating();
-            String texto = edx_comentario_encuestas.getText().toString();
+    // Calculamos promedio
+    float promedio = (r1 + r2 + r3 + r4 + r5 + r6 + r7) / 7;
+    String comentario = et_comentario.getText().toString().trim();
 
-            // Simulación de envío , mostramos en pantalla el mismo!!
-            String resumen = String.format(
-                    "Encuesta enviada:\nLimpieza %.1f ★ | Mantenimiento %.1f ★ | Recepción %.1f ★",
-                    limp, mant, recep
-            );
-            Snackbar.make(v, resumen, Snackbar.LENGTH_LONG).show();
-            v.postDelayed(this::finish, 1800);
-        });
-        btn_volver_encuesta.setOnClickListener(v->{
-            finish();
-        });
+    // Mostramos simulación de envío
+    new AlertDialog.Builder(this)
+            .setTitle("Encuesta enviada")
+            .setMessage("Gracias por su valoración.\n\nPromedio general: " +
+                    String.format("%.1f", promedio) + " ⭐" +
+                    (comentario.isEmpty() ? "" : "\n\nComentario:\n" + comentario))
+            .setPositiveButton("Aceptar", (dialog, which) -> limpiarCampos())
+            .show();
+}
 
+    // metodo para limpiar los valores de los ratings, seteamos a 1 valor x defecto!!
+    private void limpiarCampos() {
+        rb_limpieza_habitacion.setRating(1);
+        rb_limpieza_planta.setRating(1);
+        rb_limpieza_vestibulo.setRating(1);
+        rb_personal_limpieza.setRating(1);
+        rb_personal_mantenimiento.setRating(1);
+        rb_recepcion.setRating(1);
+        rb_servicio_mantenimiento.setRating(1);
+        et_comentario.setText("");
     }
 }
