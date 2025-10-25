@@ -7,14 +7,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_margin="10dp"
+    android:padding="20dp"
     android:background="#F5F5DC"
     android:gravity="center_horizontal"
     tools:context=".Pantalla_Registro"
-    android:padding="10dp">
+    >
     <TextView
         android:id="@+id/CampoTextoRegistro"
         android:layout_width="match_parent"
+        android:layout_marginHorizontal="10dp"
         android:layout_height="wrap_content"
         android:text=" Pantalla Registro"
         android:gravity="center"
@@ -26,30 +27,33 @@
     <EditText
         android:id="@+id/Campo_DatosNombreUser_PantallaRegistro"
         android:layout_width="match_parent"
+
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
         android:hint="nombre"
         android:inputType="text"
         />
     <EditText
         android:id="@+id/Campo_DatosApellidosUser_PantallaRegistro"
         android:layout_width="match_parent"
+
         android:layout_height="wrap_content"
         android:hint="apellidos"
         android:inputType="text"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
         />
     <EditText
         android:id="@+id/Campo_email_PantallaRegistro"
         android:layout_width="match_parent"
+        android:layout_marginHorizontal="20dp"
         android:layout_height="wrap_content"
         android:hint="email"
         android:inputType="textEmailAddress"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
         android:textColor="#3D53B6"
         />
 
@@ -59,8 +63,8 @@
         android:layout_height="wrap_content"
         android:hint="número de telefono"
         android:inputType="phone"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
         android:textColor="#3D53B6"
         />
 
@@ -71,42 +75,30 @@
         android:hint="password"
         android:inputType="textPassword"
         android:textColor="#3D53B6"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
         />
 
     <EditText
         android:id="@+id/Campo_Confirma_Contrasena_PantallaRegistro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+
         android:hint="Confirm password"
         android:inputType="textPassword"
         android:textColor="#3D53B6"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
         />
 
-
-
-    <!-- intentamos simular un switch-->
-
-    <Switch
+       <Switch
         android:id="@+id/switch_pantalla_registro"
         android:text="Aceptar terminos y condiciones"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         />
-
-<!--
-    <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/switch_pantalla_registro2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Aceptar términos y condiciones" />
-        -->
-
-
 
     <LinearLayout
         android:id="@+id/linear_interior_botones_pantalla_registro"
