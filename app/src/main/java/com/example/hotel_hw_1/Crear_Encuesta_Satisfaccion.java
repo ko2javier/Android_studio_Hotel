@@ -86,7 +86,7 @@ public class Crear_Encuesta_Satisfaccion extends AppCompatActivity {
 
                 })
                 .show();
-        v.postDelayed(this::finish, 2300);// damos unos segundos y volvemos a la pantalla inicial
+        v.postDelayed(this::finish, 2800);// damos unos segundos y volvemos a la pantalla inicial
 
     }
 }

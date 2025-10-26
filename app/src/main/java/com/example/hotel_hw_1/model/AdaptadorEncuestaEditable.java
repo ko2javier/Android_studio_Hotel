@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
@@ -21,9 +22,9 @@ import com.example.hotel_hw_1.R;
 import java.util.List;
 
 public class AdaptadorEncuestaEditable extends ArrayAdapter<Encuesta> {
-
-    private final List<Encuesta> encuestas;
     private final Context context;
+    private final List<Encuesta> encuestas;
+    private String comentario = "";
 
     public AdaptadorEncuestaEditable(Context context, List<Encuesta> encuestas) {
         super(context, 0, encuestas);
@@ -32,10 +33,32 @@ public class AdaptadorEncuestaEditable extends ArrayAdapter<Encuesta> {
     }
 
     @Override
+    public int getCount() {
+        // sumamos 1 al tamaño total por el ítem de comentarios
+        return encuestas.size() + 1;
+    }
+
+    @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        if (convertView == null) {
-            convertView = LayoutInflater.from(context)
-                    .inflate(R.layout.item_encuesta_editable, parent, false);
+        LayoutInflater inflater = LayoutInflater.from(context);
+
+        // Último ítem → el campo de comentarios
+        if (position == encuestas.size()) {
+            convertView = inflater.inflate(R.layout.item_encuesta_comentario, parent, false);
+            EditText etComentario = convertView.findViewById(R.id.et_comentario_item);
+
+            // guardamos el texto a medida que el usuario escribe
+            etComentario.setText(comentario);
+            etComentario.setOnFocusChangeListener((v, hasFocus) -> {
+                if (!hasFocus) comentario = etComentario.getText().toString();
+            });
+
+            return convertView;
+        }
+
+        // Ítems normales (preguntas)
+        if (convertView == null || convertView.findViewById(R.id.rating_encuesta) == null) {
+            convertView = inflater.inflate(R.layout.item_encuesta_editable, parent, false);
         }
 
         Encuesta encuesta = encuestas.get(position);
@@ -46,7 +69,6 @@ public class AdaptadorEncuestaEditable extends ArrayAdapter<Encuesta> {
         txtCategoria.setText(encuesta.getCategoria());
         ratingBar.setRating(encuesta.getPromedio());
 
-        // Permitir que el usuario cambie el valor y se guarde en el modelo
         ratingBar.setOnRatingBarChangeListener((bar, rating, fromUser) -> {
             if (fromUser) encuesta.setPromedio(rating);
         });
@@ -54,8 +76,11 @@ public class AdaptadorEncuestaEditable extends ArrayAdapter<Encuesta> {
         return convertView;
     }
 
-    // Método para obtener los valores seleccionados (por ejemplo, al pulsar "Enviar encuesta")
     public List<Encuesta> getResultados() {
         return encuestas;
+    }
+
+    public String getComentario() {
+        return comentario;
     }
 }
