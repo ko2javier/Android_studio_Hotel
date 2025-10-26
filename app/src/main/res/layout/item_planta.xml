@@ -2,14 +2,18 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/layout_planta"
     android:orientation="vertical"
-    android:padding="10dp"
-    android:background="#FAF9E8"
+    android:padding="20dp"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:elevation="8dp">
     <LinearLayout
         android:id="@+id/linear_intermedio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_vertical"
+        android:paddingVertical="6dp"
         android:orientation="horizontal">
         <ImageView
             android:id="@+id/img_icono"

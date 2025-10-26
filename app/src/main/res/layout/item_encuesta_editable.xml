@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_encuesta_editable"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#FFF"
+    android:padding="10dp"
+    android:layout_marginBottom="12dp"
+    android:elevation="8dp">
+
+    <LinearLayout
+        android:id="@+id/linear_encuesta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/img_encuesta"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/outline_asterisk_24" />
+
+        <TextView
+            android:id="@+id/txt_categoria_encuesta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="#000"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <RatingBar
+        android:id="@+id/rating_encuesta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:numStars="5"
+        android:stepSize="0.5"
+        android:rating="0.5"
+        android:isIndicator="false"
+        android:layout_marginTop="6dp" />
+
+</LinearLayout>

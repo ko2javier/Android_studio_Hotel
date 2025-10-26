@@ -5,7 +5,7 @@
     android:id="@+id/layout_gestion_empleados"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F7F7F7"
+    android:background="#FAF9E8"
     android:orientation="vertical"
     android:padding="20dp"
     tools:context=".GestionEmpleadosActivity">
@@ -19,6 +19,7 @@
         android:textColor="#C62828"
         android:textStyle="bold"
         android:textSize="20sp"
+        android:layout_marginTop="25dp"
         android:layout_marginBottom="20dp"/>
 
     <ListView
@@ -26,8 +27,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:divider="@android:color/darker_gray"
-        android:dividerHeight="1dp"/>
+        android:divider="@android:color/transparent"
+        android:dividerHeight="8dp"/>
 
     <Button
         android:id="@+id/btn_agregar_empleado"
