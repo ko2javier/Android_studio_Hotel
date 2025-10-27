@@ -25,7 +25,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.hotel_hw_1.R;
 import com.example.hotel_hw_1.model.Usuario;
-import com.example.hotel_hw_1.ropositorios.UsuarioData;
+import com.example.hotel_hw_1.repositorios.UsuarioData;
 import com.example.hotel_hw_1.model.Validaciones;
 import com.google.android.material.snackbar.Snackbar;
 

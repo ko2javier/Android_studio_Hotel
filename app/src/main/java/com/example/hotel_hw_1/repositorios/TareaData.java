@@ -9,7 +9,7 @@
  * Módulo: Programación Multimedia y Dispositivos Móviles
  */
 
-package com.example.hotel_hw_1.ropositorios;
+package com.example.hotel_hw_1.repositorios;
 
 
 import com.example.hotel_hw_1.model.Tarea;

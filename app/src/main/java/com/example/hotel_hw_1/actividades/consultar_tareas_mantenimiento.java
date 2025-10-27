@@ -23,7 +23,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.hotel_hw_1.R;
 import com.example.hotel_hw_1.model.Tarea;
 import com.example.hotel_hw_1.adaptadores.TareaAdapter;
-import com.example.hotel_hw_1.ropositorios.TareaData;
+import com.example.hotel_hw_1.repositorios.TareaData;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -23,7 +23,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.hotel_hw_1.R;
 import com.example.hotel_hw_1.model.Huesped;
-import com.example.hotel_hw_1.ropositorios.HuespedData;
+import com.example.hotel_hw_1.repositorios.HuespedData;
 import com.google.android.material.snackbar.Snackbar;
 
 public class GestionEntradasSalidasActivity extends AppCompatActivity {

@@ -16,7 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.hotel_hw_1.R;
 import com.example.hotel_hw_1.adaptadores.AdapterHuesped;
-import com.example.hotel_hw_1.ropositorios.HuespedData;
+import com.example.hotel_hw_1.repositorios.HuespedData;
 
 public class ConsultarHuespedesActivity extends AppCompatActivity {
 

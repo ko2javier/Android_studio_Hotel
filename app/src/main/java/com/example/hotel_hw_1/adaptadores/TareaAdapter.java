@@ -25,9 +25,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.hotel_hw_1.R;
-import com.example.hotel_hw_1.ropositorios.EmpleadoData;
+import com.example.hotel_hw_1.repositorios.EmpleadoData;
 import com.example.hotel_hw_1.model.Tarea;
-import com.example.hotel_hw_1.ropositorios.TareaData;
+import com.example.hotel_hw_1.repositorios.TareaData;
 import com.example.hotel_hw_1.model.Usuario;
 
 import java.util.List;

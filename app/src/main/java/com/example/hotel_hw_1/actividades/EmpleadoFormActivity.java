@@ -20,7 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.hotel_hw_1.R;
 import com.example.hotel_hw_1.model.Empleado;
-import com.example.hotel_hw_1.ropositorios.EmpleadoData;
+import com.example.hotel_hw_1.repositorios.EmpleadoData;
 import com.google.android.material.snackbar.Snackbar;
 
 public class EmpleadoFormActivity extends AppCompatActivity {

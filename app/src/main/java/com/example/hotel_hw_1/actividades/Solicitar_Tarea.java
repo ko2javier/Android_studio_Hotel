@@ -25,7 +25,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.hotel_hw_1.R;
 import com.example.hotel_hw_1.model.Tarea;
-import com.example.hotel_hw_1.ropositorios.TareaData;
+import com.example.hotel_hw_1.repositorios.TareaData;
 import com.google.android.material.snackbar.Snackbar;
 
 public class Solicitar_Tarea extends AppCompatActivity {

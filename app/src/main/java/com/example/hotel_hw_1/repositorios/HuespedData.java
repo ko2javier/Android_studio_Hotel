@@ -1,4 +1,4 @@
-package com.example.hotel_hw_1.ropositorios;
+package com.example.hotel_hw_1.repositorios;
 /**
  * Autor: K. Jabier O'Reilly
  * Proyecto: Gestión de Hotel - Práctica 1ª Evaluación (PMDM 2025/2026)
