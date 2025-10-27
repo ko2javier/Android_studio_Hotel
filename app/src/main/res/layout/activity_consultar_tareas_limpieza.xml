@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:background="#F8F6E3"
     android:padding="16dp"
-    tools:context=".ConsultarTareasLimpieza">
+    tools:context=".actividades.ConsultarTareasLimpieza">
 
 
     <TextView

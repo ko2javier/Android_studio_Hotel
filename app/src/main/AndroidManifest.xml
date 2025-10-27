@@ -12,73 +12,73 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light.NoActionBar">
         <activity
-            android:name=".consultar_tareas_mantenimiento"
+            android:name=".actividades.consultar_tareas_mantenimiento"
             android:exported="false" />
         <activity
-            android:name=".ConsultarTareasLimpieza"
+            android:name=".actividades.ConsultarTareasLimpieza"
             android:exported="false" />
         <activity
-            android:name=".GestionTareasActivity"
+            android:name=".actividades.GestionTareasActivity"
             android:exported="false" />
         <activity
-            android:name=".EmpleadoFormActivity"
+            android:name=".actividades.EmpleadoFormActivity"
             android:exported="false" />
         <activity
-            android:name=".GestionEmpleadosActivity"
+            android:name=".actividades.GestionEmpleadosActivity"
             android:exported="false" />
         <activity
-            android:name=".ConsultarHuespedesActivity"
+            android:name=".actividades.ConsultarHuespedesActivity"
             android:exported="false" />
         <activity
-            android:name=".GestionEntradasSalidasActivity"
+            android:name=".actividades.GestionEntradasSalidasActivity"
             android:exported="false" />
         <activity
-            android:name=".Solicitar_Tarea"
+            android:name=".actividades.Solicitar_Tarea"
             android:exported="false" />
         <activity
-            android:name=".Consultar_Estado_Reservas"
+            android:name=".actividades.Consultar_Estado_Reservas"
             android:exported="false" />
         <activity
-            android:name=".Realizar_Reserva_Activity"
+            android:name=".actividades.Realizar_Reserva_Activity"
             android:exported="false" />
         <activity
-            android:name=".Crear_Encuesta_Satisfaccion"
+            android:name=".actividades.Crear_Encuesta_Satisfaccion"
             android:exported="false" />
         <activity
-            android:name=".MantenimientoActivity"
+            android:name=".actividades.MantenimientoActivity"
             android:exported="false" />
         <activity
-            android:name=".HuespedActivity"
+            android:name=".actividades.HuespedActivity"
             android:exported="false" />
         <activity
-            android:name=".LimpiadorActivity"
+            android:name=".actividades.LimpiadorActivity"
             android:exported="false" />
         <activity
-            android:name=".RecepcionistaActivity"
+            android:name=".actividades.RecepcionistaActivity"
             android:exported="false" />
         <activity
-            android:name=".GerenteActivity"
+            android:name=".actividades.GerenteActivity"
             android:exported="false" />
         <activity
-            android:name=".Consultar_Encuestas_Satisfaccion"
+            android:name=".actividades.Consultar_Encuestas_Satisfaccion"
             android:exported="false" />
         <activity
-            android:name=".Consultar_Ocupacion_Hotel"
+            android:name=".actividades.Consultar_Ocupacion_Hotel"
             android:exported="false" />
         <activity
-            android:name=".Consultar_Editar_Perfil"
+            android:name=".actividades.Consultar_Editar_Perfil"
             android:exported="false" />
         <activity
-            android:name=".Pantalla_Registro"
+            android:name=".actividades.Pantalla_Registro"
             android:exported="false" />
         <activity
             android:name=".Pantalla_Menu_Usuarios"
             android:exported="false" />
         <activity
-            android:name=".Pantalla_Inicio"
+            android:name=".actividades.Pantalla_Inicio"
             android:exported="false" />
         <activity
-            android:name=".Presentacion"
+            android:name=".actividades.Presentacion"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -44,15 +44,17 @@
             android:backgroundTint="#4CAF50"
             android:textColor="#FFF"
             android:textStyle="bold"/>
+
+
+
         <Button
             android:id="@+id/btn_volver_encuesta"
             android:layout_width="match_parent"
-            android:layout_marginHorizontal="5dp"
             android:layout_height="wrap_content"
-            android:text="Volver"
-            android:background="#1a759f"
-            android:layout_marginTop="15dp"
-            android:textColor="@color/white"/>
+            android:text="ENVIAR ENCUESTA"
+            android:backgroundTint="#1a759f"
+            android:textColor="#FFF"
+            android:textStyle="bold"/>
 
 
     </LinearLayout>

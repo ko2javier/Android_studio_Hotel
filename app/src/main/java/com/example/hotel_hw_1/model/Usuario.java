@@ -15,11 +15,11 @@ package com.example.hotel_hw_1.model;
 import android.content.Context;
 import android.content.Intent;
 
-import com.example.hotel_hw_1.GerenteActivity;
-import com.example.hotel_hw_1.HuespedActivity;
-import com.example.hotel_hw_1.LimpiadorActivity;
-import com.example.hotel_hw_1.MantenimientoActivity;
-import com.example.hotel_hw_1.RecepcionistaActivity;
+import com.example.hotel_hw_1.actividades.GerenteActivity;
+import com.example.hotel_hw_1.actividades.HuespedActivity;
+import com.example.hotel_hw_1.actividades.LimpiadorActivity;
+import com.example.hotel_hw_1.actividades.MantenimientoActivity;
+import com.example.hotel_hw_1.actividades.RecepcionistaActivity;
 
 import java.io.Serializable;
 import java.util.ArrayList;

@@ -6,7 +6,7 @@
     android:id="@+id/layout_solicitar_tarea"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Solicitar_Tarea"
+    tools:context=".actividades.Solicitar_Tarea"
     android:orientation="vertical"
     android:padding="30dp"
     android:background="#FAF9E8">
