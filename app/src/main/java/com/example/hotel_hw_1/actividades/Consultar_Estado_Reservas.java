@@ -19,7 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.hotel_hw_1.R;
 import com.example.hotel_hw_1.adaptadores.AdaptadorReserva;
-import com.example.hotel_hw_1.model.Usuario;
+import com.example.hotel_hw_1.modelos.Usuario;
 
 import java.util.List;
 

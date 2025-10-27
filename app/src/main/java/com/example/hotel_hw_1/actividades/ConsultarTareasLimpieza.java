@@ -20,7 +20,7 @@ import android.widget.RadioGroup;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.hotel_hw_1.R;
-import com.example.hotel_hw_1.model.Tarea;
+import com.example.hotel_hw_1.modelos.Tarea;
 import com.example.hotel_hw_1.adaptadores.TareaAdapter;
 import com.example.hotel_hw_1.repositorios.TareaData;
 

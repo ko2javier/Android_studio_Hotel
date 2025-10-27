@@ -8,30 +8,37 @@
     android:layout_height="match_parent"
     tools:context=".actividades.Solicitar_Tarea"
     android:orientation="vertical"
-    android:padding="30dp"
+    android:padding="25dp"
     android:background="#FAF9E8">
+
     <TextView
         android:id="@+id/txt_titulo"
         android:text="Solicitud de Limpieza / Mantenimiento"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:textStyle="bold"
         android:textSize="18sp"
         android:gravity="center"
         android:textColor="#C11C1C"
         android:layout_marginBottom="20dp"/>
-    <!-- Por bloques 1ro tipo-->
+
+    <!-- Tipo de tarea -->
     <RadioGroup
         android:id="@+id/radioGroupTarea"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+
         <RadioButton
             android:id="@+id/rb_limpieza"
             android:text="Limpieza"
             android:checked="true"
+            android:gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
+
         <RadioButton
             android:id="@+id/rb_mmto"
             android:text="Mantenimiento"
@@ -39,47 +46,89 @@
             android:layout_height="wrap_content"/>
     </RadioGroup>
 
-
     <!-- Número habitación -->
     <TextView
+        android:id="@+id/txt_no_habitacion"
         android:text="Número de habitación (100–599):"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="20dp"
         android:textStyle="bold"/>
+
     <EditText
         android:id="@+id/etx_numero_room"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Ejemplo: 112"
         android:inputType="number"/>
+
+    <TextView
+        android:id="@+id/txt_error_habitacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#C62828"
+        android:textSize="13sp"
+        android:visibility="gone"
+        android:layout_marginTop="4dp"
+        android:text="Error en número de habitación"/>
+
+
     <!-- Zona -->
-    <TextView
-        android:id="@+id/txt_choose_zona"
-        android:text="Zona:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:textStyle="bold"/>
-    <AutoCompleteTextView
-        android:id="@+id/autoZona"
+    <LinearLayout
+        android:id="@+id/linear_spinner_zona"
+        android:layout_marginTop="25dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:completionThreshold="1"
-        android:hint="Salon/Baño"/>
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txt_choose_zona"
+            android:text="Zona:"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="start"
+            android:textStyle="bold"/>
+
+        <Spinner
+            android:id="@+id/spinnerZona"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown" />
+    </LinearLayout>
+
+
+
     <!-- Pasillo -->
-    <TextView
-        android:text="Pasillo (opcional):"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:textStyle="bold"/>
-    <AutoCompleteTextView
-        android:id="@+id/autoPasillo"
+    <LinearLayout
+        android:id="@+id/linear_spinner_pasillo"
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:completionThreshold="1"
-        android:hint="Seleccione pasillo"/>
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txt_pasillo"
+            android:text="Pasillo (opcional):"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="start"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:textStyle="bold"/>
+
+        <Spinner
+            android:id="@+id/spinnerPasillo"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown" />
+    </LinearLayout>
+
+
+
+    <!-- Botones -->
     <Button
         android:id="@+id/btn_enviar_solicitud"
         android:text="ENVIAR SOLICITUD"
@@ -97,7 +146,5 @@
         android:layout_marginTop="10dp"
         android:backgroundTint="#0D47A1"
         android:textColor="#FFF"/>
-
-
 
 </LinearLayout>

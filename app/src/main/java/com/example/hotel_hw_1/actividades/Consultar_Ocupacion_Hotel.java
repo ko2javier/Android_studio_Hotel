@@ -19,7 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.hotel_hw_1.R;
 import com.example.hotel_hw_1.adaptadores.AdaptadorPlanta;
-import com.example.hotel_hw_1.model.Planta;
+import com.example.hotel_hw_1.modelos.Planta;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -20,7 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.hotel_hw_1.R;
 import com.example.hotel_hw_1.adaptadores.AdaptadorEncuestaEditable;
-import com.example.hotel_hw_1.model.Encuesta;
+import com.example.hotel_hw_1.modelos.Encuesta;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;

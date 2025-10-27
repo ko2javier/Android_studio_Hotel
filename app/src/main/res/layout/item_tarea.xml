@@ -9,14 +9,14 @@
     android:background="#FFFFFF"
     android:elevation="3dp">
 
-    <!-- Contenedor principal horizontal -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical">
 
-        <!-- Icono de tarea -->
+
         <ImageView
             android:id="@+id/img_icono_tarea"
             android:layout_width="42dp"
@@ -34,7 +34,7 @@
             android:orientation="vertical"
             android:layout_weight="1">
 
-            <!-- Tipo y estado -->
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -61,7 +61,7 @@
                     android:textStyle="bold"/>
             </LinearLayout>
 
-            <!-- Planta / Habitación -->
+
             <TextView
                 android:id="@+id/txt_ubicacion_tarea"
                 android:layout_width="match_parent"
@@ -71,7 +71,7 @@
                 android:textColor="#333333"
                 android:layout_marginTop="2dp"/>
 
-            <!-- Pasillo -->
+
             <TextView
                 android:id="@+id/txt_detalle_tarea"
                 android:layout_width="match_parent"
@@ -81,7 +81,7 @@
                 android:textColor="#555555"
                 android:layout_marginTop="2dp"/>
 
-            <!-- Asignada a -->
+
             <TextView
                 android:id="@+id/txt_asignada_a"
                 android:layout_width="match_parent"
@@ -93,7 +93,7 @@
         </LinearLayout>
     </LinearLayout>
 
-    <!-- Botón de acción -->
+
     <Button
         android:id="@+id/btn_accion_tarea"
         android:layout_width="match_parent"

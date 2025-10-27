@@ -20,8 +20,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.hotel_hw_1.R;
 import com.example.hotel_hw_1.adaptadores.AdaptadorEncuesta;
-import com.example.hotel_hw_1.model.Encuesta;
-import com.example.hotel_hw_1.model.Usuario;
+import com.example.hotel_hw_1.modelos.Encuesta;
+import com.example.hotel_hw_1.modelos.Usuario;
 
 import java.util.ArrayList;
 import java.util.List;

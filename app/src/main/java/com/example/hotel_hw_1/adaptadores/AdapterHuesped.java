@@ -18,7 +18,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 import com.example.hotel_hw_1.R;
-import com.example.hotel_hw_1.model.Huesped;
+import com.example.hotel_hw_1.modelos.Huesped;
 import java.util.List;
 
 public class AdapterHuesped extends BaseAdapter {

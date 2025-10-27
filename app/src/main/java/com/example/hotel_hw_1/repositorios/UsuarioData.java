@@ -11,7 +11,7 @@
 
 package com.example.hotel_hw_1.repositorios;
 
-import com.example.hotel_hw_1.model.Usuario;
+import com.example.hotel_hw_1.modelos.Usuario;
 
 import java.util.ArrayList;
 import java.util.List;

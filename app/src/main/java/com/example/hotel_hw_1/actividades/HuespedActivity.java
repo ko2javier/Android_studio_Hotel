@@ -18,7 +18,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.hotel_hw_1.R;
-import com.example.hotel_hw_1.model.Usuario;
+import com.example.hotel_hw_1.modelos.Usuario;
 import com.google.android.material.snackbar.Snackbar;
 
 public class HuespedActivity extends AppCompatActivity {

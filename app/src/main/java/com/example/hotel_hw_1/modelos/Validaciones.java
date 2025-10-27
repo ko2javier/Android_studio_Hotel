@@ -8,10 +8,12 @@
  * Módulo: Programación Multimedia y Dispositivos Móviles
  */
 
-package com.example.hotel_hw_1.model;
+package com.example.hotel_hw_1.modelos;
 
+import android.graphics.Color;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.*;
 
 import com.google.android.material.snackbar.Snackbar;
 
@@ -85,5 +87,77 @@ public class Validaciones {
 
         return true;
     }
+
+
+    // Método para validar numero de habitaciones
+    public static boolean validarHabitacionObligatoria(View v,
+                                                       EditText etxNumero,
+                                                       TextView txtError) {
+        String valor = etxNumero.getText().toString().trim();
+
+        // paso 1 ver si esta vacio el campo. Si lo esta error !!
+        if (valor.isEmpty()) {
+            txtError.setText("El número de habitación es obligatorio");
+            txtError.setVisibility(View.VISIBLE);
+            etxNumero.setError("Obligatorio");
+            return false;
+        }
+ // Paso 2 valido el numero escrito con parse En caso negativo error!!
+        int n;
+        try {
+            n = Integer.parseInt(valor);
+        } catch (NumberFormatException e) {
+            txtError.setText("Debe ser un número válido");
+            txtError.setVisibility(View.VISIBLE);
+            etxNumero.setError("Número inválido");
+            return false;
+        }
+// Paso 3 valido el rango del la habitacion si es incorrecto error !!
+        if (n < 100 || n > 599) {
+            txtError.setText("El número debe estar entre 100 y 599");
+            txtError.setVisibility(View.VISIBLE);
+            etxNumero.setError("Fuera de rango");
+            return false;
+        }
+
+        // OK
+        txtError.setVisibility(View.GONE);
+        etxNumero.setError(null);
+        return true;
+    }
+
+
+
+    // Método para validar nombre y apellidos
+
+    public static boolean validarNombreYApellidos(View v, EditText nombre, EditText apellidos) {
+        String patron = "^[a-zA-ZáéíóúÁÉÍÓÚñÑ\\s]{3,}$";
+        String nom = nombre.getText().toString().trim();
+        String ape = apellidos.getText().toString().trim();
+
+        boolean respuesta = false;
+
+        // Validar nombre
+        if (!nom.matches(patron)) {
+            Snackbar.make(v, "El nombre debe tener al menos 3 letras válidas", Snackbar.LENGTH_SHORT).show();
+            nombre.setBackgroundColor(Color.parseColor("#FFCDD2"));
+            respuesta = true;
+        } else {
+            nombre.setBackgroundColor(Color.TRANSPARENT);
+        }
+
+        // Validar apellido
+        if (!ape.matches(patron)) {
+            Snackbar.make(v, "El apellido debe tener al menos 3 letras válidas", Snackbar.LENGTH_SHORT).show();
+            apellidos.setBackgroundColor(Color.parseColor("#FFCDD2"));
+            respuesta = true;
+        } else {
+            apellidos.setBackgroundColor(Color.TRANSPARENT);
+        }
+
+        // Si no hubo errores, respuesta seguirá en false (válido)
+        return !respuesta;
+    }
+
 
 }

@@ -10,7 +10,7 @@
  * Módulo: Programación Multimedia y Dispositivos Móviles
  */
 
-package com.example.hotel_hw_1.model;
+package com.example.hotel_hw_1.modelos;
 
 import android.content.Context;
 import android.content.Intent;

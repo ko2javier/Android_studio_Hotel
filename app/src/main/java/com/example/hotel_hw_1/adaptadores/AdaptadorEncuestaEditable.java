@@ -18,7 +18,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.example.hotel_hw_1.R;
-import com.example.hotel_hw_1.model.Encuesta;
+import com.example.hotel_hw_1.modelos.Encuesta;
 
 import java.util.List;
 

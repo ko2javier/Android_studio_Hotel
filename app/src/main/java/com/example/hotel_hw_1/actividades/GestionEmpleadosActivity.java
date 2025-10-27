@@ -22,7 +22,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 import com.example.hotel_hw_1.R;
-import com.example.hotel_hw_1.model.Empleado;
+import com.example.hotel_hw_1.modelos.Empleado;
 import com.example.hotel_hw_1.adaptadores.EmpleadoAdapter;
 import com.example.hotel_hw_1.repositorios.EmpleadoData;
 

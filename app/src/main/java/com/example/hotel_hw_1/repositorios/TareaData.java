@@ -12,7 +12,7 @@
 package com.example.hotel_hw_1.repositorios;
 
 
-import com.example.hotel_hw_1.model.Tarea;
+import com.example.hotel_hw_1.modelos.Tarea;
 
 import java.util.ArrayList;
 import java.util.List;

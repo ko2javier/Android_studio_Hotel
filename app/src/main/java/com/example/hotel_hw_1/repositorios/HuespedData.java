@@ -10,7 +10,7 @@ package com.example.hotel_hw_1.repositorios;
  * Módulo: Programación Multimedia y Dispositivos Móviles
  */
 
-import com.example.hotel_hw_1.model.Huesped;
+import com.example.hotel_hw_1.modelos.Huesped;
 
 import java.util.ArrayList;
 import java.util.List;

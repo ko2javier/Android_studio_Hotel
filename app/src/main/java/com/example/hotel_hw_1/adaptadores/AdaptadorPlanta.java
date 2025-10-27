@@ -19,7 +19,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.hotel_hw_1.R;
-import com.example.hotel_hw_1.model.Planta;
+import com.example.hotel_hw_1.modelos.Planta;
 
 import java.util.List;
 

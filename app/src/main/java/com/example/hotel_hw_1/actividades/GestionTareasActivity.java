@@ -19,10 +19,10 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.hotel_hw_1.R;
-import com.example.hotel_hw_1.model.Tarea;
+import com.example.hotel_hw_1.modelos.Tarea;
 import com.example.hotel_hw_1.adaptadores.TareaAdapter;
 import com.example.hotel_hw_1.repositorios.TareaData;
-import com.example.hotel_hw_1.model.Usuario;
+import com.example.hotel_hw_1.modelos.Usuario;
 
 import java.util.List;
 

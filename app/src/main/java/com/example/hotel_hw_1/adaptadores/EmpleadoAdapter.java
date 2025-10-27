@@ -23,7 +23,7 @@ import androidx.annotation.Nullable;
 import android.widget.ArrayAdapter;
 
 import com.example.hotel_hw_1.R;
-import com.example.hotel_hw_1.model.Empleado;
+import com.example.hotel_hw_1.modelos.Empleado;
 
 import java.util.List;
 
