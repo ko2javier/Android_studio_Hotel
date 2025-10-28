@@ -12,6 +12,11 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+/*
+* Con esta clase validamos todos los campos
+* de reserva que son muchisimos
+* como es algo tan particular lo hacemos de una sola vez
+* */
 public class ValidadorReserva {
 
     public static boolean validarFormulario(
@@ -28,7 +33,7 @@ public class ValidadorReserva {
         int errores = 0;
         StringBuilder mensajes = new StringBuilder();
 
-        //  Paso 1 Validar tipo habitación
+        // Paso 1: Validar tipo de habitación
         int idSeleccionado = radioGroupHabitacion.getCheckedRadioButtonId();
         if (idSeleccionado == -1) {
             errores++;
@@ -42,26 +47,44 @@ public class ValidadorReserva {
             rbTriple.setTextColor(Color.BLACK);
         }
 
-        //  PAso 2 Validar fecha
+        // Paso 2: Validar fecha
         String fecha = editFecha.getText().toString().trim();
         if (fecha.isEmpty()) {
             errores++;
-            mensajes.append(" El campo fecha no puede estar vacío.\n");
-            editFecha.setBackgroundColor(Color.parseColor("#FFCDD2"));
+            mensajes.append("• El campo fecha no puede estar vacío.\n");
+            editFecha.setError("Campo obligatorio");
         } else {
-            editFecha.setBackgroundColor(Color.TRANSPARENT);
+            editFecha.setError(null);
         }
 
-        //  PAso 3 Validar nombre/apellidos si es recepcionista
+        // Paso 3: Validar nombre y apellidos (solo para recepcionista)
         if (Usuario.getInstance().getTipo_usuario().equalsIgnoreCase("recepcionista")) {
-            boolean datosValidos = Validaciones.validarNombreYApellidos(v, etNombre, etApellidos);
-            if (!datosValidos) {
+
+            String nombre = etNombre.getText().toString().trim();
+            String apellidos = etApellidos.getText().toString().trim();
+            String patron = "^[a-zA-ZáéíóúÁÉÍÓÚñÑ\\s]{3,}$";
+
+            boolean nombreValido = nombre.matches(patron);
+            boolean apellidosValidos = apellidos.matches(patron);
+
+            if (!nombreValido) {
                 errores++;
-                mensajes.append("Nombre o apellidos inválidos.\n");
+                mensajes.append("• Nombre inválido.\n");
+                etNombre.setError("Nombre inválido (mínimo 3 letras)");
+            } else {
+                etNombre.setError(null);
+            }
+
+            if (!apellidosValidos) {
+                errores++;
+                mensajes.append("• Apellidos inválidos.\n");
+                etApellidos.setError("Apellidos inválidos (mínimo 3 letras)");
+            } else {
+                etApellidos.setError(null);
             }
         }
 
-        //  Paso 4 Mostrar errores
+        // Paso 4: Mostrar errores si existen
         if (errores > 0) {
             new AlertDialog.Builder(context)
                     .setTitle("Errores en el formulario")

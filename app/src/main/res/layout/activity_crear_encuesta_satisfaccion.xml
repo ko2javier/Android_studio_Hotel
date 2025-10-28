@@ -51,7 +51,7 @@
             android:id="@+id/btn_volver_encuesta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="ENVIAR ENCUESTA"
+            android:text="VOLVER"
             android:backgroundTint="#1a759f"
             android:textColor="#FFF"
             android:textStyle="bold"/>

@@ -1,13 +1,7 @@
 package com.example.hotel_hw_1.repositorios;
 /**
  * Autor: K. Jabier O'Reilly
- * Proyecto: Gestión de Hotel - Práctica 1ª Evaluación (PMDM 2025/2026)
- * Clase: HuespedData.java
- * Descripción: Clase encargada de gestionar la información de los huéspedes,
- *              incluyendo el registro, búsqueda y actualización del estado
- *              (Check-In o Check-Out) dentro del sistema del hotel.
- * Centro: C.F.G.S. Desarrollo de Aplicaciones Multiplataforma
- * Módulo: Programación Multimedia y Dispositivos Móviles
+ *
  */
 
 import com.example.hotel_hw_1.modelos.Huesped;
@@ -37,6 +31,9 @@ public class HuespedData {
         listaHuespedes.add(h);
     }
 
+    /*
+    *  2 respuestas de este método
+    *  null si no hay gest , el húesped si es que está*/
     public static Huesped buscarHuesped(String nombre, String apellidos) {
         for (Huesped h : listaHuespedes) {
             if (h.getNombre().equalsIgnoreCase(nombre) &&
@@ -46,6 +43,7 @@ public class HuespedData {
         }
         return null;
     }
+
 // Ponemos el check out en el usuario para que se vea en la lista!!
     public static boolean marcarCheckOut(String nombre, String apellidos) {
         Huesped h = buscarHuesped(nombre, apellidos);

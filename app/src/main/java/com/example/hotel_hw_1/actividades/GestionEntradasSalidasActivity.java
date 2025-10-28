@@ -1,11 +1,6 @@
 /**
  * Autor: K. Jabier O'Reilly
- * Proyecto: Gestión de Hotel - Práctica 1ª Evaluación (PMDM 2025/2026)
- * Clase: GestionEntradasSalidasActivity.java
- * Descripción: Gestiona los procesos de Check-In y Check-Out de los huéspedes,
- *              validando los datos y actualizando el registro del hotel.
- * Centro: C.F.G.S. Desarrollo de Aplicaciones Multiplataforma
- * Módulo: Programación Multimedia y Dispositivos Móviles
+ *
  */
 
 package com.example.hotel_hw_1.actividades;
@@ -18,15 +13,23 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
+
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.hotel_hw_1.R;
 import com.example.hotel_hw_1.modelos.Huesped;
+import com.example.hotel_hw_1.modelos.Validaciones;
 import com.example.hotel_hw_1.repositorios.HuespedData;
 import com.google.android.material.snackbar.Snackbar;
 
 public class GestionEntradasSalidasActivity extends AppCompatActivity {
+    private RadioGroup radioGroupOperacion;
+    private RadioButton rbCheckIn, rbCheckOut;
+    private Button btnVolver, btnCheckIn, btnBuscar,btnCheckOut;
+    private String nombre,apellidos, telefono,habitacion;
+    private  EditText etNombre,etApellidos, etTelefono, etHabitacion, etNombreBuscar, etApellidosBuscar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,27 +38,27 @@ public class GestionEntradasSalidasActivity extends AppCompatActivity {
         setContentView(R.layout.activity_gestion_entradas_salidas);
 
         //  Definimos varibles grales
-        RadioGroup radioGroupOperacion = findViewById(R.id.radio_group_operacion);
-        RadioButton rbCheckIn = findViewById(R.id.rb_check_in);
-        RadioButton rbCheckOut = findViewById(R.id.rb_check_out);
-        Button btnVolver = findViewById(R.id.btn_volver);
+         radioGroupOperacion = findViewById(R.id.radio_group_operacion);
+        rbCheckIn = findViewById(R.id.rb_check_in);
+        rbCheckOut = findViewById(R.id.rb_check_out);
+        btnVolver = findViewById(R.id.btn_volver);
 
         // Ahora los linear
         LinearLayout layoutCheckIn = findViewById(R.id.linear_form_checkin);
         LinearLayout layoutCheckOut = findViewById(R.id.linear_buscar_checkout);
 
         // Los  Check-In
-        EditText etNombre = findViewById(R.id.et_nombre_huesped);
-        EditText etApellidos = findViewById(R.id.et_apellidos_huesped);
-        EditText etTelefono = findViewById(R.id.et_telefono_huesped);
-        EditText etHabitacion = findViewById(R.id.et_habitacion_huesped);
-        Button btnCheckIn = findViewById(R.id.btn_realizar_check_in);
+         etNombre = findViewById(R.id.et_nombre_huesped);
+         etApellidos = findViewById(R.id.et_apellidos_huesped);
+         etTelefono = findViewById(R.id.et_telefono_huesped);
+         etHabitacion = findViewById(R.id.et_habitacion_huesped);
+        btnCheckIn = findViewById(R.id.btn_realizar_check_in);
 
         // Los Check-Out
-        EditText etNombreBuscar = findViewById(R.id.et_nombre_buscar);
-        EditText etApellidosBuscar = findViewById(R.id.et_apellidos_buscar);
-        Button btnBuscar = findViewById(R.id.btn_buscar_checkout);
-        Button btnCheckOut = findViewById(R.id.btn_realizar_check_out);
+         etNombreBuscar = findViewById(R.id.et_nombre_buscar);
+         etApellidosBuscar = findViewById(R.id.et_apellidos_buscar);
+         btnBuscar = findViewById(R.id.btn_buscar_checkout);
+         btnCheckOut = findViewById(R.id.btn_realizar_check_out);
 
         // hacemos los cambios entre  Check-In / Check-Out
         radioGroupOperacion.setOnCheckedChangeListener((group, checkedId) -> {
@@ -68,84 +71,123 @@ public class GestionEntradasSalidasActivity extends AppCompatActivity {
             }
         });
 
-        // REgistrar husped con el buton a la escucha!!
+        // Registrar husped con el buton a la escucha!!
         btnCheckIn.setOnClickListener(v -> {
-            String nombre = etNombre.getText().toString().trim();
-            String apellidos = etApellidos.getText().toString().trim();
-            String telefono = etTelefono.getText().toString().trim();
-            String habitacion = etHabitacion.getText().toString().trim();
 
-            if (validaciones_campos(v, nombre, apellidos, telefono, habitacion)) return;
-
-
-            Huesped nuevo = new Huesped(nombre, apellidos, telefono, habitacion);
-            HuespedData.agregarHuesped(nuevo);
-            Snackbar.make(v, "Exito Check-In realizado ", Snackbar.LENGTH_LONG).show();
-
-            // Limpiar campos
-            etNombre.setText("");
-            etApellidos.setText("");
-            etTelefono.setText("");
-            etHabitacion.setText("");
+            registrar_huesped(v);
         });
 
         //  Buscamos gest  para Check-Out
         btnBuscar.setOnClickListener(v -> {
-            String nombre = etNombreBuscar.getText().toString().trim();
-            String apellidos = etApellidosBuscar.getText().toString().trim();
-
-            if (nombre.isEmpty() || apellidos.isEmpty()) {
-                Snackbar.make(v, "Introduzca nombre y apellidos", Snackbar.LENGTH_SHORT).show();
-                return;
-            }
-
-            Huesped h = HuespedData.buscarHuesped(nombre, apellidos);
-            if (h != null && h.isCheckInActivo()) {
-                btnCheckOut.setVisibility(Button.VISIBLE);
-                Snackbar.make(v, "Huésped encontrado: " + h.getNombre() + " " + h.getApellidos(), Snackbar.LENGTH_SHORT).show();
-            } else {
-                btnCheckOut.setVisibility(Button.GONE);
-                mostrarDialogoNoEncontrado();
-            }
+            buscar_huesped(v);
         });
 
         // Hacemos  Check-Out (cambiar estado)
         btnCheckOut.setOnClickListener(v -> {
-            String nombre = etNombreBuscar.getText().toString().trim();
-            String apellidos = etApellidosBuscar.getText().toString().trim();
-
-            boolean exito = HuespedData.marcarCheckOut(nombre, apellidos);
-            if (exito) {
-                Snackbar.make(v, " Exito Check-Out realizado ", Snackbar.LENGTH_LONG).show();
-                btnCheckOut.setVisibility(Button.GONE);
-                etNombreBuscar.setText("");
-                etApellidosBuscar.setText("");
-            } else {
-                Snackbar.make(v, " Check-Out Fallido", Snackbar.LENGTH_LONG).show();
-            }
+            realizar_check_out(v);
         });
 
-        // 🔹 Volver
+        //  Volver
         btnVolver.setOnClickListener(v -> finish());
     }
 
-    private static boolean validaciones_campos(View v, String nombre, String apellidos, String telefono, String habitacion) {
-        if (nombre.length()<3 || apellidos.length()<3 ) {
-            Snackbar.make(v, "Nombre/apellidos minimo 3 caracteres", Snackbar.LENGTH_SHORT).show();
-            return true;
+    private void realizar_check_out(View v) {
+        nombre = etNombreBuscar.getText().toString().trim();
+        apellidos = etApellidosBuscar.getText().toString().trim();
+        boolean exito = HuespedData.marcarCheckOut(nombre, apellidos);
+        if (exito) {
+            Snackbar.make(v, " Exito Check-Out realizado ", Snackbar.LENGTH_LONG).show();
+            btnCheckOut.setVisibility(Button.GONE);
+            etNombreBuscar.setText("");
+            etApellidosBuscar.setText("");
+        } else {
+            Snackbar.make(v, " Check-Out Fallido", Snackbar.LENGTH_LONG).show();
         }
-        // Validamos phone, numeros no letras y 9 dig
-        if (!telefono.matches("\\d{9}")) { // exactamente 9 dígitos
-            Snackbar.make(v, "Teléfono inválido. Use 9 números.", Snackbar.LENGTH_SHORT).show();
-            return true;
+    }
+
+    private void registrar_huesped(View v) {
+        if (!validaciones_campos(v)) return;
+        nombre = etNombre.getText().toString().trim();
+        apellidos = etApellidos.getText().toString().trim();
+        telefono = etTelefono.getText().toString().trim();
+        habitacion = etHabitacion.getText().toString().trim();
+
+        Huesped nuevo = new Huesped(nombre, apellidos, telefono, habitacion);
+        HuespedData.agregarHuesped(nuevo);
+        Snackbar.make(v, "Exito Check-In realizado ", Snackbar.LENGTH_LONG).show();
+
+        // Limpiar campos
+        etNombre.setText("");
+        etApellidos.setText("");
+        etTelefono.setText("");
+        etHabitacion.setText("");
+    }
+
+    private void buscar_huesped(View v) {
+        int errores = 0;
+        StringBuilder msg = new StringBuilder();
+
+        if (!Validaciones.validarNombre( etNombreBuscar)) {
+            errores++;
+            msg.append("• Nombre inválido.\n");
+        }
+        if (!Validaciones.validarApellidos( etApellidosBuscar)) {
+            errores++;
+            msg.append("• Apellidos inválidos.\n");
+        }
+        if (errores > 0) {
+            new AlertDialog.Builder(this)
+                    .setTitle("Errores en el formulario")
+                    .setMessage(msg.toString())
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .setPositiveButton("Aceptar", null)
+                    .show();
+            return ;
+        }
+        nombre = etNombreBuscar.getText().toString().trim();
+        apellidos = etApellidosBuscar.getText().toString().trim();
+
+        Huesped h = HuespedData.buscarHuesped(nombre, apellidos);
+        if (h != null && h.isCheckInActivo()) {
+            btnCheckOut.setVisibility(Button.VISIBLE);
+            Snackbar.make(v, "Huésped encontrado: " + h.getNombre() + " " + h.getApellidos(), Snackbar.LENGTH_SHORT).show();
+        } else {
+            btnCheckOut.setVisibility(Button.GONE);
+            mostrarDialogoNoEncontrado();
+        }
+    }
+
+    private boolean validaciones_campos(View v) {
+        int errores = 0;
+        StringBuilder msg = new StringBuilder();
+
+        if (!Validaciones.validarNombre( etNombre)) {
+            errores++;
+            msg.append("• Nombre inválido.\n");
+        }
+        if (!Validaciones.validarApellidos( etApellidos)) {
+            errores++;
+            msg.append("• Apellidos inválidos.\n");
+        }
+        if (!Validaciones.validarTelefonoNuevo( etTelefono)) {
+            errores++;
+            msg.append("• Teléfono inválido (9 dígitos).\n");
+        }
+        if (!Validaciones.validarHabitacionObligatoria(v, etHabitacion, new TextView(this))) {
+            errores++;
+            msg.append("• Habitación inválida (100–599).\n");
         }
 
-        // Valido habitacion tiene que ser numero y entre 100 y 599!!
-        if (!habitacion.matches("^[1-5]\\d{2}$")) {
-            Snackbar.make(v, "Número de habitación inválido (100–599)", Snackbar.LENGTH_SHORT).show();
-            return true;
+        if (errores > 0) {
+            new AlertDialog.Builder(this)
+                    .setTitle("Errores en el formulario")
+                    .setMessage(msg.toString())
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .setPositiveButton("Aceptar", null)
+                    .show();
+            return false;
         }
-        return false;
+        return true;
     }
 
     private void mostrarDialogoNoEncontrado() {

@@ -1,15 +1,11 @@
 /**
  * Autor: K. Jabier O'Reilly
- * Proyecto: Gestión de Hotel - Práctica 1ª Evaluación (PMDM 2025/2026)
- * Clase: Pantalla_Registro.java
- * Descripción: Pantalla de registro de nuevos usuarios (huéspedes).
- *              Incluye validaciones de todos los campos y control del switch de términos.
- * Centro: C.F.G.S. Desarrollo de Aplicaciones Multiplataforma
- * Módulo: Programación Multimedia y Dispositivos Móviles
+ *
  */
 
 package com.example.hotel_hw_1.actividades;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -39,11 +35,6 @@ public class Pantalla_Registro extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_pantalla_registro);
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.mainPantallaRegistro), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
 
         // Identificamos varibles con id !!
          et_nombre = findViewById(R.id.Campo_DatosNombreUser_PantallaRegistro);
@@ -65,7 +56,7 @@ public class Pantalla_Registro extends AppCompatActivity {
 
         // Botón registrar
         btn_registrar.setOnClickListener(v -> {
-            if (validar_campos(v)) return;
+            if (!validar_campos(v)) return;
 
             registrar_user(v);
         });
@@ -94,25 +85,67 @@ public class Pantalla_Registro extends AppCompatActivity {
         }, 1500);
     }
 
+    /* metodo para validar todos los campos del registro
+    * en este caaso el usuario validado podra entrar al sistema como huesped despues!!
+    * */
     private boolean validar_campos(View v) {
-        // Validaciones secuenciales,  usando la clase Validaciones
-        if (!Validaciones.validarCampoNoVacio(v, et_nombre, "Debe ingresar su nombre")) return true;
-        if (!Validaciones.validarNombreOApellido(v, et_nombre, "El nombre")) return true;
+        int errores = 0;
+        StringBuilder msg = new StringBuilder();
 
-        if (!Validaciones.validarCampoNoVacio(v, et_apellidos, "Debe ingresar sus apellidos"))
-            return true;
-        if (!Validaciones.validarNombreOApellido(v, et_apellidos, "Los apellidos")) return true;
-
-        if (!Validaciones.validarEmail(v, et_email)) return true;
-        if (!Validaciones.validarTelefono(v, et_phone)) return true;
-        if (!Validaciones.validarPassword(v, et_password)) return true;
-        if (!Validaciones.validarConfirmacionPassword(v, et_password, et_confirmPassword))
-            return true;
-
-        if (!sw_terminos.isChecked()) {
-            Snackbar.make(v, "Debe aceptar los términos y condiciones", Snackbar.LENGTH_SHORT).show();
-            return true;
+        // Paso 1:  Nombre
+        if (!Validaciones.validarNombre(et_nombre)) {
+            errores++;
+            msg.append("• Nombre inválido.\n");
         }
-        return false;
+
+        // Paso 2: Apellidos
+        if (!Validaciones.validarApellidos(et_apellidos)) {
+            errores++;
+            msg.append("• Apellidos inválidos.\n");
+        }
+
+        // Paso 3: Email
+        if (!Validaciones.validarEmail(v, et_email)) {
+            errores++;
+            msg.append("• Email inválido.\n");
+        }
+
+        // Paso 4: Teléfono
+        if (!Validaciones.validarTelefonoNuevo(et_phone)) {
+            errores++;
+            msg.append("• Teléfono inválido (9 dígitos).\n");
+        }
+
+        // Paso 5: Contraseña
+        if (!Validaciones.validarPassword(v, et_password)) {
+            errores++;
+            msg.append("• La contraseña debe tener al menos 4 caracteres.\n");
+        }
+
+        // Paso 6: Confirmación de contraseña
+        if (!Validaciones.validarConfirmacionPassword(v, et_password, et_confirmPassword)) {
+            errores++;
+            msg.append("• Las contraseñas no coinciden.\n");
+        }
+
+        // Paso 7: Términos y condiciones
+        if (!Validaciones.validarTerminos(sw_terminos, this)) {
+            errores++;
+            msg.append("• Debe aceptar los términos y condiciones.\n");
+        }
+
+        // Paso 8: Si hay errores, mostrar todos juntos
+        if (errores > 0) {
+            new AlertDialog.Builder(this)
+                    .setTitle("Errores en el formulario")
+                    .setMessage(msg.toString())
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .setPositiveButton("Aceptar", null)
+                    .show();
+            return false; // Retornamos False porque hay errores
+        }
+
+        return true;
     }
+
 }

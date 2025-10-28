@@ -36,6 +36,7 @@ public class Realizar_Reserva_Activity extends AppCompatActivity {
     private RadioGroup radio_group, radiog_type_pension;
     private   EditText edit_fecha, etNombreHuesped, et_apellidos;
     private TextView txt_disponibilidad_actual;
+    private Button btn_confirmar_reserva, btn_volver_reserva_flat;
 
 
     // Metodo para verificar la reserva realizada
@@ -123,8 +124,8 @@ public class Realizar_Reserva_Activity extends AppCompatActivity {
          radiog_type_pension= findViewById(R.id.radiog_type_pension);
          rb_media_pension= findViewById(R.id.rb_media_pension);
         rb_pension_full= findViewById(R.id.rb_pension_full);
-        Button btn_confirmar_reserva= findViewById(R.id.btn_confirmar_reserva_flat);
-        Button btn_volver_reserva_flat = findViewById(R.id.btn_volver_reserva_flat);
+        btn_confirmar_reserva= findViewById(R.id.btn_confirmar_reserva_flat);
+        btn_volver_reserva_flat = findViewById(R.id.btn_volver_reserva_flat);
          txt_disponibilidad_actual = findViewById(R.id.txt_disponibilidad_actual);
         LinearLayout linearPlanta = findViewById(R.id.linear_planta_reserva);
         Spinner spinnerPlanta = findViewById(R.id.spinner_planta);
@@ -135,7 +136,7 @@ public class Realizar_Reserva_Activity extends AppCompatActivity {
 
         // Obtener usuario actual
         Usuario usuario = Usuario.getInstance();
-      // Cmprobamos el tipo de usuario y oculatamos para huesped!!
+      // Comprobamos el tipo de usuario y ocultamos para huesped!!
         if (usuario.getTipo_usuario().equalsIgnoreCase("recepcionista")) {
             linearPlanta.setVisibility(View.VISIBLE); // HAcemos visible solo para recepcionista
             etNombreHuesped.setVisibility(View.VISIBLE);
@@ -155,42 +156,44 @@ public class Realizar_Reserva_Activity extends AppCompatActivity {
         });
 
         btn_confirmar_reserva.setOnClickListener(v -> {
-
             confirmar_reserva(v);
         });
 
         // ---  Pongo a la escucha el Selector de fecha DatePickerDialog ---
         edit_fecha.setOnClickListener(v -> {
-            final Calendar calen = Calendar.getInstance();
-            int year = calen.get(Calendar.YEAR);
-            int month = calen.get(Calendar.MONTH);
-            int day = calen.get(Calendar.DAY_OF_MONTH);
-
-            DatePickerDialog datePicker = new DatePickerDialog(
-                    this,
-                    (view, selectedYear, selectedMonth, selectedDay) -> {
-                        // Le doy formato a mi Fecha
-                        String fechaSeleccionada = String.format("%02d-%02d-%04d",
-                                selectedDay, (selectedMonth + 1), selectedYear);
-                        edit_fecha.setText(fechaSeleccionada);
-                    },
-                    year, month, day
-            );
-
-            // Limitar fechas válidas
-            Calendar minDate = Calendar.getInstance(); // hoy
-            datePicker.getDatePicker().setMinDate(minDate.getTimeInMillis());
-
-            Calendar maxDate = Calendar.getInstance();
-            maxDate.add(Calendar.YEAR, 2); // 2 años por encima!!!
-            datePicker.getDatePicker().setMaxDate(maxDate.getTimeInMillis());
-
-            datePicker.show();
+            reservar_fecha();
         });
 
+    }
 
+    /* Reservo la fecha adecuada, con los limitadores correspondientes*/
+    private void reservar_fecha() {
+        final Calendar calen = Calendar.getInstance();
+        int year = calen.get(Calendar.YEAR);
+        int month = calen.get(Calendar.MONTH);
+        int day = calen.get(Calendar.DAY_OF_MONTH);
 
+        DatePickerDialog datePicker = new DatePickerDialog(
+                this,
+                (view, selectedYear, selectedMonth, selectedDay) -> {
+                    // Le doy formato a mi Fecha
+                    String fechaSeleccionada = String.format("%02d-%02d-%04d",
+                            selectedDay, (selectedMonth + 1), selectedYear);
+                    edit_fecha.setText(fechaSeleccionada);
+                },
+                year, month, day
+        );
 
+        // Limitar fechas válidas
+        Calendar minDate = Calendar.getInstance(); // hoy
+        minDate.add(Calendar.DAY_OF_MONTH, 2);
+        datePicker.getDatePicker().setMinDate(minDate.getTimeInMillis());
+
+        Calendar maxDate = Calendar.getInstance();
+        maxDate.add(Calendar.YEAR, 2); // 2 años por encima!!!
+        datePicker.getDatePicker().setMaxDate(maxDate.getTimeInMillis());
+
+        datePicker.show();
     }
 
 

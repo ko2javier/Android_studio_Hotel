@@ -1,15 +1,11 @@
 /**
  * Autor: K. Jabier O'Reilly
- * Proyecto: Gestión de Hotel - Práctica 1ª Evaluación (PMDM 2025/2026)
- * Clase: Validaciones.java
- * Descripción: Clase utilitaria que centraliza las validaciones de los campos
- *              de entrada del sistema.
- * Centro: C.F.G.S. Desarrollo de Aplicaciones Multiplataforma
- * Módulo: Programación Multimedia y Dispositivos Móviles
+ *
  */
 
 package com.example.hotel_hw_1.modelos;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.view.View;
 import android.widget.EditText;
@@ -19,77 +15,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 public class Validaciones {
 
-    //  Valida campo vacío
-    public static boolean validarCampoNoVacio(View v, EditText campo, String mensaje) {
-        String texto = campo.getText().toString().trim();
-        if (texto.isEmpty()) {
-            Snackbar.make(v, mensaje, Snackbar.LENGTH_SHORT).show();
-            campo.requestFocus();
-            return false;
-        }
-        return true;
-    }
-
-    //  Nombre o apellidos (solo letras y mínimo 3 caracteres)
-    public static boolean validarNombreOApellido(View v, EditText campo, String etiqueta) {
-        String texto = campo.getText().toString().trim();
-        if (!texto.matches("^[a-zA-ZáéíóúÁÉÍÓÚñÑ\\s]{3,}$")) {
-            Snackbar.make(v, etiqueta + " debe tener al menos 3 letras válidas", Snackbar.LENGTH_SHORT).show();
-            campo.requestFocus();
-            return false;
-        }
-        return true;
-    }
-
-    //  Teléfono: 9 dígitos
-    public static boolean validarTelefono(View v, EditText campo) {
-        String texto = campo.getText().toString().trim();
-        if (!texto.matches("^\\d{9}$")) {
-            Snackbar.make(v, "El teléfono debe tener 9 dígitos numéricos", Snackbar.LENGTH_SHORT).show();
-            campo.requestFocus();
-            return false;
-        }
-        return true;
-    }
-
-    //  Contraseña: mínimo 4 caracteres
-    public static boolean validarPassword(View v, EditText campo) {
-        String pass = campo.getText().toString().trim();
-        if (pass.length() < 4) {
-            Snackbar.make(v, "La contraseña debe tener al menos 4 caracteres", Snackbar.LENGTH_SHORT).show();
-            campo.requestFocus();
-            return false;
-        }
-        return true;
-    }
-
-    //  Confirmar contraseñas iguales!!
-    public static boolean validarConfirmacionPassword(View v, EditText pass1, EditText pass2) {
-        if (!pass1.getText().toString().equals(pass2.getText().toString())) {
-            Snackbar.make(v, "Las contraseñas no coinciden", Snackbar.LENGTH_SHORT).show();
-            pass2.requestFocus();
-            return false;
-        }
-        return true;
-    }
-    //  Confirmar email
-    public static boolean validarEmail(View v, EditText campo) {
-        String email = campo.getText().toString().trim();
-
-        // Expresión regular para validar formato de email
-        String patronEmail = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$";
-
-        if (!email.matches(patronEmail) || email.isEmpty()) {
-            Snackbar.make(v, "Email vacio o formato inválido. Corrija !", Snackbar.LENGTH_SHORT).show();
-            campo.requestFocus();
-            return false;
-        }
-
-        return true;
-    }
-
-
-    // Método para validar numero de habitaciones
+    //1-  Método para validar numero de habitaciones
     public static boolean validarHabitacionObligatoria(View v,
                                                        EditText etxNumero,
                                                        TextView txtError) {
@@ -102,7 +28,7 @@ public class Validaciones {
             etxNumero.setError("Obligatorio");
             return false;
         }
- // Paso 2 valido el numero escrito con parse En caso negativo error!!
+        // Paso 2 valido el numero escrito con parse En caso negativo error!!
         int n;
         try {
             n = Integer.parseInt(valor);
@@ -126,38 +52,110 @@ public class Validaciones {
         return true;
     }
 
-
-
-    // Método para validar nombre y apellidos
-
-    public static boolean validarNombreYApellidos(View v, EditText nombre, EditText apellidos) {
-        String patron = "^[a-zA-ZáéíóúÁÉÍÓÚñÑ\\s]{3,}$";
-        String nom = nombre.getText().toString().trim();
-        String ape = apellidos.getText().toString().trim();
-
-        boolean respuesta = false;
-
-        // Validar nombre
-        if (!nom.matches(patron)) {
-            Snackbar.make(v, "El nombre debe tener al menos 3 letras válidas", Snackbar.LENGTH_SHORT).show();
-            nombre.setBackgroundColor(Color.parseColor("#FFCDD2"));
-            respuesta = true;
+    // 2- Valida nombre: solo letras, mínimo 3 caracteres
+    public static boolean validarNombre(EditText campo) {
+        String texto = campo.getText().toString().trim();
+        if (!texto.matches("^[a-zA-ZáéíóúÁÉÍÓÚñÑ\\s]{3,}$")) {
+            campo.setError("Nombre inválido. Solo letras, mínimo 3 caracteres");
+            return false;
         } else {
-            nombre.setBackgroundColor(Color.TRANSPARENT);
+            campo.setError(null);
+            return true;
         }
-
-        // Validar apellido
-        if (!ape.matches(patron)) {
-            Snackbar.make(v, "El apellido debe tener al menos 3 letras válidas", Snackbar.LENGTH_SHORT).show();
-            apellidos.setBackgroundColor(Color.parseColor("#FFCDD2"));
-            respuesta = true;
-        } else {
-            apellidos.setBackgroundColor(Color.TRANSPARENT);
-        }
-
-        // Si no hubo errores, respuesta seguirá en false (válido)
-        return !respuesta;
     }
 
+    // 3- Valida apellidos: solo letras, mínimo 3 caracteres
+    public static boolean validarApellidos(EditText campo) {
+        String texto = campo.getText().toString().trim();
+        if (!texto.matches("^[a-zA-ZáéíóúÁÉÍÓÚñÑ\\s]{3,}$")) {
+            campo.setError("Apellidos inválidos. Solo letras, mínimo 3 caracteres");
+            return false;
+        } else {
+            campo.setError(null);
+            return true;
+        }
+    }
+
+    // 4- Valida teléfono: exactamente 9 dígitos numéricos
+    public static boolean validarTelefonoNuevo(EditText campo) {
+        String texto = campo.getText().toString().trim();
+        if (!texto.matches("^\\d{9}$")) {
+            campo.setError("Teléfono inválido (9 dígitos)");
+            return false;
+        } else {
+            campo.setError(null);
+            return true;
+        }
+    }
+// 5- Valida contraseña , tiene que tener mas de 4 caracteres
+    public static boolean validarPassword(View v, EditText campo) {
+        String pass = campo.getText().toString().trim();
+        if (pass.length() < 4) {
+           campo.setError("La contraseña debe tener al menos 4 caracteres");
+           return false;
+        }
+        campo.setBackgroundColor(Color.TRANSPARENT);
+
+        return true;
+    }
+
+/* 6- Para Validar el rol del Empleado*/
+
+public static boolean validarRol(EditText campo) {
+    String texto = campo.getText().toString().trim();
+
+    // Lista de roles válidos
+    String[] rolesValidos = {"Recepción", "Mantenimiento", "Gerente", "Limpieza"};
+    boolean valido = false;
+
+    for (String rol : rolesValidos) {
+        if (rol.equalsIgnoreCase(texto)) {
+            valido = true;
+            break;
+        }
+    }
+    if (!valido) {
+        campo.setError("Rol inválido. Use: Recepción, Mantenimiento, Gerente o Limpieza");
+        return false;
+    }
+
+    campo.setError(null);
+    return true;
+    }
+
+    // 8-  Metodo para validar Email !!
+    public static boolean validarEmail(View v, EditText campo) {
+        String email = campo.getText().toString().trim();
+        // Expresión regular para validar formato de email
+        String patronEmail = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$";
+        if (!email.matches(patronEmail) || email.isEmpty()) {
+            campo.setError("Email vacio o formato inválido");
+
+            return false;
+        }
+        campo.setError(null);
+        return true;
+    }
+
+    // 9- Método para validar terminos y condiciones
+    public static boolean validarTerminos(Switch switchTerminos, Context context) {
+        if (!switchTerminos.isChecked()) {
+            switchTerminos.setError("Debe aceptar los términos y condiciones");
+            return false;
+        }
+        switchTerminos.setError(null);
+        return true;
+    }
+    // 10- Método para validar terminos y condiciones
+    public static boolean validarConfirmacionPassword(View v, EditText pass1, EditText pass2) {
+        if (!pass1.getText().toString().equals(pass2.getText().toString())) {
+            pass2.setError("La contraseña no coincide");
+
+            return false;
+        }
+         pass2.setError(null);
+
+        return true;
+    }
 
 }

@@ -11,6 +11,7 @@ package com.example.hotel_hw_1.actividades;
 
 import android.os.Bundle;
 import android.util.Patterns;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -20,6 +21,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.hotel_hw_1.R;
 import com.example.hotel_hw_1.modelos.Empleado;
+import com.example.hotel_hw_1.modelos.Validaciones;
 import com.example.hotel_hw_1.repositorios.EmpleadoData;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -78,57 +80,72 @@ public class EmpleadoFormActivity extends AppCompatActivity {
 * el elemento clave para ver que hace --> modoEditar = true; !!!
 *
 * */
+private void guardarEmpleado(View v) {
+    String nombre = etNombre.getText().toString().trim();
+    String apellidos = etApellidos.getText().toString().trim();
+    String rol = etRol.getText().toString().trim();
+    String email = etEmail.getText().toString().trim();
+    String telefono = etTelefono.getText().toString().trim();
 
-    private void guardarEmpleado(android.view.View v) {
-        String nombre = etNombre.getText().toString().trim();
-        String apellidos = etApellidos.getText().toString().trim();
-        String rol = etRol.getText().toString().trim().toLowerCase();
-        String email = etEmail.getText().toString().trim();
-        String telefono = etTelefono.getText().toString().trim();
+    int errores = 0;
+    StringBuilder msg = new StringBuilder();
 
-// Validaciones empezamos con nombre/apellidos
-        if (nombre.length()<3 || apellidos.length()<3) {
-            Snackbar.make(v, "Nombre/Apelllidos deben tener 3 caracteres min", Snackbar.LENGTH_SHORT).show();
-            return;
-        }
-        //2-  Si el rol no se corresponde mostramos dialog.
-        if(!rol.equals("recepcionista") && !rol.equals("mantenimiento") &&
-                !rol.equals("limpieza")  ){
-
-           new AlertDialog.Builder(this).setTitle("Error")
-            .setMessage("Escriba un rol válido: 'recepcionista', 'mantenimiento' o 'limpieza'")
-                    .setPositiveButton("OK", null)
-                    .show();
-            return;
-        }
-
-        // 3- Validamos phone, numeros no letras y 9 dig
-        if (!telefono.matches("\\d{9}")) { // exactamente 9 dígitos
-            Snackbar.make(v, "Teléfono inválido. Use 9 números.", Snackbar.LENGTH_SHORT).show();
-            return;
-        }
-        // 4- Validar correo electronico
-        if ( !Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            Snackbar.make(v, "Correo electrónico inválido", Snackbar.LENGTH_SHORT).show();
-            return;
-        }
-
-
-        if (modoEditar) {
-            empleadoActual.setNombre(nombre);
-            empleadoActual.setApellidos(apellidos);
-            empleadoActual.setRol(rol);
-            empleadoActual.setEmail(email);
-            empleadoActual.setTelefono(telefono);
-            Snackbar.make(v, "Empleado actualizado correctamente", Snackbar.LENGTH_SHORT).show();
-        } else {
-            Empleado nuevo = new Empleado(nombre, apellidos, rol, email, telefono);
-            EmpleadoData.agregarEmpleado(nuevo);
-            Snackbar.make(v, "Empleado agregado correctamente", Snackbar.LENGTH_SHORT).show();
-        }
-
-        finish(); // vuelvemos a la pantalle anterior
+    //  Paso 1- Validar nombre y apellidos
+    if (!Validaciones.validarNombre(etNombre)) {
+        errores++;
+        msg.append("• Nombre inválido (mínimo 3 letras).\n");
     }
+    if (!Validaciones.validarApellidos(etApellidos)) {
+        errores++;
+        msg.append("• Apellidos inválidos (mínimo 3 letras).\n");
+    }
+
+    // PAso 2- Validar rol
+    if (!Validaciones.validarRol(etRol)) {
+        errores++;
+        msg.append("• Rol inválido. Use: Recepción, Mantenimiento, Gerente o Limpieza.\n");
+    }
+
+    // Paso 3- Validar teléfono
+    if (!Validaciones.validarTelefonoNuevo(etTelefono)) {
+        errores++;
+        msg.append("• Teléfono inválido (9 dígitos).\n");
+    }
+
+    // Paso 4-  Validar email
+    if (!Validaciones.validarEmail(v, etEmail)) {
+        errores++;
+        msg.append("• Correo electrónico inválido.\n");
+    }
+
+    // PAso 5-  Si hay errores, mostramos un diálogo y salimos
+    if (errores > 0) {
+        new AlertDialog.Builder(this)
+                .setTitle("Errores en el formulario")
+                .setMessage(msg.toString())
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setPositiveButton("Aceptar", null)
+                .show();
+        return;
+    }
+
+    // PAso 6- Si no hay errores, guardamos o actualizamos
+    if (modoEditar) {
+        empleadoActual.setNombre(nombre);
+        empleadoActual.setApellidos(apellidos);
+        empleadoActual.setRol(rol);
+        empleadoActual.setEmail(email);
+        empleadoActual.setTelefono(telefono);
+        Snackbar.make(v, "Empleado actualizado correctamente", Snackbar.LENGTH_SHORT).show();
+    } else {
+        Empleado nuevo = new Empleado(nombre, apellidos, rol, email, telefono);
+        EmpleadoData.agregarEmpleado(nuevo);
+        Snackbar.make(v, "Empleado agregado correctamente", Snackbar.LENGTH_SHORT).show();
+    }
+
+    finish(); // Volver a la pantalla anterior
+}
+
 
 
 }
