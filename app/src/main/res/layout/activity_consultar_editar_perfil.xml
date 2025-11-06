@@ -25,62 +25,112 @@
 
         />
 
+    <TextView
+        android:id="@+id/txt_nombre"
+        android:layout_width="match_parent"
+        android:layout_marginTop="30dp"
+        android:text="Nombre: "
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_height="wrap_content"/>
+
     <EditText
         android:id="@+id/campo_nombre_editar_perfil"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="nombre"
         android:enabled="false"
-        android:layout_marginTop="50dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:inputType="text"
         />
+    <TextView
+        android:id="@+id/txt_apellidos"
+        android:layout_width="match_parent"
+        android:text="Apellidos: "
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:textSize="15sp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_height="wrap_content"/>
     <EditText
         android:id="@+id/campo_apellidos_editar_perfil"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="apellidos"
+
         android:enabled="false"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:inputType="text"
         />
+    <TextView
+        android:id="@+id/txt_email"
+        android:layout_width="match_parent"
+        android:text="Correo Electrónico: "
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:textSize="15sp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_height="wrap_content"/>
     <EditText
         android:id="@+id/campo_email_editar_perfil"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="email"
         android:enabled="false"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:inputType="textEmailAddress"
         />
+    <TextView
+        android:id="@+id/txt_phone"
+        android:layout_width="match_parent"
+        android:text="Teléfono: "
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:textSize="15sp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_height="wrap_content"/>
     <EditText
         android:id="@+id/campo_telefono_editar_perfil"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="telefono"
         android:enabled="false"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:inputType="phone"
         />
+    <TextView
+        android:id="@+id/txt_pass"
+        android:layout_width="match_parent"
+        android:text="Contraseña: "
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:textSize="15sp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_height="wrap_content"/>
     <EditText
         android:id="@+id/campo_pass_editar_perfil"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="contraseña"
         android:enabled="false"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:inputType="text"
         />
+    <TextView
+        android:id="@+id/txt_type"
+        android:layout_width="match_parent"
+        android:text="Tipo de Usuario: "
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:textSize="15sp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_height="wrap_content"/>
     <EditText
         android:id="@+id/campo_tipo_user_editar_perfil"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="user_type"
+
         android:enabled="false"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"

@@ -61,7 +61,7 @@
         android:background="#E8F5E9"
         android:padding="10dp"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="10dp"
         android:elevation="2dp"
         android:textStyle="bold"
         android:gravity="center" />
@@ -90,8 +90,6 @@
             android:layout_weight="1"
             android:layout_marginLeft="30dp"
              />
-
-
     </LinearLayout>
 
     <EditText
@@ -112,8 +110,6 @@
         android:visibility="gone"
         android:layout_marginTop="5dp"/>
 
-
-
     <TextView
         android:id="@+id/txt_tipo_room"
         android:text="Elige tipo de habitación:"
@@ -129,7 +125,7 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp">
+        >
         <RadioButton
             android:id="@+id/rbSimple"
             android:text="Simple"
@@ -155,14 +151,14 @@
         android:text="Servicios adicionales:"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"/>
     <LinearLayout
         android:id="@+id/linear_check_box"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="10dp"
         >
         <CheckBox
             android:id="@+id/checkbox_spa"
@@ -177,33 +173,38 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"/>
-        <RadioGroup
-            android:id="@+id/radiog_type_pension"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            >
-            <RadioButton
-                android:id="@+id/rb_media_pension"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1/2 Pensión"
-                />
-            <RadioButton
-                android:id="@+id/rb_pension_full"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Pensión"
-                />
-
-
-
-        </RadioGroup>
-
 
 
     </LinearLayout>
+    <TextView
+        android:id="@+id/txt_servicios_adicionales_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Servicios Adicionales/Pensión:"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"/>
+    <RadioGroup
+        android:id="@+id/radiog_type_pension"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal"
+        >
+        <RadioButton
+            android:id="@+id/rb_media_pension"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1/2 Pensión"
+            />
+        <RadioButton
+            android:id="@+id/rb_pension_full"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pensión"
+            />
+    </RadioGroup>
 
 
     <Button

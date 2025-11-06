@@ -38,24 +38,38 @@ public class AdaptadorPlanta extends ArrayAdapter<Planta> {
                     .inflate(R.layout.item_planta, parent, false);
         }
 
-        // Referencias a los componentes del layout
+        // Referencio los campos por ID
         ImageView imgIcono = convertView.findViewById(R.id.img_icono);
         TextView txtTitulo = convertView.findViewById(R.id.txt_titulo_planta);
-        TextView txtDetalles = convertView.findViewById(R.id.txt_detalles_planta);
 
-        // Icono fijo (hotel)
+        TextView txtSimplesDisp = convertView.findViewById(R.id.txt_simples_disponibles);
+        TextView txtSimplesOcup = convertView.findViewById(R.id.txt_simples_ocupadas);
+
+
+        TextView txtDoblesDisp = convertView.findViewById(R.id.txt_dobles_disponibles);
+        TextView txtDoblesOcup = convertView.findViewById(R.id.txt_dobles_ocupadas);
+
+
+        TextView txtTriplesDisp = convertView.findViewById(R.id.txt_triples_disponibles);
+        TextView txtTriplesOcup = convertView.findViewById(R.id.txt_triples_ocupadas);
+
+        // Asigno el  icono y título
         imgIcono.setImageResource(R.drawable.hotel_bg);
+        txtTitulo.setText(planta.getNombre());
 
-        // Texto de la planta
+        int simplesOcupadas = 40 - planta.getNumSimples();
+        int doblesOcupadas = 50 - planta.getNumDobles();
+        int triplesOcupadas = 10 - planta.getNumTriples();
 
-        txtTitulo.setText(planta.getNombre() );
+        // Asigno los valores!
+        txtSimplesDisp.setText(planta.getNumSimples()+"");
+        txtSimplesOcup.setText(simplesOcupadas+"");
 
-        // Detalles: simples, dobles, triples
-        txtDetalles.setText(
-                "Simples: " + planta.getNumSimples()  +
-                        "\nDobles: " + planta.getNumDobles() +
-                        "\nTriples: " + planta.getNumTriples()
-        );
+        txtDoblesDisp.setText(planta.getNumDobles()+"");
+        txtDoblesOcup.setText(doblesOcupadas+"");
+
+        txtTriplesDisp.setText(planta.getNumTriples()+"");
+        txtTriplesOcup.setText(triplesOcupadas+"");
 
         return convertView;
     }

@@ -10,6 +10,10 @@
 
 package com.example.hotel_hw_1.modelos;
 
+
+/**
+ *
+ */
 public class Empleado {
 
     private String nombre;

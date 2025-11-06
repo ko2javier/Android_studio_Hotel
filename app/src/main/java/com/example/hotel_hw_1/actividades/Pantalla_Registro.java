@@ -135,14 +135,9 @@ public class Pantalla_Registro extends AppCompatActivity {
         }
 
         // Paso 8: Si hay errores, mostrar todos juntos
-        if (errores > 0) {
-            new AlertDialog.Builder(this)
-                    .setTitle("Errores en el formulario")
-                    .setMessage(msg.toString())
-                    .setIcon(android.R.drawable.ic_dialog_alert)
-                    .setPositiveButton("Aceptar", null)
-                    .show();
-            return false; // Retornamos False porque hay errores
+        if (errores > 0 && !isFinishing()) {
+            Validaciones.mostrarErrores(this, msg);
+            return false;
         }
 
         return true;

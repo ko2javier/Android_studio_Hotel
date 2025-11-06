@@ -84,14 +84,9 @@ public class ValidadorReserva {
             }
         }
 
-        // Paso 4: Mostrar errores si existen
-        if (errores > 0) {
-            new AlertDialog.Builder(context)
-                    .setTitle("Errores en el formulario")
-                    .setMessage(mensajes.toString())
-                    .setIcon(android.R.drawable.ic_dialog_alert)
-                    .setPositiveButton("Aceptar", null)
-                    .show();
+        // Paso 4: Mostrar errores si existen usando el metodp de clase Validaciones
+        if (errores > 0 ) {
+            Validaciones.mostrarErrores(context, mensajes);
             return false;
         }
 

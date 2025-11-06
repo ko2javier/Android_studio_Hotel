@@ -48,7 +48,7 @@
         android:layout_gravity="center"
         android:background="#9BD973"
         android:layout_marginTop="30dp"
-        android:text="Consultar Tareas Pdtes/Asignadas"
+        android:text="Consultar Tareas Pendientes/Asignadas"
         android:padding="5dp"
 
         />
@@ -74,7 +74,7 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:background="#F8C537"
-    android:text="Cerrar Sesion "
+    android:text="Cerrar Sesión "
     android:textStyle="bold"
     android:padding="3dp"
 

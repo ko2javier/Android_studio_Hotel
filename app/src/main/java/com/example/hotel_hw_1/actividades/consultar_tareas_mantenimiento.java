@@ -1,11 +1,6 @@
 /**
  * Autor: K. Jabier O'Reilly
- * Proyecto: Gestión de Hotel - Práctica 1ª Evaluación (PMDM 2025/2026)
- * Clase: consultar_tareas_mantenimiento.java
- * Descripción: Pantalla donde el personal de mantenimiento puede ver y filtrar
- *              sus tareas (pendientes o asignadas) mediante una lista y botones de opción.
- * Centro: C.F.G.S. Desarrollo de Aplicaciones Multiplataforma
- * Módulo: Programación Multimedia y Dispositivos Móviles
+
  */
 
 package com.example.hotel_hw_1.actividades;

@@ -43,7 +43,7 @@ public class Planta {
     public int getNumDobles() { return numDobles; }
     public int getNumTriples() { return numTriples; }
 
-    // 🔹 Resta una habitación del tipo que se reserva
+    //  Resta una habitación del tipo que se reserva
     public boolean reservar(String tipoHabitacion) {
         switch (tipoHabitacion.toLowerCase()) {
             case "simple":

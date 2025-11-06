@@ -93,13 +93,8 @@ public class Consultar_Editar_Perfil extends AppCompatActivity {
         }
 
         // Paso 5. Si hay errores mostramos y salimos
-        if (errores > 0) {
-            new AlertDialog.Builder(this)
-                    .setTitle("Errores en el formulario")
-                    .setMessage(msg.toString())
-                    .setIcon(android.R.drawable.ic_dialog_alert)
-                    .setPositiveButton("Aceptar", null)
-                    .show();
+        if (errores > 0 && !isFinishing()) {
+            Validaciones.mostrarErrores(this, msg);
             return false;
         }
 

@@ -1,11 +1,6 @@
 /**
  * Autor: K. Jabier O'Reilly
- * Proyecto: Gestión de Hotel - Práctica 1ª Evaluación (PMDM 2025/2026)
- * Clase: Crear_Encuesta_Satisfaccion.java
- * Descripción: Permite al huésped valorar distintos aspectos del hotel y enviar su encuesta
- *              mostrando una confirmación con el promedio de puntuación.
- * Centro: C.F.G.S. Desarrollo de Aplicaciones Multiplataforma
- * Módulo: Programación Multimedia y Dispositivos Móviles
+
  */
 
 package com.example.hotel_hw_1.actividades;

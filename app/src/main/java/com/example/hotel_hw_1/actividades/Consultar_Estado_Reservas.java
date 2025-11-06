@@ -1,11 +1,6 @@
 /**
  * Autor: K. Jabier O'Reilly
- * Proyecto: Gestión de Hotel - Práctica 1ª Evaluación (PMDM 2025/2026)
- * Clase: Consultar_Estado_Reservas.java
- * Descripción: Muestra al huésped el estado de sus reservas con un listado simple.
- *              Si no hay reservas, se añaden algunas de ejemplo para visualizar la pantalla.
- * Centro: C.F.G.S. Desarrollo de Aplicaciones Multiplataforma
- * Módulo: Programación Multimedia y Dispositivos Móviles
+
  */
 
 package com.example.hotel_hw_1.actividades;

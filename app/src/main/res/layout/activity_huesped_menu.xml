@@ -20,7 +20,7 @@
         android:textStyle="bold"
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
-        android:text="Pantalla Menu huesped"
+        android:text="Pantalla Menu húesped"
         android:textSize="20sp"
         android:textColor="#C32626"
         />
@@ -46,7 +46,7 @@
         android:layout_gravity="center"
         android:background="#9BD973"
         android:layout_marginTop="50dp"
-        android:text="Add Reservas al hotel"
+        android:text="Adicionar Reservas al hotel"
         android:padding="5dp"
 
         />
@@ -58,7 +58,7 @@
         android:layout_gravity="center"
         android:background="#9BD973"
         android:layout_marginTop="50dp"
-        android:text="Check status de Reservas hotel"
+        android:text="Chequear estado Reservas Hotel"
         android:padding="5dp"
 
         />
@@ -96,7 +96,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="#F8C537"
-        android:text="Cerrar Sesion "
+        android:text="Cerrar Sesión "
         android:textStyle="bold"
         android:padding="3dp"
 

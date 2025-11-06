@@ -1,12 +1,9 @@
 /**
  * Autor: K. Jabier O'Reilly
  *
- *
  */
 
 package com.example.hotel_hw_1.actividades;
-
-
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -21,16 +18,15 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.hotel_hw_1.R;
-
 import com.example.hotel_hw_1.modelos.Validaciones;
 import com.google.android.material.snackbar.Snackbar;
 
 public class Solicitar_Tarea extends AppCompatActivity {
 
     private EditText etx_numero_room;
-           private TextView txt_error_habitacion;
-    private  RadioGroup radioGroupTarea;
-    private  Spinner spinnerZona, spinnerPasillo;
+    private TextView txt_error_habitacion;
+    private RadioGroup radioGroupTarea, radioGroupTipoTarea;
+    private Spinner spinnerZona, spinnerPasillo;
     private Button btnEnviar, btnVolver;
 
     private static String[] pasillos = null, zonasLimpieza = null, zonasMantenimiento = null;
@@ -39,81 +35,101 @@ public class Solicitar_Tarea extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //EdgeToEdge.enable(this);
         setContentView(R.layout.activity_solicitar_tarea);
 
-        // Asigno id a mis variables
-
+        //Id a las variables
         radioGroupTarea = findViewById(R.id.radioGroupTarea);
+        radioGroupTipoTarea = findViewById(R.id.radioGroupTipoTarea);
         etx_numero_room = findViewById(R.id.etx_numero_room);
-        txt_error_habitacion= findViewById(R.id.txt_error_habitacion);
+        txt_error_habitacion = findViewById(R.id.txt_error_habitacion);
         spinnerZona = findViewById(R.id.spinnerZona);
         spinnerPasillo = findViewById(R.id.spinnerPasillo);
         btnEnviar = findViewById(R.id.btn_enviar_solicitud);
         btnVolver = findViewById(R.id.btn_volver);
 
-        // Defino arrays
+        // Definos los arrays para los spinners
         pasillos = new String[]{"Norte", "Sur", "Este", "Oeste"};
         zonasLimpieza = new String[]{"Salón", "Dormitorio", "Baño", "General"};
         zonasMantenimiento = new String[]{"Salón", "Dormitorio", "Baño"};
 
-        // Adapter para  spinner pasillos
+        // configuro  spinner pasillos
         ArrayAdapter<String> adapterPasillo = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_item, pasillos);
-
         adapterPasillo.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerPasillo.setAdapter(adapterPasillo);
 
-        // Adapter para  spinner Zona. Por defecto Limpieza es la opcion!
+        // configuro por defecto para zona Limpieza
         ArrayAdapter<String> adapterZona = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_item, zonasLimpieza);
         adapterZona.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerZona.setAdapter(adapterZona);
 
-        /* Como tengo 2 zonas Limpieza y Matenimiento en base a esto
-        * debo de cambiar las opciones que debe tomas el cliente
-        * modifico a mantenimiento/limpieza en base a que tome el radioButton
-        * */
-        radioGroupTarea.setOnCheckedChangeListener((group, checkedId) -> {
-            if (checkedId == R.id.rb_limpieza) {
-                ArrayAdapter<String> adapterLimpieza = new ArrayAdapter<>(this,
-                        android.R.layout.simple_spinner_item, zonasLimpieza);
-                adapterLimpieza.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                spinnerZona.setAdapter(adapterLimpieza);
+        /**
+         * Cambio de opciones el spinnerZona según
+         * tipo principal Limpieza / Mantenimiento
+         */
 
-            } else if (checkedId == R.id.rb_mmto) {
-                ArrayAdapter<String> adapterMmto = new ArrayAdapter<>(this,
-                        android.R.layout.simple_spinner_item, zonasMantenimiento);
-                adapterMmto.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                spinnerZona.setAdapter(adapterMmto);
-            }
+        radioGroupTarea.setOnCheckedChangeListener((group, checkedId) -> {
+            spinner_zona(checkedId);
         });
 
-        // Listener botón Enviar
-        btnEnviar.setOnClickListener(v -> {
-            /*
-            * reviso mis campo habitación con Validar !!! */
-            boolean ok = Validaciones.validarHabitacionObligatoria(v, etx_numero_room, txt_error_habitacion);
-            if (!ok) return;
+        /**
+         * Cambio de visibilidad según tipo de tarea (Habitación / Pasillo)
+         */
 
+        radioGroupTipoTarea.setOnCheckedChangeListener((group, checkedId) -> {
+
+            visibilidad_hab_pasillo(checkedId);
+        });
+
+        // Pongo a la escucha  los listeners
+        btnEnviar.setOnClickListener(v -> {
+            // Reviso campo habitación solo si está visible
+            if (etx_numero_room.getVisibility() == View.VISIBLE) {
+                boolean ok = Validaciones.validarHabitacionObligatoria(v, etx_numero_room, txt_error_habitacion);
+                if (!ok) return;
+            }
             Snackbar.make(v, "Solicitud enviada correctamente", Snackbar.LENGTH_SHORT).show();
             etx_numero_room.setText("");
-
         });
 
-        // Listener botón Volver
         btnVolver.setOnClickListener(v -> finish());
     }
 
-    private void validaciones_de_limpieza(View v) {
-        // Por ahora no validamos nada
-        Snackbar.make(v, "Solicitud enviada correctamente", Snackbar.LENGTH_SHORT).show();
+    private void visibilidad_hab_pasillo(int checkedId) {
+        boolean esPasillo = (checkedId == R.id.rb_pasillo);
 
+        // Si es pasillo → mostrar solo el pasillo
+        findViewById(R.id.linear_spinner_pasillo).setVisibility(esPasillo ? View.VISIBLE : View.GONE);
+
+        // Si es habitación → mostrar número y zona
+        findViewById(R.id.txt_no_habitacion).setVisibility(esPasillo ? View.GONE : View.VISIBLE);
+        etx_numero_room.setVisibility(esPasillo ? View.GONE : View.VISIBLE);
+        txt_error_habitacion.setVisibility(esPasillo ? View.GONE : View.VISIBLE);
+        findViewById(R.id.linear_spinner_zona).setVisibility(esPasillo ? View.GONE : View.VISIBLE);
+    }
+
+    private void spinner_zona(int checkedId) {
+        if (checkedId == R.id.rb_limpieza) {
+            ArrayAdapter<String> adapterLimpieza = new ArrayAdapter<>(this,
+                    android.R.layout.simple_spinner_item, zonasLimpieza);
+            adapterLimpieza.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spinnerZona.setAdapter(adapterLimpieza);
+        } else if (checkedId == R.id.rb_mmto) {
+            ArrayAdapter<String> adapterMmto = new ArrayAdapter<>(this,
+                    android.R.layout.simple_spinner_item, zonasMantenimiento);
+            adapterMmto.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spinnerZona.setAdapter(adapterMmto);
+        }
+    }
+
+    private void validaciones_de_limpieza(View v) {
+        Snackbar.make(v, "Solicitud enviada correctamente", Snackbar.LENGTH_SHORT).show();
         // Limpiar campos
         etx_numero_room.setText("");
         spinnerZona.setSelection(0);
         spinnerPasillo.setSelection(0);
         radioGroupTarea.check(R.id.rb_limpieza);
+        radioGroupTipoTarea.check(R.id.rb_habitacion);
     }
-
 }

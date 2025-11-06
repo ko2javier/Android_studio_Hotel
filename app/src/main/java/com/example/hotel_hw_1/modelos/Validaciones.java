@@ -5,6 +5,8 @@
 
 package com.example.hotel_hw_1.modelos;
 
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.view.View;
@@ -13,6 +15,10 @@ import android.widget.*;
 
 import com.google.android.material.snackbar.Snackbar;
 
+
+/**
+ *
+ */
 public class Validaciones {
 
     //1-  Método para validar numero de habitaciones
@@ -123,7 +129,7 @@ public static boolean validarRol(EditText campo) {
     return true;
     }
 
-    // 8-  Metodo para validar Email !!
+    //  8-  Metodo para validar Email !!
     public static boolean validarEmail(View v, EditText campo) {
         String email = campo.getText().toString().trim();
         // Expresión regular para validar formato de email
@@ -147,6 +153,15 @@ public static boolean validarRol(EditText campo) {
         return true;
     }
     // 10- Método para validar terminos y condiciones
+
+
+    /**
+     *
+     * @param v
+     * @param pass1
+     * @param pass2
+     * @return 1 si coinciden 2 si son distintas
+     */
     public static boolean validarConfirmacionPassword(View v, EditText pass1, EditText pass2) {
         if (!pass1.getText().toString().equals(pass2.getText().toString())) {
             pass2.setError("La contraseña no coincide");
@@ -156,6 +171,19 @@ public static boolean validarRol(EditText campo) {
          pass2.setError(null);
 
         return true;
+    }
+    // 11- Método para mostrar mensajes de error !!
+    public static void mostrarErrores(Context context, StringBuilder mensajes) {
+        if (mensajes.length() == 0) return;
+
+        //if (context instanceof Activity && ((Activity) context).isFinishing()) return;
+
+        new AlertDialog.Builder(context)
+                .setTitle("Errores en el formulario")
+                .setMessage(mensajes.toString())
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setPositiveButton("Aceptar", null)
+                .show();
     }
 
 }

@@ -73,7 +73,7 @@ public class Pantalla_Inicio extends AppCompatActivity {
     }
 /* Método para validar campos user y pass, si están
 *     bien, cumplen con los parámetros mínimos
-* se comprueba si existen en UsuarioData.*/
+* se comprueba si existe en UsuarioData.*/
 
     private void validar_login(View v) {
         int errores = 0;
@@ -92,15 +92,8 @@ public class Pantalla_Inicio extends AppCompatActivity {
         }
 
         // Paso 3-  Mostrar errores si los hay
-        if (errores > 0) {
-            if (!isFinishing()) {
-                new AlertDialog.Builder(this)
-                        .setTitle("Errores en el formulario")
-                        .setMessage(msg.toString())
-                        .setIcon(android.R.drawable.ic_dialog_alert)
-                        .setPositiveButton("Aceptar", null)
-                        .show();
-            }
+        if (errores > 0 && !isFinishing()) {
+            Validaciones.mostrarErrores(this, msg);
             return;
         }
 

@@ -141,6 +141,7 @@ public class Realizar_Reserva_Activity extends AppCompatActivity {
             linearPlanta.setVisibility(View.VISIBLE); // HAcemos visible solo para recepcionista
             etNombreHuesped.setVisibility(View.VISIBLE);
             et_apellidos.setVisibility(View.VISIBLE);
+
             // declaro mi spinner
             String[] plantas = {"Planta 1", "Planta 2", "Planta 3", "Planta 4", "Planta 5"};
             ArrayAdapter<String> adapter = new ArrayAdapter<>(this,

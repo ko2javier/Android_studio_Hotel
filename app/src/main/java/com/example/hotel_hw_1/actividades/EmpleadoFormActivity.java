@@ -1,19 +1,17 @@
 /**
  * Autor: K. Jabier O'Reilly
- * Proyecto: Gestión de Hotel - Práctica 1ª Evaluación (PMDM 2025/2026)
- * Clase: EmpleadoFormActivity.java
- * Descripción: Pantalla para añadir o editar empleados del hotel.
- *              Incluye validaciones de campos y manejo del modo edición.
- * Centro: C.F.G.S. Desarrollo de Aplicaciones Multiplataforma
- * Módulo: Programación Multimedia y Dispositivos Móviles
+
  */
 package com.example.hotel_hw_1.actividades;
 
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AlertDialog;
@@ -27,7 +25,8 @@ import com.google.android.material.snackbar.Snackbar;
 
 public class EmpleadoFormActivity extends AppCompatActivity {
     // defino variables
-    private EditText etNombre, etApellidos, etRol, etEmail, etTelefono;
+    private EditText etNombre, etApellidos, etEmail, etTelefono, etRol;
+
     private Button btnGuardar, btnCancelar;
 
     private boolean modoEditar = false;
@@ -44,10 +43,16 @@ public class EmpleadoFormActivity extends AppCompatActivity {
         etNombre = findViewById(R.id.et_nombre_empleado);
         etApellidos = findViewById(R.id.et_apellidos_empleado);
         etRol = findViewById(R.id.et_rol_empleado);
+
         etEmail = findViewById(R.id.et_email_empleado);
         etTelefono = findViewById(R.id.et_telefono_empleado);
         btnGuardar = findViewById(R.id.btn_guardar);
         btnCancelar = findViewById(R.id.btn_cancelar);
+
+        /**
+         * Configuro mi spinner
+         */
+
 
         /*Verifico que el bundle no sea nulo y me
         traiga la posicion del array para mostrar datos del empleado!!!
@@ -67,6 +72,7 @@ public class EmpleadoFormActivity extends AppCompatActivity {
     private void rellenarCampos() {
         etNombre.setText(empleadoActual.getNombre());
         etApellidos.setText(empleadoActual.getApellidos());
+
         etRol.setText(empleadoActual.getRol());
         etEmail.setText(empleadoActual.getEmail());
         etTelefono.setText(empleadoActual.getTelefono());
@@ -100,13 +106,13 @@ private void guardarEmpleado(View v) {
         msg.append("• Apellidos inválidos (mínimo 3 letras).\n");
     }
 
-    // PAso 2- Validar rol
+    //  Paso 2- Validar rol
     if (!Validaciones.validarRol(etRol)) {
         errores++;
-        msg.append("• Rol inválido. Use: Recepción, Mantenimiento, Gerente o Limpieza.\n");
+        msg.append("• Rol Incorrecto. Escoja Recepcionista\\Mantenimiento\\Limpieza).\n");
     }
 
-    // Paso 3- Validar teléfono
+       // Paso 3- Validar teléfono
     if (!Validaciones.validarTelefonoNuevo(etTelefono)) {
         errores++;
         msg.append("• Teléfono inválido (9 dígitos).\n");
@@ -119,15 +125,11 @@ private void guardarEmpleado(View v) {
     }
 
     // PAso 5-  Si hay errores, mostramos un diálogo y salimos
-    if (errores > 0) {
-        new AlertDialog.Builder(this)
-                .setTitle("Errores en el formulario")
-                .setMessage(msg.toString())
-                .setIcon(android.R.drawable.ic_dialog_alert)
-                .setPositiveButton("Aceptar", null)
-                .show();
+    if (errores > 0 && !isFinishing()) {
+        Validaciones.mostrarErrores(this, msg);
         return;
     }
+
 
     // PAso 6- Si no hay errores, guardamos o actualizamos
     if (modoEditar) {

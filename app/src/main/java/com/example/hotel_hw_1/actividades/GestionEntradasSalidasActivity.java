@@ -135,14 +135,9 @@ public class GestionEntradasSalidasActivity extends AppCompatActivity {
             errores++;
             msg.append("• Apellidos inválidos.\n");
         }
-        if (errores > 0) {
-            new AlertDialog.Builder(this)
-                    .setTitle("Errores en el formulario")
-                    .setMessage(msg.toString())
-                    .setIcon(android.R.drawable.ic_dialog_alert)
-                    .setPositiveButton("Aceptar", null)
-                    .show();
-            return ;
+        if (errores > 0 && !isFinishing()) {
+            Validaciones.mostrarErrores(this, msg);
+            return;
         }
         nombre = etNombreBuscar.getText().toString().trim();
         apellidos = etApellidosBuscar.getText().toString().trim();
@@ -178,13 +173,8 @@ public class GestionEntradasSalidasActivity extends AppCompatActivity {
             msg.append("• Habitación inválida (100–599).\n");
         }
 
-        if (errores > 0) {
-            new AlertDialog.Builder(this)
-                    .setTitle("Errores en el formulario")
-                    .setMessage(msg.toString())
-                    .setIcon(android.R.drawable.ic_dialog_alert)
-                    .setPositiveButton("Aceptar", null)
-                    .show();
+        if (errores > 0 && !isFinishing()) {
+            Validaciones.mostrarErrores(this, msg);
             return false;
         }
         return true;

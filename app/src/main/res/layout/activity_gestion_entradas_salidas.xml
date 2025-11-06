@@ -43,14 +43,14 @@
 
         <RadioButton
             android:id="@+id/rb_check_in"
-            android:text="Check-In"
+            android:text="Entrada Húesped"
             android:checked="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
         <RadioButton
             android:id="@+id/rb_check_out"
-            android:text="Check-Out"
+            android:text="Salida Húesped"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"/>
@@ -104,7 +104,7 @@
 
         <Button
             android:id="@+id/btn_realizar_check_in"
-            android:text="REALIZAR CHECK-IN"
+            android:text="REALIZAR ENTRADA HÚESPED"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -154,7 +154,7 @@
 
         <Button
             android:id="@+id/btn_realizar_check_out"
-            android:text="REALIZAR CHECK-OUT"
+            android:text="REALIZAR SALIDA HÚESPED"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="#B71C1C"
