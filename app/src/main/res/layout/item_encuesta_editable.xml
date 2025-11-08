@@ -4,17 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="#FFF"
+    android:background="#FFFFFF"
     android:padding="10dp"
     android:layout_marginBottom="12dp"
     android:elevation="8dp">
 
+    <!-- Título de la encuesta -->
     <LinearLayout
         android:id="@+id/linear_encuesta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_gravity="center"
         android:gravity="center_vertical">
 
         <ImageView
@@ -33,6 +33,7 @@
             android:textStyle="bold" />
     </LinearLayout>
 
+    <!-- Rating -->
     <RatingBar
         android:id="@+id/rating_encuesta"
         android:layout_width="wrap_content"
@@ -43,5 +44,22 @@
         android:rating="0.5"
         android:isIndicator="false"
         android:layout_marginTop="6dp" />
+
+    <!-- Campo de comentarios -->
+    <EditText
+        android:id="@+id/et_comentario_encuesta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:hint="Comentario opcional..."
+        android:inputType="textCapSentences|textMultiLine"
+        android:minLines="1"
+        android:maxLines="3"
+        android:textSize="14sp"
+        android:textColor="#333"
+        android:textColorHint="#999"
+        android:padding="6dp"
+        android:backgroundTint="#D8D8D8" />
 
 </LinearLayout>
