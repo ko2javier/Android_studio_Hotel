@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:padding="20dp"
     android:background="#FAF9E8"
-    tools:context=".actividades.GestionTareasActivity">
+    tools:context=".actividad.GestionTareasActivity">
 
     <!--  Título dinámico -->
     <TextView

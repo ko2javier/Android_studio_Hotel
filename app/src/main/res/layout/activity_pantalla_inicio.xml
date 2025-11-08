@@ -9,7 +9,7 @@
     android:orientation="vertical"
     android:background="#F5F5DC"
     android:gravity="center_horizontal"
-    tools:context=".actividades.Pantalla_Inicio"
+    tools:context=".actividad.Pantalla_Inicio"
     android:padding="10dp">
 
     <LinearLayout

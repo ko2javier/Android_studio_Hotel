@@ -8,7 +8,7 @@
     android:background="#FAF9E8"
     android:orientation="vertical"
     android:padding="20dp"
-    tools:context=".actividades.GestionEmpleadosActivity">
+    tools:context=".actividad.GestionEmpleadosActivity">
 
     <TextView
         android:id="@+id/txt_titulo_gestion_empleados"

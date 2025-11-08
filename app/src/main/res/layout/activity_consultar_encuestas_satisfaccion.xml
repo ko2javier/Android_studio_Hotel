@@ -6,7 +6,7 @@
     android:id="@+id/consultar_encuestas_satisfacion"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".actividades.Consultar_Encuestas_Satisfaccion"
+    tools:context=".actividad.Consultar_Encuesta_Satisfaccion"
     android:background="#FAF9E8"
     android:orientation="vertical"
     android:padding="10dp">

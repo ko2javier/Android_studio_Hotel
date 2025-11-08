@@ -6,7 +6,7 @@
     android:id="@+id/consultar_editar_perfil"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".actividades.Consultar_Editar_Perfil"
+    tools:context=".actividad.Consultar_Editar_Perfil"
     android:background="#F5F5DC"
     android:orientation="vertical"
     android:padding="10dp"

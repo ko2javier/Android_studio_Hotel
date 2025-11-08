@@ -6,7 +6,7 @@
     android:id="@+id/consultar_estado_reservas"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".actividades.Consultar_Estado_Reservas"
+    tools:context=".actividad.Consultar_Estado_Reserva"
     android:orientation="vertical"
     android:padding="24dp"
     android:background="#F5F5DC">

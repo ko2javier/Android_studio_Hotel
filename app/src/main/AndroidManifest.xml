@@ -12,73 +12,73 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light.NoActionBar">
         <activity
-            android:name=".actividades.consultar_tareas_mantenimiento"
+            android:name=".actividad.consultar_tareas_mantenimiento"
             android:exported="false" />
         <activity
-            android:name=".actividades.ConsultarTareasLimpieza"
+            android:name=".actividad.ConsultarTareasLimpieza"
             android:exported="false" />
         <activity
-            android:name=".actividades.GestionTareasActivity"
+            android:name=".actividad.GestionTareasActivity"
             android:exported="false" />
         <activity
-            android:name=".actividades.EmpleadoFormActivity"
+            android:name=".actividad.EmpleadoFormActivity"
             android:exported="false" />
         <activity
-            android:name=".actividades.GestionEmpleadosActivity"
+            android:name=".actividad.GestionEmpleadosActivity"
             android:exported="false" />
         <activity
-            android:name=".actividades.ConsultarHuespedesActivity"
+            android:name=".actividad.ConsultarHuespedesActivity"
             android:exported="false" />
         <activity
-            android:name=".actividades.GestionEntradasSalidasActivity"
+            android:name=".actividad.GestionEntradasSalidasActivity"
             android:exported="false" />
         <activity
-            android:name=".actividades.Solicitar_Tarea"
+            android:name=".actividad.Solicitar_Tarea"
             android:exported="false" />
         <activity
-            android:name=".actividades.Consultar_Estado_Reservas"
+            android:name=".actividad.Consultar_Estado_Reserva"
             android:exported="false" />
         <activity
-            android:name=".actividades.Realizar_Reserva_Activity"
+            android:name=".actividad.Realizar_Reserva_Activity"
             android:exported="false" />
         <activity
-            android:name=".actividades.Crear_Encuesta_Satisfaccion"
+            android:name=".actividad.Crear_Encuesta_Satisfaccion"
             android:exported="false" />
         <activity
-            android:name=".actividades.MantenimientoActivity"
+            android:name=".actividad.MantenimientoActivity"
             android:exported="false" />
         <activity
-            android:name=".actividades.HuespedActivity"
+            android:name=".actividad.HuespedActivity"
             android:exported="false" />
         <activity
-            android:name=".actividades.LimpiadorActivity"
+            android:name=".actividad.LimpiadorActivity"
             android:exported="false" />
         <activity
-            android:name=".actividades.RecepcionistaActivity"
+            android:name=".actividad.RecepcionistaActivity"
             android:exported="false" />
         <activity
-            android:name=".actividades.GerenteActivity"
+            android:name=".actividad.GerenteActivity"
             android:exported="false" />
         <activity
-            android:name=".actividades.Consultar_Encuestas_Satisfaccion"
+            android:name=".actividad.Consultar_Encuesta_Satisfaccion"
             android:exported="false" />
         <activity
-            android:name=".actividades.Consultar_Ocupacion_Hotel"
+            android:name=".actividad.Consultar_Ocupacion_Hotel"
             android:exported="false" />
         <activity
-            android:name=".actividades.Consultar_Editar_Perfil"
+            android:name=".actividad.Consultar_Editar_Perfil"
             android:exported="false" />
         <activity
-            android:name=".actividades.Pantalla_Registro"
+            android:name=".actividad.Pantalla_Registro"
             android:exported="false" />
         <activity
             android:name=".Pantalla_Menu_Usuarios"
             android:exported="false" />
         <activity
-            android:name=".actividades.Pantalla_Inicio"
+            android:name=".actividad.Pantalla_Inicio"
             android:exported="false" />
         <activity
-            android:name=".actividades.Presentacion"
+            android:name=".actividad.Presentacion"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

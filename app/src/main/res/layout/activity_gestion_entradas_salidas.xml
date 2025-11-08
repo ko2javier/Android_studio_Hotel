@@ -6,7 +6,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".actividades.GestionEntradasSalidasActivity"
+    tools:context=".actividad.GestionEntradasSalidasActivity"
     android:orientation="vertical"
     android:padding="30dp"
     android:background="#FAF9E8">
@@ -73,34 +73,61 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"/>
-
+        <TextView
+            android:id="@+id/txt_nombre"
+            android:text="Nombre:"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
         <EditText
             android:id="@+id/et_nombre_huesped"
-            android:hint="Nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/txt_apellidos"
+            android:text="Apellidos:"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
         <EditText
             android:id="@+id/et_apellidos_huesped"
-            android:hint="Apellidos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"/>
-
+           />
+        <TextView
+            android:id="@+id/txt_phone"
+            android:text="Teléfono:"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
         <EditText
             android:id="@+id/et_telefono_huesped"
-            android:hint="Teléfono"
+
             android:inputType="phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"/>
-
+            />
+        <TextView
+            android:id="@+id/txt_hab"
+            android:text="Habitación:"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
         <EditText
             android:id="@+id/et_habitacion_huesped"
-            android:hint="Habitación"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"/>
+           />
 
         <Button
             android:id="@+id/btn_realizar_check_in"
