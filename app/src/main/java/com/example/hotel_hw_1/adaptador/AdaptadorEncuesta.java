@@ -46,6 +46,7 @@ public class AdaptadorEncuesta extends ArrayAdapter<Encuesta> {
         RatingBar rating = convertView.findViewById(R.id.rating_encuesta);
         TextView txtPromedio = convertView.findViewById(R.id.txt_promedio_encuesta);
         TextView txtCantidad = convertView.findViewById(R.id.txt_cant_encuesta);
+        TextView  txt_comentario_general= convertView.findViewById(R.id.txt_comentario_general);
 
         // les pongo los valores a las mismas con los set!!
 
@@ -53,6 +54,24 @@ public class AdaptadorEncuesta extends ArrayAdapter<Encuesta> {
         rating.setRating(encuesta.getPromedio());
         txtPromedio.setText("Promedio: " + encuesta.getPromedio());
         txtCantidad.setText(encuesta.getCantidad() + " encuestas registradas");
+        String comentario;
+        switch (encuesta.getCategoria()) {
+            case "Limpieza de la habitación":
+                comentario = "\"Todo muy bueno, continúen con el trabajo.\"";
+                break;
+            case "Atención en recepción":
+                comentario = "\"Excelente trato, muy amables.\"";
+                break;
+            case "Servicio de mantenimiento durante su estancia":
+                comentario = "\"Respondieron rápido ante los problemas.\"";
+                break;
+            default:
+                comentario = "\"Muy satisfecho con el servicio.\"";
+                break;
+        }
+
+
+        txt_comentario_general.setText(comentario);
 
         return convertView;
     }

@@ -71,6 +71,36 @@
                 android:text="3 encuestas registradas"
                 android:textColor="#777"
                 android:textSize="12sp" />
+            <LinearLayout
+                android:id="@+id/linear_final"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:id="@+id/txt_titulo_comentario"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Comentarios de los huéspedes:"
+                    android:textColor="#444"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                     />
+                <TextView
+                    android:id="@+id/txt_comentario_general"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Todo muy bueno, continuen con el trabajo"
+
+                    android:textColor="#2E7D32"
+                    android:textSize="14sp"
+                    android:textStyle="italic" />
+            </LinearLayout>
+
         </LinearLayout>
 
     </LinearLayout>
